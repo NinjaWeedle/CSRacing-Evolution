@@ -64,7 +64,7 @@ Text(65,150,"TIER
 Text(65,185,|LCAE(16
 |LCAE(15
 TextColor(Ans
-Text(23,102,Str1
+Text(23,100,Str1
 Line(~1.8,1.1,7,1.1,24
 Line(~1.8,1.9,7,1.9,24
 TextColor(12
@@ -97,7 +97,7 @@ Then
 	Horizontal 3.2,19
 	Line(~4,~5,~4,~3
 	|LCAE(1->A
-	|LCSE(5+A->U
+	int(|LCSE(5+A->U
 	Text(0,200,"TUNING
 	Text(0,0,"C[r]:
 	Text(0,25,|LCSE(1
@@ -159,33 +159,40 @@ Then
 	|LCSE(1->C
 	Text(0,25,C
 	Text(20,50,"CURRENT COLOR:
-	Text(65,93,"COST: 5
+	Text(65,93,"COST: 25
 	|LCAE(15
 	TextColor(Ans
 	Text(20,160,Ans
-	Text(40,128,"#
-	Pt-On(.2,~.7,Ans
-	Pt-On(~.15,~.7,Ans
-	Input "INPUT COLOR:",A
-	If A>24 or A<10
-	12->A
-	If C>=5 and A!=|LCAE(15
+	If not(|LCAE(1
 	Then
-		A->|LCAE(15
-		TextColor(12
-		Text(~1,21,40,Str0
-		C-5->|LCSE(1
-		TextColor(A
-		Text(20,85,"COLOR CHANGED
-	End
-	Text(65,93,"PRESS ENTER
-	128->B
-	Text(40,B,"#
-	Pt-On(.2,~.7,A
-	Pt-On(~.15,~.7,A
-	Pause 
-	For(B,122,250,2
+		Pause "NO CAR SELECTED
+		1->A
+	Else
+		Text(40,128,"#
+		Pt-On(.2,~.7,Ans
+		Pt-On(~.15,~.7,Ans
+		Input "INPUT COLOR:",A
+		If A>24 or A<10
+		12->A
+		If C>=25 and A!=|LCAE(15
+		Then
+			A->|LCAE(15
+			(.01A)+int(|LCSE(5+|LCAE(1->|LCSE(5+|LCAE(1
+			TextColor(12
+			Text(~1,21,40,Str0
+			C-25->|LCSE(1
+			TextColor(A
+			Text(20,85,"COLOR CHANGED
+		End
+		Text(65,93,"PRESS ENTER
+		128->B
 		Text(40,B,"#
+		Pt-On(.2,~.7,A
+		Pt-On(~.15,~.7,A
+		Pause 
+		For(B,122,250,2
+			Text(40,B,"#
+		End
 	End
 	Full
 End
@@ -196,13 +203,14 @@ Then
 	Text(0,210,"STATS
 	Horizontal 3.2,12
 	TextColor(10
-	Text(125,50,"LADDER:
-	Text(125,105,|LCSE(2)-9
-	Text(125,125,"/25
+	Text(150,50,"LADDER:
+	Text(150,105,|LCSE(2)-9
+	Text(150,125,"/30
 	TextColor(15
-	Text(105,145,iPart(|LCSE(3)-.9
-	Text(105,50,"CAR SPECIFIC:
-	Text(105,165,"/6
+	Text(135,145,iPart(|LCSE(3)-.9
+	Text(135,50,"CAR SPECIFIC:
+	Text(135,165,"/6
+	Horizontal ~2.5,12
 	Pause 
 End
 If A
@@ -248,7 +256,18 @@ Then
 	ClrDraw
 	Text(0,180,"CHANGE CAR
 	Horizontal 3.2
-	Text(65,50,Str1
+	Text(80,5,"GOT IN
+	Text(150,93,"PRESS ENTER
+	|LCSE(5+|LCAE(1
+	If Ans=int(Ans
+	Then
+		(.01|LCAE(15))+Ans->|LCSE(5+|LCAE(1
+		Text(
+	Else
+		100fPart(Ans->|LCAE(15
+		TextColor(Ans
+	End
+	Text(80,50,Str1
 	Pause 
 	Goto 0
 End
@@ -261,7 +280,7 @@ End
 "CPU->Str2
 1->L
 DelVar thetaClrDraw
-Menu("EVENT LIST","REGULATION",A,"LADDER",B,"TIME TRIALS",C,"CAR SPECIFIC",D,"BACK TO HOME",0
+Menu("EVENT LIST","REGULATION",A,"LADDER",B,"TIME TRIALS",C,"CAR SPECIFIC",D,"TOURNAMENT",E,"BACK TO HOME",0
 Lbl D
 3->W
 |LCSE(3->A
@@ -299,6 +318,8 @@ Lbl C
 5->W
 Text(0,160,"TIME TRIALS
 Horizontal 3.2,11
+Text(50,17,"LONG
+
 Horizontal 1
 Pause 
 Goto 2
@@ -306,15 +327,15 @@ Goto 1
 Lbl B
 2->W
 BorderColor 3
+Text(0,170,"LADDER RACE
 TextColor(18
-Text(0,90,"LADDER RACE
 Horizontal 3,18
 Text(~1,80,95,|LCSE(2)-9
-Text(~1,80,120,"/25
+Text(~1,80,120,"/30
 .1|LCSE(2->D
 Text(30,50,"C[r]. PRIZE:
 Text(30,125,W500D
-If 34=|LCSE(2
+If 39=|LCSE(2
 Text(30,125,5000
 Text(150,90,"PRESS ENTER
 Pause 
@@ -502,7 +523,7 @@ Else
 	1+|LCSE(3->|LCSE(3
 	If 15>|LCSE(4
 	(5=W)+|LCSE(4->|LCSE(4
-	If W=2 and 34=|LCSE(2
+	If W=2 and 39=|LCSE(2
 	Then
 		2600+|LCSE(1->|LCSE(1
 		Text(95,30,"YOU'RE THE NEW LADDER CHAMP!
