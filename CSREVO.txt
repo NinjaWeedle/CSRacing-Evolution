@@ -216,20 +216,20 @@ Then
 	For(F,1,3
 		Text(40+(20F),195,|LTTR(3+F
 	End
-	Line(~4.4,2.2,~4.4,~1.8
+	Line(~4.4,2.2,~4.4,~1.8,12
 	TextColor(10
-	Text(150,50,"LADDER:
-	Text(150,105,|LCSE(2)-9
-	Text(150,125,"/30
+	Text(140,50,"LADDER:
+	Text(140,105,|LCSE(2)-9
+	Text(140,125,"/30
 	TextColor(15
-	Text(135,145,iPart(|LCSE(3)-.9
-	Text(135,50,"CAR SPECIFIC:
-	Text(135,165,"/6
+	Text(125,145,iPart(|LCSE(3)-.9
+	Text(125,50,"CAR SPECIFIC:
+	Text(125,165,"/6
 	Horizontal 1.2,11
 	Horizontal .2,14
 	Horizontal ~.8,18
 	Horizontal ~1.8,12
-	Line(1,2.2,1,~1.8
+	Line(1,2.2,1,~1.8,12
 	Pause 
 End
 If A
@@ -281,7 +281,7 @@ Then
 	If Ans=int(Ans
 	Then
 		(.01|LCAE(15))+Ans->|LCSE(5+|LCAE(1
-		Text(
+		Text(80,40,Str1
 	Else
 		100fPart(Ans->|LCAE(15
 		TextColor(Ans
@@ -301,7 +301,7 @@ End
 DelVar thetaClrDraw
 Menu("EVENT LIST","REGULATION",A,"LADDER",B,"TIME TRIALS",C,"CAR SPECIFIC",D,"TOURNAMENT",E,"BACK TO HOME",0
 Lbl D
-3->W
+5->W
 |LCSE(3->A
 TextColor(15
 Horizontal 3
@@ -334,7 +334,7 @@ If not(W
 Goto 2
 Goto 1
 Lbl C
-5->W
+2->W
 Text(0,170,"TIME TRIALS
 Horizontal 3.2,11
 Horizontal 2.3,11
@@ -361,10 +361,13 @@ Then
 End
 If A=2
 Goto 2
-3|LCAE(16)-3
+|LCAE(16)+(3(L=2->theta
+(240L)/|LTTR(theta->D
+"GHOST->Str2
+21->Q
 Goto 1
 Lbl B
-2->W
+3->W
 BorderColor 3
 Text(0,170,"LADDER RACE
 TextColor(18
@@ -375,7 +378,7 @@ Text(~1,80,120,"/30
 Text(30,50,"C[r]. PRIZE:
 Text(30,125,W500D
 If 39=|LCSE(2
-Text(30,125,5000
+Text(30,125,10000
 Text(150,90,"PRESS ENTER
 Pause 
 Goto 1
@@ -417,6 +420,7 @@ Text(34,0,"YOU
 Text(55,1,"#
 Pt-On(~6.5,.95,Ans
 Pt-On(~6.15,.95,Ans
+If W!=2
 randInt(10,24->Q
 TextColor(Q
 Text(80,1,"#
@@ -431,7 +435,7 @@ Repeat Ans=21
 	getKey
 End
 Text(~1,0,60,Str0
-Text(~1,30,0,Str0
+Text(~1,33,0,Str0
 Text(~1,99,0,Str0
 |LCAE(1->A
 |LCSE(5+A->U
@@ -523,10 +527,8 @@ Repeat P>=240L
 	If S10>V
 	.1V->S
 	If R>|LCAE(2
-	S-(.1(A+U))(1.1-GH->S
+	S-(.1+(.1(A+U))(1.1-GH->S
 	TextColor(19
-	round(P/L,0->[recursiven]
-	P+S->P
 	S+(.1(A+U))(1.1-GH->S
 	If W>=3
 	D+.1J->D
@@ -537,7 +539,8 @@ Repeat P>=240L
 	Else
 		~9->D
 	End
-	Text(~1,53,[recursiven]," 
+	Text(~1,53,round(P/L,0)," 
+	P+S->P
 	TextColor(N
 	Text(55,round(P/L,0),"#
 	TextColor(Q
@@ -562,9 +565,9 @@ Else
 	1+|LCSE(3->|LCSE(3
 	If 15>|LCSE(4
 	(5=W)+|LCSE(4->|LCSE(4
-	If W=2 and 39=|LCSE(2
+	If W=3 and 39=|LCSE(2
 	Then
-		2600+|LCSE(1->|LCSE(1
+		5200+|LCSE(1->|LCSE(1
 		Text(95,30,"YOU'RE THE NEW LADDER CHAMP!
 	Else
 		(W=2)+|LCSE(2->|LCSE(2
@@ -575,15 +578,16 @@ TextColor(12
 Text(150,80,"PRESS ENTER            
 Text(0,0,"C[r]:
 Text(0,20,|LCSE(1:Pause 
-If theta
-Pause "EVENT FLAG
-
-If theta=4
+If theta and theta=int(theta
 Then
-	1->|LCSE(7
-	1->|LCSE(5
-	"CAR CREATOR->Str0
-	If theta
-	Pause "UNLOCKED
+	If Z<|LTTR(theta
+	Then
+		Disp "NEW RECORD!
+		Z->|LTTR(theta
+	Else
+		Disp "RECORD TIED
+	End
+	Disp "TIME:
+	Pause Z
 End
 Goto 0

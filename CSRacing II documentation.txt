@@ -112,7 +112,7 @@ V = Top Speed
 W = Event type
 Z = Countdown
 (Theta) = Did the player win against a crew leader and if so which one (1 = tier 1 leader beaten, 2 = tier2 leader beaten)
-(Recursive n): Last player car position 
+
 
 EVENT TYPES:
 Regulation races: W=1
