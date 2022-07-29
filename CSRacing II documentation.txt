@@ -77,6 +77,14 @@ List L1:
 ...etc...this repeats until all 30 cars have their own challenges...
 60: Acceleration level for car challenge 30
 
+List TTR:
+1: Short Tier 1 Record
+2: Short Tier 2 Record
+3: Short Tier 3 Record
+4: Long Tier 1 Record
+5: Long Tier 2 Record
+6: Long Tier 3 Record
+
 
 VARIABLES:
 A = temp var. 1
@@ -92,6 +100,7 @@ J = Opponent Acceleration level (Only affects Car Specific and Crew Battle)
 K = Key pressed
 L = Race Length
 M = Final drive ratio
+N = Player Car color
 O = Opponent Car position
 P = Player Car position
 Q = Opponent car color
