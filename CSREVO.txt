@@ -339,7 +339,7 @@ Text(0,170,"TIME TRIALS
 Horizontal 3.2,11
 Horizontal 2.3,11
 Text(20,99,"TIER
-DelVar ADelVar BText(20,134,|LCAR(16
+DelVar ADelVar BText(20,134,|LCAE(16
 Text(50,30,"LONG TRACK
 Text(80,30,"SHORT TRACK
 Text(110,30,"BACK
