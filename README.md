@@ -1,2 +1,162 @@
-# CSRacing-Evolution
-The sequel to Calculator Street Racing. Targets a more complete and realistic racing engine than the original.
+ _____   ___   ____         _____
+|       /     |    |             \
+|       \__   |____|         ____/
+|          \  |    \        /
+|_____  ___/  |     \ACING /_____  
+
+CALCULATOR STREET RACING II: EVOLUTION
+
+A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
+
+NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run slowly on older models without use of a program like FASTER.
+Github: https://github.com/NinjaWeedle/CSRacing-Evolution - If there's a new version of CSRacing, you'll find it here first.
+Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing!
+_________________________________________________________
+Table of contents:
+
+I. GETTING STARTED
+ 1: How to install Calculator Street Racing on your TI-84+
+ 2: How to play
+ 3: Game modes
+ 4: Home menu
+
+II. CSRACING II IN DEPTH
+ 5: Tips & Tricks 
+ 6: Car List
+
+III. EXTRA INFORMATION
+ 7: Developer's Notes & Technicalities
+ 8: A short guide to CSRacing jargon
+ 9: Credits and License
+_________________________________________________________
+
+< I. GETTING STARTED >
+
+
+1. HOW TO INSTALL:
+
+Send CSRACING.8xp and CSRGARAG.8xp to RAM. (Or send CSRACING.8xp to archive if using a shell like MirageOS or Doors CS7)
+
+
+2. HOW TO PLAY:
+
+
+
+Racing controls: 
+
+YOU-----------------
+#                 ▓▓
+==================▓▓
+#                 ▓▓
+CPU-----------------
+
+Press 2ND to start your engine and begin the countdown to launch. To rev quickly, repeatedly press 2ND. To rev slowly, press ALPHA (Or any key that isn't 2ND or ON). 
+ - Pay attention to the text at the bottom of the screen- it'll tell you if your RPM is above, below, or at the number needed for the fastest launch.
+
+Once the race begins, your car will begin accelerating automatically. Press the up arrow key to shift up, and the down arrow key to shift down.
+ - Every car drives differently. The best time to shift, the number of gears, redline, and many other stats differ from car to car, and certain cars may not need to shift at all for shorter races.
+
+
+3. GAME MODES
+
+Upon selecting the "RACE" option in the main menu, you will be presented the event list that shows the different kinds of races you can enter.
+Each mode has its own rules:
+ 
+- Regulation: Any car with any upgrades can enter. After selecting this option, you'll be asked to enter a difficulty level, and after that, the track length.
+The difficulty level is the MPH the opponent will travel at: Entering a difficulty of 10 will have the opponent drive at a constant 10 MPH, a difficulty of 35 equates to 35 MPH, and so on and so forth.
+The higher the difficulty level, the better the rewards!
+After entering the difficulty, you'll be asked to specify the length of the road. A length of 1 is the standard length, 2 is double length, 3 is triple length, 4 is quadruple length, and 5 is quintuple length. The track length does not affect the Cr. earned for winning, but does slightly increase the payment for losing.
+
+- Ladder: Race your way through 30 increasingly challenging races! The Grand Prize is 10000 Cr. Beware though: If you lose a race, you'll be knocked down a spot on the ladder.
+
+- Time Trials
+   
+- Return to Home: This isn't a game mode. Selecting this option will send you back to the main menu.
+
+4. HOME MENU
+
+Upon starting the game, you will be greeted by the home menu.
+
+
+
+ - Change Car: Self explanatory. Selecting this option lets you swap to another car you own. 
+
+ - Dealership: Currently unavailiable
+
+ - Paintshop: Lets you paint your car by typing one of the numbers listed below. 
+   -- Color guide: 10=Blue, 11=Red, 12=Black, 13=Magenta, 14=Green, 15=Orange, 16=Brown, 17=Navy, 18=LtBlue, 19=Yellow, 20=White, 21=LtGray, 22=MedGray, 23=Gray, and 24=DarkGray
+
+ - Create Car: Once you progress past a certain point in the game, you can come here to create a new car from scratch. 
+   -- The initial cost of creating a car is 100000 Cr. per car- You can lower development costs substantially by winning Car Specific races as previously mentioned in section 3.
+   -- Cars you create will be overwritten once you switch to another car- If you want to save your creations, back up the list named "CAE" and the String Variable Str1 to your computer. Once you've backed them up, you can also share your custom cars with your friends by sending them these variables.
+   -- To load or restore a custom car, just send the files that contain the custom car data (namely CAE.8xl and Str1.8xs) to your calculator. They will appear in game when you next launch CSRACING. 
+   -- Refer to section 8 for more details on car creation.
+
+ - Return: Returns to the main menu of CSRacing.
+
+< II. CSRACING IN DEPTH >
+
+
+5. TIPS & TRICKS
+
+ - Good launches will earn you an extra 5 Cr, and Perfect launches will net you 13 extra Cr.
+ - The key to the best shifts is to shift up the same frame the max RPM in the current gear is reached- nailing the timing will let you constantly accelerate.
+ - Upgrades scale in cost based on the tier of the car you're upgrading- Tier 1 cars are the cheapest cars to upgrade, and Tier 3 cars are the most expensive to upgrade due to their exotic nature.
+ - Upgrades offer a noticeable performance boost, but buying faster cars is eventually necessary to stay competitive.
+ - Regulation races are a great way to earn Cr. - Just make sure to keep the difficulty at a level your car can handle.
+ - There will be two cars availiable in each tier.
+
+
+
+6. CAR LIST (by car identifier number):
+
+3: Ford Focus RS (2009) - T2
+4:
+5: Lamborghini Countach LP400 (1974) - T3
+
+*Cars with "*" next to their number cannot be purchased at the Car Dealer.
+
+
+
+< III. EXTRA INFORMATION >
+
+
+7. DEVELOPER'S NOTES & TECHNICALITIES:
+
+ - This game should run on TI-84+ CSE, but will run extremely slow on that hardware.
+ - The cars in this game are intended to have the same gear ratios and top speeds as their real-world counterparts- but real world performance may differ. (The names are a bit different here due to copyright, but I'm sure you can figure out what cars they represent via the Developer's Documentation in the extras folder.)
+ - Cars with electronically limited top speeds in the real world (i.e. 155 MPH) have their limiters removed here.
+ - Races take a couple seconds to start due to how slow the Shade( command is at drawing.
+ - If you get ERR: UNDEFINED after the title screen, it's likely because you deleted Str1. To fix this, enter "A->Str1 on the homescreen in TI-OS.
+
+
+8. A SHORT GUIDE TO CSRACING JARGON
+
+ - CSRacing = Calculator Street Racing
+ - Cr. = Credits, the currency of CSRacing
+ - CIN = Car Identifier Number.
+ - Oxiti = A fictional car brand. 
+ - Tune = refers to the act of tuning a car, in this case for performance.
+ - Home = the homescreen of the game.
+
+
+9. CREDITS, LICENSE AND CONTACT INFORMATION
+
+Game created by Oxiti8 in 2022.
+
+Special thanks to Mr. Womp Womp and fghsgh on Cemetech for help with optimization.
+
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THIS SOFTWARE OR THE USE OR OTHER DEALINGS IN THIS
+SOFTWARE.
+
+Redistribution of this software is welcome, but this document MUST accompany it.
+
+Email: weedleninja88@gmail.com
+Ticalc.org author profile: https://ticalc.org/archives/files/authors/117/11708.html
+
