@@ -1,9 +1,3 @@
- _____   ___   ____         _____
-|       /     |    |             \
-|       \__   |____|         ____/
-|          \  |    \        /
-|_____  ___/  |     \ACING /_____  
-
 CALCULATOR STREET RACING II: EVOLUTION
 
 A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
@@ -110,9 +104,8 @@ Upon starting the game, you will be greeted by the home menu.
 
 6. CAR LIST (by car identifier number):
 
-3: Ford Focus RS (2009) - T2
-4:
-5: Lamborghini Countach LP400 (1974) - T3
+3: Focus RS (2009) - T2
+4: Countach LP400 (1974) - T2
 
 *Cars with "*" next to their number cannot be purchased at the Car Dealer.
 

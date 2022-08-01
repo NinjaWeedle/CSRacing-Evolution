@@ -16,7 +16,7 @@ List CSE:
 6: (1 or above=owned, 0=not owned)
 7: 
 8: Ford Focus RS (2009) owned?
-9: 
+9: Lamborghini Countach LP400 (1974) owned?
 10: 
 11: 
 12: 
@@ -116,16 +116,15 @@ Z = Countdown
 
 EVENT TYPES:
 Regulation races: W=1
-Ladder races: W=2
-Car Specific/ Custom Spec (Was restriction races): W=3
-Link Battle: W=4
-Crew Battle: W=5
+Time Trials: W=2
+Ladder races: W=3
+
 
 CAR LIST (by car identifier number):
 1:
 2:
 3: Ford Focus RS (2009)
-4:
+4: Lamborghini Countach LP400 (1974)
 5:
 6:
 31: Identifies custom cars

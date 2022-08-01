@@ -45,7 +45,7 @@ Then
 End
 If not(|LCSE(2
 10->|LCSE(2
-For(A,3,12
+For(A,3,5
 	If not(|LCSE(A
 	1->|LCSE(A
 End
@@ -232,6 +232,13 @@ Then
 	Line(1,2.2,1,~1.8,12
 	Pause 
 End
+If C=5
+Then
+	ClrDraw
+	Horizontal 3.2,17
+	Text(0,175,"DEALERSHIP
+	Pause 
+End
 If A
 Goto 0
 If C=6
@@ -247,11 +254,20 @@ Then
 	DelVar BClrDraw
 	Text(0,180,"CHANGE CAR
 	Horizontal 3.2
+	For(X,0,5
+		Text((20X+25),30,"???
+	End
+	If |LCSE(6
 	Text(25,30,"CAR 1
+	If |LCSE(7
 	Text(45,30,"MIRA TR-XX AVANZATO R '97
+	If |LCSE(8
 	Text(65,30,"FOCUS RS '09
-	Text(85,30,"CAR 4
+	If |LCSE(9
+	Text(85,30,"COUNTACH LP400 '74
+	If |LCSE(10
 	Text(105,30,"CAR 5
+	If |LCSE(11
 	Text(125,30,"CAR 6
 	Text(145,30,"BACK
 	Repeat B
@@ -261,6 +277,11 @@ Then
 		getKey->K
 		K=21 or K=105->B
 		Text(~1,(20A+23),14," 
+	End
+	If A=3
+	Then
+		"COUNTACH LP400 '74->Str1
+		{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,2.2,.2,.13,15,2,375,365,25.3,4.091->CAE
 	End
 	If A=2
 	Then
@@ -275,18 +296,21 @@ Then
 	ClrDraw
 	Text(0,180,"CHANGE CAR
 	Horizontal 3.2
-	Text(80,5,"GOT IN
+	Text(75,10,"GOT IN
+	60
+	Text(110,99,"CAR
+	Text(110,130,|LCAE(1
 	Text(150,93,"PRESS ENTER
 	|LCSE(5+|LCAE(1
 	If Ans=int(Ans
 	Then
 		(.01|LCAE(15))+Ans->|LCSE(5+|LCAE(1
-		Text(80,40,Str1
+		TextColor(|LCAE(15
 	Else
 		100fPart(Ans->|LCAE(15
 		TextColor(Ans
 	End
-	Text(80,50,Str1
+	Text(75,55,Str1
 	Pause 
 	Goto 0
 End
@@ -361,8 +385,8 @@ Then
 End
 If A=2
 Goto 2
-|LCAE(16)+(3(L=2->theta
-(240L)/|LTTR(theta->D
+|LCAE(16)+3(L=2->theta
+240L/|LTTR(theta->D
 "GHOST->Str2
 21->Q
 Goto 1
@@ -371,7 +395,7 @@ Lbl B
 BorderColor 3
 Text(0,170,"LADDER RACE
 TextColor(18
-Horizontal 3,18
+Horizontal 3.2,18
 Text(~1,80,95,|LCSE(2)-9
 Text(~1,80,120,"/30
 .1|LCSE(2->D
