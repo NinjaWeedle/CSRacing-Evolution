@@ -3,6 +3,7 @@
 Full
 BackgroundOff
 BorderColor 4
+DetectAsymOff
 TextColor(12
 AxesOff
 ZStandard
@@ -36,10 +37,7 @@ Circle(15,5,4,12
 Text(140,200,"OXITI8
 "                      ->Str0
 Pause 
-SetUpEditor CAE
-SetUpEditor CSE
-SetUpEditor TTR
-SetUpEditor CSR
+SetUpEditor CAE,CSE,TTR,CSR
 30->dim(|LCSE
 If not(|LCSE(Ans
 Then
@@ -375,394 +373,395 @@ Then
 					TextColor(12
 					Pause 
 				End
-				End
 			End
 		End
 	End
-	If A
-	Goto 0
-	If C=6
-	Then
-		ClrHome
-		Disp "SAVING
-		Archive |LCSE
-		Archive |LTTR
-		Archive |LCSR
-		ClrDraw
-		Return
-	End
-	If C=3
-	Then
-		DelVar FDelVar BClrDraw
-		Text(0,180,"CHANGE CAR
-		Horizontal 3.2
-		For(Y,0,1
-			For(X,0,5
-				Text((20X+25),20+130Y,"???
-			End
+End
+If A
+Goto 0
+If C=6
+Then
+	ClrHome
+	Disp "SAVING
+	Archive |LCSE
+	Archive |LTTR
+	Archive |LCSR
+	ClrDraw
+	Return
+End
+If C=3
+Then
+	DelVar FDelVar BClrDraw
+	Text(0,180,"CHANGE CAR
+	Horizontal 3.2
+	For(Y,0,1
+		For(X,0,5
+			Text((20X+25),20+130Y,"???
 		End
-		If |LCSE(6
-		Text(25,20,"CAR 1
-		If |LCSE(7
-		Text(45,20,"MIRA AVANZATO
-		If |LCSE(8
-		Text(65,20,"FOCUS RS
-		If |LCSE(9
-		Text(85,20,"COUNTACH LP400
-		If |LCSE(10
-		Text(105,20,"CAR 5
-		If |LCSE(11
-		Text(125,20,"CAR 6
-		DelVar FText(145,20,"BACK
-		Repeat B
-			A-(A and K=25->A
-			A+((K=34)(A<6->A
-			F-((F and K=24->F
-			F+((not(F) and K=26->F
-			Text((20A+25),4+130F,">
-			getKey->K
-			K=21 or K=105->B
-			Text(~1,(20A+23),4+130F," 
-		End
-		If F
-		Then
-			
-		Else
-			If A=3 and |LCSE(9
-			Then
-				"COUNTACH LP400 '74->Str9
-				{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,2.2,.2,.13,15,2,375,365,25.3,4.091->CAE
-			End
-			If A=2 and |LCSE(8
-			Then
-				"FOCUS RS '09->Str9
-				{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,1.9,.25,.15,14,2,300,318,25.5,4.06,.575985->CAE
-			End
-			If A=1
-			Then
-				"MIRA AVANZATO R '97->Str9
-				{2->CAE
-			End
-		End
-		ClrDraw
-		Text(0,180,"CHANGE CAR
-		Horizontal 3.2
-		Text(75,10,"GOT IN
-		60
-		Text(110,99,"CAR
-		Text(110,130,|LCAE(1
-		Text(150,93,"PRESS ENTER
-		|LCSE(5+|LCAE(1
-		If Ans=int(Ans
-		Then
-			(.01|LCAE(15))+Ans->|LCSE(5+|LCAE(1
-			TextColor(|LCAE(15
-		Else
-			100fPart(Ans->|LCAE(15
-			TextColor(Ans
-		End
-		Text(75,55,Str9
-		Pause 
-		Goto 0
 	End
-	Lbl 2
-	If 15=|LCAE(1
-	Then
-		Pause "YOU NEED A CAR TO RACE.
-		Goto 0
-	End
-	"CPU->Str2
-	1->L
-	DelVar thetaClrDraw
-	Menu("EVENT LIST","REGULATION",A,"LADDER",B,"TIME TRIALS",C,"CAR SPECIFIC",D,"TOURNAMENT",E,"BACK TO HOME",0
-	Lbl D
-	5->W
-	|LCSE(3->A
-	TextColor(15
-	Horizontal 3
-	Text(0,75,"CAR SPECIFIC
-	If A>=31
-	Then
-		TextColor(12
-		Text(~1,80,60,"CUSTOM SPEC
-		Pause 
-		Input "LAUNCH SPD?",D
-		Input "ACCEL LV?",J
-		Input "LENGTH?",L
-		.1D->D
-	Else
-		SetUpEditor L1
-		.5->B
-		.2->C
-		L1(A->D
-		L1(6+A->J
-		W(A=|LCAE(1->W
-		Text(~1,50,80,"CAR
-		Text(~1,50,120,A
-		If W
-		Text(120,40,Str1
-		If not(W
-		Text(80,80,"REQUIRE\D
-		Pause 
-	End
-	If not(W
-	Goto 2
-	Goto 1
-	Lbl C
-	2->W
-	Text(0,170,"TIME TRIALS
-	Horizontal 3.2,11
-	Horizontal 2.3,11
-	Text(20,99,"TIER
-	DelVar ADelVar BText(20,134,|LCAE(16
-	Text(50,30,"LONG TRACK
-	Text(80,30,"SHORT TRACK
-	Text(110,30,"BACK
+	If |LCSE(6
+	Text(25,20,"CAR 1
+	If |LCSE(7
+	Text(45,20,"MIRA AVANZATO
+	If |LCSE(8
+	Text(65,20,"FOCUS RS
+	If |LCSE(9
+	Text(85,20,"COUNTACH LP400
+	If |LCSE(10
+	Text(105,20,"CAR 5
+	If |LCSE(11
+	Text(125,20,"CAR 6
+	DelVar FText(145,20,"BACK
 	Repeat B
-		A-((A!=0)(K=25->A
-		A+((K=34)(A<2->A
-		Text((30A+50),14,">
+		A-(A and K=25->A
+		A+((K=34)(A<6->A
+		F-((F and K=24->F
+		F+((not(F) and K=26->F
+		Text((20A+25),4+130F,">
 		getKey->K
-		Ans=105 or Ans=21->B
-		Text(~1,(30A+51),14," 
+		K=21 or K=105->B
+		Text(~1,(20A+23),4+130F," 
 	End
-	If not(A
+	If F
 	Then
-		2->L
+		
+	Else
+		If A=3 and |LCSE(9
+		Then
+			"COUNTACH LP400 '74->Str9
+			{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,2.2,.2,.13,15,2,375,365,25.3,4.091->CAE
+		End
+		If A=2 and |LCSE(8
+		Then
+			"FOCUS RS '09->Str9
+			{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,1.9,.25,.15,14,2,300,318,25.5,4.06,.575985->CAE
+		End
+		If A=1
+		Then
+			"MIRA AVANZATO R '97->Str9
+			{2->CAE
+		End
 	End
-	If A=1
+	ClrDraw
+	Text(0,180,"CHANGE CAR
+	Horizontal 3.2
+	Text(75,10,"GOT IN
+	60
+	Text(110,99,"CAR
+	Text(110,130,|LCAE(1
+	Text(150,93,"PRESS ENTER
+	|LCSE(5+|LCAE(1
+	If Ans=int(Ans
 	Then
-		1->L
+		(.01|LCAE(15))+Ans->|LCSE(5+|LCAE(1
+		TextColor(|LCAE(15
+	Else
+		100fPart(Ans->|LCAE(15
+		TextColor(Ans
 	End
-	If A=2
-	Goto 2
-	|LCAE(16)+3(L=2->theta
-	240L/|LTTR(theta->D
-	"GHOST->Str2
-	21->Q
-	Goto 1
-	Lbl B
-	3->W
-	BorderColor 3
-	Text(0,170,"LADDER RACE
-	TextColor(18
-	Horizontal 3.2,18
-	Text(~1,80,95,|LCSE(2)-9
-	Text(~1,80,120,"/30
-	.1|LCSE(2->D
-	Text(30,50,"CR. PRIZE:
-	Text(30,125,W500D
-	If 39=|LCSE(2
-	Text(30,125,10000
-	Text(150,90,"PRESS ENTER
+	Text(75,55,Str9
 	Pause 
-	Goto 1
-	Lbl A
-	1->W
-	BorderColor 2
-	Horiz
-	Text(0,170,"REGULATION
-	TextColor(14
-	Horizontal 2.6,14
-	Input "DIFFICULTY?",D
-	If D<0
-	randInt(10,70->D
-	D.1->D
-	Input "LENGTH?",L
-	abs(L->L
-	If L>5 or not(L
-	1->L
-	Text(40,50,"CR. PRIZE:
-	Text(40,130,W500D
-	Pause "PRESS ENTER
-	Lbl 1
-	Full
-	BorderColor 1
-	DelVar SDelVar RDelVar PDelVar OClrDraw
-	1->G
-	Text(0,75,"VS.
-	Text(0,99,Str2
-	TextColor(19
-	Text(~1,51,0,Str0
-	Text(~1,65,0,Str0
-	Text(~1,80,0,Str0
-	Line(~7,.3,6,.3,19
-	Line(~7,.5,6,.5,19
-	Shade(~.8,1.6,6,7,4,2,12
-	|LCAE(15->N
-	TextColor(N
-	Text(34,0,"YOU
-	Text(55,1,"#
-	Pt-On(~6.5,.95,Ans
-	Pt-On(~6.15,.95,Ans
-	If W!=2
-	randInt(10,24->Q
-	TextColor(Q
-	Text(80,1,"#
-	Pt-On(~6.5,~.3,Q
-	Pt-On(~6.15,~.3,Q
-	Text(99,0,Str2
-	TextColor(12
-	Text(150,190,"LENGTH:
-	Text(150,245,L
-	Text(0,60,"PRESS 2ND TO REV
-	Repeat Ans=21
-		getKey
-	End
-	Text(~1,0,60,Str0
-	Text(~1,33,0,Str0
-	Text(~1,99,0,Str0
-	|LCAE(1->A
-	|LCSE(5+A->U
-	.1(U-1->U
-	|LCAE(2->A
-	|LCAE(3->B
-	|LCAE(5->C
-	|LCAE(13->E
-	|LCAE(14->H
-	|LCAE(20->M
-	
-	Text(106,10,"RPM (X1000)
-	Text(5,98,"TIME
-	For(Z,3,0,~.05
-		TextColor(12
-		Text(~1,130,25,R
-		If R=round(R,0
-		Text(~1,130,37,".0
-		Text(~1,20,90,Z
-		getKey->K
-		If R<B
-		Then
-			TextColor(11
-			Text(150,80,"REV MORE
-		Else
-			If R=B
-			Then
-				TextColor(14
-				Text(150,80,"PERFECT!
-			Else
-				TextColor(11
-				Text(150,80,"REV LESS
-			End
-		End
-		If K and R<A
-		Then
-			R+(K=21->R
-			R+E2(K!=21->R
-		Else
-			If R>A
-			A->R
-			abs(R-E->R
-		End
-		TextColor(12
-	End
-	Text(~1,20,90,Str0
-	DelVar ZText(~1,130,25,R
-	|LCAE(12->A
-	If B=round(R,0
-	Then
-		TextColor(18
-		Text(150,80,"GOOD START
-		5+|LCSE(1->|LCSE(1
-		B.1->S
-	Else
-		TextColor(11
-		Text(150,80,"POOR START
-		.1->S
-	End
-	If R=B
-	Then
-		TextColor(14
-		Text(150,80,"PERFECT START
-		8+|LCSE(1->|LCSE(1
-		.1(R+1->S
-	End
-	|LCAE(6->F
-	TextColor(12
-	Text(106,160,"GEAR
-	Text(106,115,"MPH
-	Text(~1,130,170,G
-	Repeat P>=240L
-		getKey->K
-		If K=25 and G<C
-		Then
-			G+1->G
-			|LCAE(5+G->F
-			Text(~1,130,170,G
-		End
-		If K=34 and G>1
-		Then
-			G-1->G
-			|LCAE(5+G->F
-			Text(~1,130,170,G
-		End
-		Text(~1,130,115,round(10S,0
-		round(((10S336FM)/|LCAE(19)),0)/1000->R
-		Text(~1,130,25,R
-		If S10>|LCAE(4
-		.1|LCAE(4->S
-		If R>|LCAE(2
-		S-(.1+(.1(A+U))(1.1-GH->S
-		TextColor(19
-		S+(.1(A+U))(1.1-GH->S
-		If W>=3
-		D+.1J->D
-		Text(~1,78,round(O/L,0)," 
-		If O<240L
-		Then
-			O+D->O
-		Else
-			~9->D
-		End
-		Text(~1,53,round(P/L,0)," 
-		P+S->P
-		TextColor(N
-		Text(55,round(P/L,0),"#
-		TextColor(Q
-		Text(80,round(O/L,0),"#
-		TextColor(12
-		Z+1->Z
-		Text(~1,20,98,Z
-	End
-	If D=~9
-	Then
-		DelVar thetaText(~1,78,75,"YOU LOSE
-		int(L+D+|LCSE(1->|LCSE(1
-		If W=5
-		Text(60,30,Str3
-		If W=2 and 11<=|LCSE(2
-		|LCSE(2)-1->|LCSE(2
-	Else
-		TextColor(14
-		Text(~1,53,80,"YOU WIN
-		TextColor(12
-		If W=3 and 31>|LCSE(3
-		1+|LCSE(3->|LCSE(3
-		If 15>|LCSE(4
-		(5=W)+|LCSE(4->|LCSE(4
-		If W=3 and 39=|LCSE(2
-		Then
-			5200+|LCSE(1->|LCSE(1
-			Text(95,30,"YOU'RE THE NEW LADDER CHAMP!
-		Else
-			(W=2)+|LCSE(2->|LCSE(2
-		End
-		int(|LCSE(1)+(W500D->|LCSE(1
-	End
-	TextColor(12
-	Text(150,80,"PRESS ENTER            
-	Text(0,0,"CR:
-	Text(0,20,|LCSE(1:Pause 
-	If theta and theta=int(theta
-	Then
-		If Z<|LTTR(theta
-		Then
-			Disp "NEW RECORD!
-			Z->|LTTR(theta
-		Else
-			Disp "RECORD TIED
-		End
-		Disp "TIME:
-		Pause Z
-	End
 	Goto 0
+End
+Lbl 2
+If 15=|LCAE(1
+Then
+	Pause "YOU NEED A CAR TO RACE.
+	Goto 0
+End
+"CPU->Str2
+1->L
+DelVar thetaClrDraw
+Menu("EVENT LIST","REGULATION",A,"LADDER",B,"TIME TRIALS",C,"CAR SPECIFIC",D,"TOURNAMENT",E,"BACK TO HOME",0
+Lbl D
+5->W
+|LCSE(3->A
+TextColor(15
+Horizontal 3
+Text(0,75,"CAR SPECIFIC
+If A>=31
+Then
+	TextColor(12
+	Text(~1,80,60,"CUSTOM SPEC
+	Pause 
+	Input "LAUNCH SPD?",D
+	Input "ACCEL LV?",J
+	Input "LENGTH?",L
+	.1D->D
+Else
+	SetUpEditor L1
+	.5->B
+	.2->C
+	L1(A->D
+	L1(6+A->J
+	W(A=|LCAE(1->W
+	Text(~1,50,80,"CAR
+	Text(~1,50,120,A
+	If W
+	Text(120,40,Str1
+	If not(W
+	Text(80,80,"REQUIRE\D
+	Pause 
+End
+If not(W
+Goto 2
+Goto 1
+Lbl C
+2->W
+Text(0,170,"TIME TRIALS
+Horizontal 3.2,11
+Horizontal 2.3,11
+Text(20,99,"TIER
+DelVar ADelVar BText(20,134,|LCAE(16
+Text(50,30,"LONG TRACK
+Text(80,30,"SHORT TRACK
+Text(110,30,"BACK
+Repeat B
+	A-(A and K=25->A
+	A+((K=34)(A<2->A
+	Text(30A+50,14,">
+	getKey->K
+	Ans=105 or Ans=21->B
+	Text(~1,(30A+51),14," 
+End
+If not(A
+Then
+	2->L
+End
+If A=1
+Then
+	1->L
+End
+If A=2
+Goto 2
+|LCAE(16)+3(L=2->theta
+240L/|LTTR(theta->D
+"GHOST->Str2
+21->Q
+Goto 1
+Lbl B
+3->W
+BorderColor 3
+Text(0,170,"LADDER RACE
+TextColor(18
+Horizontal 3.2,18
+Text(~1,80,95,|LCSE(2)-9
+Text(~1,80,120,"/30
+.1|LCSE(2->D
+Text(30,50,"CR. PRIZE:
+Text(30,125,W500D
+If 39=|LCSE(2
+Text(30,125,10000
+Text(150,90,"PRESS ENTER
+Pause 
+Goto 1
+Lbl A
+1->W
+BorderColor 2
+Horiz
+Text(0,170,"REGULATION
+TextColor(14
+Horizontal 2.6,14
+Input "DIFFICULTY?",D
+If D<0
+randInt(10,70->D
+D.1->D
+Input "LENGTH?",L
+abs(L->L
+If L>5 or not(L
+1->L
+Text(40,50,"CR. PRIZE:
+Text(40,130,W500D
+Pause "PRESS ENTER
+Lbl 1
+Full
+BorderColor 1
+DelVar SDelVar RDelVar PDelVar OClrDraw
+1->G
+Text(0,75,"VS.
+Text(0,99,Str2
+TextColor(19
+Text(~1,51,0,Str0
+Text(~1,65,0,Str0
+Text(~1,80,0,Str0
+Line(~7,.3,6,.3,19
+Line(~7,.5,6,.5,19
+Horizontal ~.8,12
+Horizontal 1.65,12
+Shade(~.8,1.6,6,7,4,2,12
+|LCAE(15->N
+TextColor(N
+Text(34,0,"YOU
+Text(55,1,"#
+Pt-On(~6.5,.95,Ans
+Pt-On(~6.15,.95,Ans
+If W!=2
+randInt(10,24->Q
+TextColor(Q
+Text(80,1,"#
+Pt-On(~6.5,~.3,Q
+Pt-On(~6.15,~.3,Q
+Text(99,0,Str2
+TextColor(12
+Text(150,190,"LENGTH:
+Text(150,245,L
+Text(0,60,"PRESS 2ND TO REV
+Repeat Ans=21
+	getKey
+End
+Text(~1,0,60,Str0
+Text(~1,32,0,Str0
+Text(~1,99,0,Str0
+|LCAE(1->A
+|LCSE(5+A->U
+.1(U-1->U
+|LCAE(2->A
+|LCAE(3->B
+|LCAE(5->C
+|LCAE(13->E
+|LCAE(14->H
+|LCAE(20->M
+Text(106,10,"RPM (X1000)
+Text(5,98,"TIME
+For(Z,3,0,~.05
+	TextColor(12
+	Text(~1,130,25,R
+	If R=round(R,0
+	Text(~1,130,37,".0
+	Text(~1,20,90,Z
+	getKey->K
+	If R<B
+	Then
+		TextColor(11
+		Text(150,80,"REV MORE
+	Else
+		If R=B
+		Then
+			TextColor(14
+			Text(150,80,"PERFECT!
+		Else
+			TextColor(11
+			Text(150,80,"REV LESS
+		End
+	End
+	If K and R<A
+	Then
+		R+(K=21->R
+		R+E2(K!=21->R
+	Else
+		If R>A
+		A->R
+		abs(R-E->R
+	End
+	TextColor(12
+End
+Text(~1,20,90,Str0
+DelVar ZText(~1,130,25,R
+|LCAE(12->A
+If B=round(R,0
+Then
+	TextColor(18
+	Text(150,80,"GOOD START
+	5+|LCSE(1->|LCSE(1
+	B.1->S
+Else
+	TextColor(11
+	Text(150,80,"POOR START
+	.1->S
+End
+If R=B
+Then
+	TextColor(14
+	Text(150,80,"PERFECT START
+	8+|LCSE(1->|LCSE(1
+	.1(R+1->S
+End
+|LCAE(6->F
+TextColor(12
+Text(106,160,"GEAR
+Text(106,115,"MPH
+Text(~1,130,170,G
+Repeat P>=240L
+	getKey->K
+	If K=25 and G<C
+	Then
+		G+1->G
+		|LCAE(5+G->F
+		Text(~1,130,170,G
+	End
+	If K=34 and G>1
+	Then
+		G-1->G
+		|LCAE(5+G->F
+		Text(~1,130,170,G
+	End
+	Text(~1,130,115,round(10S,0
+	round(((10S336FM)/|LCAE(19)),0)/1000->R
+	Text(~1,130,25,R
+	If S10>|LCAE(4
+	.1|LCAE(4->S
+	If R>|LCAE(2
+	S-(.1+(.1(A+U))(1.1-GH->S
+	TextColor(19
+	S+(.1(A+U))(1.1-GH->S
+	If W>=3
+	D+.1J->D
+	Text(~1,78,round(O/L,0)," 
+	If O<240L
+	Then
+		O+D->O
+	Else
+		~9->D
+	End
+	Text(~1,53,round(P/L,0)," 
+	P+S->P
+	TextColor(N
+	Text(55,round(P/L,0),"#
+	TextColor(Q
+	Text(80,round(O/L,0),"#
+	TextColor(12
+	Z+1->Z
+	Text(~1,20,98,Z
+End
+If D=~9
+Then
+	DelVar thetaText(~1,78,75,"YOU LOSE
+	int(L+D+|LCSE(1->|LCSE(1
+	If W=5
+	Text(60,30,Str3
+	If W=2 and 11<=|LCSE(2
+	|LCSE(2)-1->|LCSE(2
+Else
+	TextColor(14
+	Text(~1,53,80,"YOU WIN
+	TextColor(12
+	If W=3 and 31>|LCSE(3
+	1+|LCSE(3->|LCSE(3
+	If 15>|LCSE(4
+	(5=W)+|LCSE(4->|LCSE(4
+	If W=3 and 39=|LCSE(2
+	Then
+		5200+|LCSE(1->|LCSE(1
+		Text(95,30,"YOU'RE THE NEW LADDER CHAMP!
+	Else
+		(W=2)+|LCSE(2->|LCSE(2
+	End
+	int(|LCSE(1)+(W500D->|LCSE(1
+End
+TextColor(12
+Text(150,80,"PRESS ENTER            
+Text(0,0,"CR:
+Text(0,20,|LCSE(1:Pause 
+If theta and theta=int(theta
+Then
+	If Z<|LTTR(theta
+	Then
+		Disp "NEW RECORD!
+		Z->|LTTR(theta
+	Else
+		Disp "RECORD TIED
+	End
+	Disp "TIME:
+	Pause Z
+End
+Goto 0
