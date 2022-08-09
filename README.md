@@ -29,20 +29,39 @@ _________________________________________________________
 
 1. HOW TO INSTALL:
 
-Send CSRACING.8xp and CSRGARAG.8xp to RAM. (Or send CSRACING.8xp to archive if using a shell like MirageOS or Doors CS7)
+Send CSREVO.8xp to either RAM or Archive.
 
 
 2. HOW TO PLAY:
 
+When you first start CSRacing II: Evolution, you wont be given a car, but rather 25000 Credits to use to purchase a car.
+To buy your first car, navigate to the "BUY CARS" option in the home menu and press 2nd or Enter to select it.
+
+CR:25000____________HOME_
+>GO RACE    |NONE________
+ TUNING     |__CAR INFO__
+ PAINTSHOP  |    TIER 0
+ CHANGE CAR |HP:   0
+ RECORDS    |LB-FT:0
+ BUY CARS   |WT:   0
+ QUIT       |
+
+Upon entering the "BUY CARS" menu, you will see 4 options: "NORTH AMERICA", "EUROPE", "ASIA", and "BACK". (BACK sends you to the home menu)
+Select the continent that has the car you want to buy, then select a car.
+If you have enough credits, you can buy that car.
+
+Once you get a car, you can get into it from the "CHANGE CAR" menu.
+
+Once you get in a car, you can tune it in the "TUNING" menu, paint it any color you like in the "PAINTSHOP", or most importantly, race it by selecting "GO RACE".
 
 
 Racing controls: 
 
-YOU-----------------
+YOU_________________
 #                 ▓▓
 ==================▓▓
 #                 ▓▓
-CPU-----------------
+CPU‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
 Press 2ND to start your engine and begin the countdown to launch. To rev quickly, repeatedly press 2ND. To rev slowly, press ALPHA (Or any key that isn't 2ND or ON). 
  - Pay attention to the text at the bottom of the screen- it'll tell you if your RPM is above, below, or at the number needed for the fastest launch.
@@ -63,7 +82,7 @@ After entering the difficulty, you'll be asked to specify the length of the road
 
 - Ladder: Race your way through 30 increasingly challenging races! The Grand Prize is 10000 Cr. Beware though: If you lose a race, you'll be knocked down a spot on the ladder.
 
-- Time Trials
+- Time Trials: Race to beat you and your friend's best times! There are six different race categories: The Short (1x length) & Long (2x length)
    
 - Return to Home: This isn't a game mode. Selecting this option will send you back to the main menu.
 

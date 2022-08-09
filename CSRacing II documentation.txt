@@ -3,7 +3,7 @@ Calculator Street Racing II: Evolution DEVELOPER'S DOCUMENTATION
 STRINGS USED:
 Str1: Car name
 Str2: Opponent name
-Str3: Crew Leader trash talk
+Str3: Car to buy name
 Str0: temporary string (often used to create grey "bands")
 
 
@@ -62,10 +62,11 @@ List CAE:
 14: Reduction in speed gained in gears above first gear (1.1 - (LCAE(14)* Current Gear) * Acceleration level)
 15: Car color (10=Blue, 11=Red, 12=Black, 13=Magenta, 14=Green, 15=Orange, 16=Brown, 17=Navy, 18=LtBlue, 19=Yellow, 20=White, 21=LtGray, 22=MedGray, 23=Gray, and 24=DarkGray)
 16: Car Tier
-17: Horsepower
-18: Torque (Lb-Ft)
+17: Peak Horsepower
+18: Peak Torque (Lb-Ft)
 19: Tire diameter (in)
 20: Final drive ratio
+21: Drag force
 
 List L1:
 1: Launch speed for car challenge 1
@@ -108,7 +109,7 @@ R = RPM (x1000)
 S = Speed
 T = Race time
 U = Upgrade status
-V = Top Speed
+V = 
 W = Event type
 Z = Countdown
 (Theta) = Did the player win against a crew leader and if so which one (1 = tier 1 leader beaten, 2 = tier2 leader beaten)
@@ -116,15 +117,16 @@ Z = Countdown
 
 EVENT TYPES:
 Regulation races: W=1
-Time Trials: W=2
-Ladder races: W=3
-
+Ladder races: W=2
+Car Specific/ Custom Spec (Was restriction races): W=3
+Link Battle: W=4
+Crew Battle: W=5
 
 CAR LIST (by car identifier number):
 1:
 2:
 3: Ford Focus RS (2009)
-4: Lamborghini Countach LP400 (1974)
+4:
 5:
 6:
 31: Identifies custom cars
