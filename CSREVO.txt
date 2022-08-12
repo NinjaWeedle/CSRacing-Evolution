@@ -42,7 +42,7 @@ SetUpEditor CAE,CSE,TTR,CSR
 If not(|LCSE(Ans
 Then
 	randInt(1,999->|LCSE(Ans
-	35|E3->|LCSE(1
+	2|E4->|LCSE(1
 	10->|LCSE(2
 End
 36->dim(|LCSR
@@ -82,10 +82,13 @@ Line(~1.8,1.1,7,1.1,24
 Line(~1.8,1.9,7,1.9,24
 TextColor(12
 Text(90,100,"HP:
-Text(90,150,|LCAE(17
+Text(90,165,|LCAE(17
 Text(110,100,"LB-FT:
-Text(110,150,|LCAE(18
-Text(130,100,"WT:
+Text(110,165,|LCAE(18
+Text(130,100,"WT(KG):
+
+Text(150,100,"REGION:
+Text(150,165,|LCAE(21
 DelVar CText(0,0,"CR:
 Text(0,20,|LCSE(1
 Text(125,17,"BUY CARS
@@ -281,9 +284,9 @@ Then
 		Then
 			Text(20,80,"NORTH AMERICA
 			Text(45,80,"FOCUS RS '09
-			Text(70,80,"ARE YOU OKAY
-			Text(95,80,"YOU BEEN HIT BY
-			Text(120,80,"YOU BEEN STRUCK BY
+			Text(70,80,"CAR*0
+			Text(95,80,"CAR=0
+			Text(120,80,"not(CAR
 		End
 		If F=1
 		Then
@@ -293,6 +296,7 @@ Then
 		If F=2
 		Then
 			Text(20,110,"ASIA
+			Text(45,80,"CRX SI '91
 		End
 		If not(F=3
 		Then
@@ -328,6 +332,17 @@ Then
 						15->B
 					End
 				End
+				If F=2
+				Then
+					If not(D
+					Then
+						"CRX SI '91->Str3
+						18|E3->C
+						1->N
+						1->I
+						14->B
+					End
+				End
 				ClrDraw
 				|LCSE(N+5->O
 				Horizontal 3.2,17
@@ -341,10 +356,10 @@ Then
 				Pt-On(.2,0,B
 				Pt-On(~.15,0,B
 				TextColor(12
-				Text(25,98,"TIER
-				Text(25,140,I
+				Text(25,110,"TIER
+				Text(25,150,I
 				Text(97,84,"COST:
-				Text(120,84,"CAR #
+				Text(120,84,"CAR #:
 				Text(120,148,N
 				Text(97,140,C
 				Text(150,5,"BACK
@@ -354,7 +369,7 @@ Then
 				Else
 					Text(150,95,"PURCHASE CAR
 				End
-				DelVar KLine(~3,~5,~3,~3.2
+				DelVar KLine(~4,~5,~4,~3.2
 				Repeat K>=11 and K<=15
 					getKey->K
 				End
@@ -400,9 +415,9 @@ Then
 		End
 	End
 	If |LCSE(6
-	Text(25,20,"CAR 1
+	Text(25,20,"CRX S[i] '91
 	If |LCSE(7
-	Text(45,20,"MIRA AVANZATO
+	Text(45,20,"1500 LARAMIE HEMI
 	If |LCSE(8
 	Text(65,20,"FOCUS RS
 	If |LCSE(9
@@ -429,17 +444,22 @@ Then
 		If A=3 and |LCSE(9
 		Then
 			"COUNTACH LP400 '74->Str9
-			{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,2.2,.2,.13,15,2,375,365,25.3,4.091->CAE
+			{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,2.2,.2,.13,15,2,375,365,25.3,4.091,2->CAE
 		End
 		If A=2 and |LCSE(8
 		Then
 			"FOCUS RS '09->Str9
-			{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,1.9,.25,.15,14,2,300,318,25.5,4.06,.575985->CAE
+			{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,1.9,.25,.15,14,2,300,318,25.5,4.06,1,.575985->CAE
 		End
 		If A=1
 		Then
 			"MIRA AVANZATO R '97->Str9
 			{2->CAE
+		End
+		If not(A
+		Then
+			"CRX SI '91->Str9
+			{1,8.2,6,153,5,3.166,2.052,1.416,1.103,.87,0,1.4,.1,.15,11,1,108,100,22.5,4.266,3->CAE
 		End
 	End
 	ClrDraw
@@ -472,7 +492,10 @@ End
 "CPU->Str2
 1->L
 DelVar thetaClrDraw
-Menu("EVENT LIST","REGULATION",A,"LADDER",B,"TIME TRIALS",C,"CAR SPECIFIC",D,"TOURNAMENT",E,"BACK TO HOME",0
+Menu("EVENT LIST","REGULATION",A,"LADDER",B,"TIME TRIALS",C,"CAR SPECIFIC",D,"SPECIAL EVENTS",E,"BACK TO HOME",0
+Lbl E
+4->W
+Goto 1
 Lbl D
 5->W
 |LCSE(3->A
@@ -551,7 +574,7 @@ Text(~1,80,120,"/30
 Text(30,50,"CR. PRIZE:
 Text(30,125,W500D
 If 39=|LCSE(2
-Text(30,125,10000
+Text(30,125,1|E4
 Text(150,90,"PRESS ENTER
 Pause 
 Goto 1
@@ -571,7 +594,7 @@ abs(L->L
 If L>5 or not(L
 1->L
 Text(40,50,"CR. PRIZE:
-Text(40,130,W500D
+Text(40,130,W500D/L
 Pause "PRESS ENTER
 Lbl 1
 Full
@@ -723,10 +746,10 @@ Repeat P>=240L
 	Z+1->Z
 	Text(~1,20,98,Z
 End
+int(L+D+|LCSE(1->|LCSE(1
 If D=~9
 Then
 	DelVar thetaText(~1,78,75,"YOU LOSE
-	int(L+D+|LCSE(1->|LCSE(1
 	If W=5
 	Text(60,30,Str3
 	If W=2 and 11<=|LCSE(2
@@ -735,8 +758,10 @@ Else
 	TextColor(14
 	Text(~1,53,80,"YOU WIN
 	TextColor(12
-	If W=3 and 31>|LCSE(3
+	If W=5 and 14>|LCSE(3
 	1+|LCSE(3->|LCSE(3
+	If W=3 and 41>|LCSE(2
+	1+|LCSE(2->|LCSE(2
 	If 15>|LCSE(4
 	(5=W)+|LCSE(4->|LCSE(4
 	If W=3 and 39=|LCSE(2
@@ -746,7 +771,7 @@ Else
 	Else
 		(W=2)+|LCSE(2->|LCSE(2
 	End
-	int(|LCSE(1)+(W500D->|LCSE(1
+	int(|LCSE(1)+(W500D/L->|LCSE(1
 End
 TextColor(12
 Text(150,80,"PRESS ENTER            

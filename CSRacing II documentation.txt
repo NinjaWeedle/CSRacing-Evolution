@@ -13,11 +13,11 @@ List CSE:
 3: Current stage in Car Specific Races
 4: Current stage in Crew Battle
 5: Number of discounts on Oxiti Car Co. development cost (Initial cost is 100,000 Cr. per car, each Car Specific race beaten brings the price down by 3,000 Cr. Beating all the Car specific races puts the price at a modest 10,000 Cr.
-6: (1 or above=owned, 0=not owned)
+6: Honda CRX Si (1991) owned?(1 or above=owned, 0=not owned)
 7: 
 8: Ford Focus RS (2009) owned?
 9: Lamborghini Countach LP400 (1974) owned?
-10: 
+10: car 5
 11: 
 12: 
 13: 
@@ -25,7 +25,7 @@ List CSE:
 15: 
 16: 
 17: 
-18: 
+18: car 13
 19: 
 20: 
 21: 
@@ -37,13 +37,7 @@ List CSE:
 27: 
 28: 
 29: 
-30: 
-31: 
-32: 
-33: 
-34: 
-35: 
-36: Custom Car
+30: Unique player id (integer from 1 to 999)
 
 List CAE:
 1: Car Identifier Number
@@ -66,7 +60,11 @@ List CAE:
 18: Peak Torque (Lb-Ft)
 19: Tire diameter (in)
 20: Final drive ratio
-21: Drag force
+21: Car region (1=NA, 2=EU, 3=JP)
+22: Drag force
+23: Grip force
+24: Car Weight (kg)
+
 
 List L1:
 1: Launch speed for car challenge 1
@@ -117,37 +115,17 @@ Z = Countdown
 
 EVENT TYPES:
 Regulation races: W=1
-Ladder races: W=2
-Car Specific/ Custom Spec (Was restriction races): W=3
-Link Battle: W=4
-Crew Battle: W=5
+Ladder races: W=3
+Special Events: W=4
+Car Specific/ Custom Spec (Was restriction races): W=5
+Time Trials: W=2 
 
 CAR LIST (by car identifier number):
-1:
+1: Honda CRX Si (1991)
 2:
 3: Ford Focus RS (2009)
-4:
+4: Lamborghini Countach LP400 (1974)
 5:
 6:
 31: Identifies custom cars
 *Not purchasable at dealer
-
-CREW MEMBERS/LEADERS (Listed in the order that they appear):
-
-- Tier 1 - The Flames
-This crew is the first you'll meet.
-  Tier 1 first opponent: Ito - Drives a Beetle '04
-  Tier 1 second opponent: Steve O - Drives an Impala SS
-  Tier 1 leader: Winnace - Drives a Javelin-AMS
-
-- Tier 2 - The Tuners
-This crew loves to modify their cars.
-  Tier 2 first opponent: Ker - Drives a CRX SIR
-  Tier 2 second opponent: Mayeo - Drives a Supra
-  Tier 2 leader: Kenido
-
-- Tier 3 - Team Oxiti
-This final crew seems to be short a member. 
-  Tier 3 First opponent: Goomzo
-  Tier 3 second opponent: Muncher
-  Tier 3 leader: IT'S A SECRET TO EVERYONE.

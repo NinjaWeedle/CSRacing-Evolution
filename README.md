@@ -34,10 +34,10 @@ Send CSREVO.8xp to either RAM or Archive.
 
 2. HOW TO PLAY:
 
-When you first start CSRacing II: Evolution, you wont be given a car, but rather 25000 Credits to use to purchase a car.
+When you first start CSRacing II: Evolution, you wont be given a car, but rather 20000 Credits to use to purchase a car.
 To buy your first car, navigate to the "BUY CARS" option in the home menu and press 2nd or Enter to select it.
 
-CR:25000____________HOME_
+CR:20000____________HOME_
 >GO RACE    |NONE________
  TUNING     |__CAR INFO__
  PAINTSHOP  |    TIER 0
