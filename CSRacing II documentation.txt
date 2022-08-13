@@ -6,13 +6,22 @@ Str2: Opponent name
 Str3: Car to buy name
 Str0: temporary string (often used to create grey "bands")
 
+Car save format:
+A car's tune setup is all saved in its list entry in |LCSE, much like CSRacing 1. However, more data is stored there than in CSR 1:
 
-List CSE:
+111.14
+The numbers after the decimal is the car's paint color.
+the first whole number is the Car's engine tune. (1 = default)
+the tens digit is the Weight tune settings (1 = default)
+the hundreds digit is the tires you currently have equipped. (1 = default[a.k.a Street Tires], 2 = Sports Tires, 3 = Race tires, 4 = Drag Slicks)
+
+
+List CSE: (Primary Save File)
 1: Amount of Cr.
 2: Current stage in Ladder races
 3: Current stage in Car Specific Races
-4: Current stage in Crew Battle
-5: Number of discounts on Oxiti Car Co. development cost (Initial cost is 100,000 Cr. per car, each Car Specific race beaten brings the price down by 3,000 Cr. Beating all the Car specific races puts the price at a modest 10,000 Cr.
+4: Number of Special Events completed
+5: 
 6: Honda CRX Si (1991) owned?(1 or above=owned, 0=not owned)
 7: 
 8: Ford Focus RS (2009) owned?
@@ -25,21 +34,22 @@ List CSE:
 15: 
 16: 
 17: 
-18: car 13
+18: car 13 (Increceba)
 19: 
-20: 
-21: 
-22: 
-23: 
-24: 
-25: 
-26: 
+20: No car fall back tune spot (If somehow modifications are made to the "none" ""car"" they will go here)
+21: Special Event 1 completion status
+22: Special Event 2 completion status
+23: Special Event 3 completion status
+24: Special Event 4 completion status
+25: Special Event 5 completion status
+26: Special Event 6 completion status
 27: 
 28: 
 29: 
 30: Unique player id (integer from 1 to 999)
 
-List CAE:
+
+List CAE: (Car Data)
 1: Car Identifier Number
 2: Max RPM
 3: Best launch RPM
@@ -69,12 +79,12 @@ List CAE:
 List L1:
 1: Launch speed for car challenge 1
 2: Launch speed for car challenge 2
-...etc...this repeats until all 30 cars have their own challenges...
-30: Launch speed for car challenge 30
-31: Acceleration level for car challenge 1
-32: Acceleration level for car challenge 2
-...etc...this repeats until all 30 cars have their own challenges...
-60: Acceleration level for car challenge 30
+...etc...this repeats until all 13 cars have their own challenges...
+13: Launch speed for car challenge 13
+14: Acceleration level for car challenge 1
+15: Acceleration level for car challenge 2
+...etc...this repeats until all 13 cars have their own challenges...
+26: Acceleration level for car challenge 13
 
 List TTR:
 1: Short Tier 1 Record
@@ -127,5 +137,13 @@ CAR LIST (by car identifier number):
 4: Lamborghini Countach LP400 (1974)
 5:
 6:
-31: Identifies custom cars
-*Not purchasable at dealer
+7:
+8:
+9:
+10:
+11:
+12:
+13*:
+14: Identifies custom cars
+15*: None
+*Not purchaseable at dealer

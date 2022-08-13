@@ -2,9 +2,14 @@ CALCULATOR STREET RACING II: EVOLUTION
 
 A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
 
+
+WARNING: This game is still being worked on. A save file created mid-development may not work properly in the final release of the game.
+
+
+
 NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run slowly on older models without use of a program like FASTER.
-Github: https://github.com/NinjaWeedle/CSRacing-Evolution - If there's a new version of CSRacing, you'll find it here first.
-Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing!
+Github: https://github.com/NinjaWeedle/CSRacing-Evolution - If there's a new version of CSRacing II Evolution, you'll find it here first.
+Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing II!
 _________________________________________________________
 Table of contents:
 
@@ -50,7 +55,7 @@ Upon entering the "BUY CARS" menu, you will see 4 options: "NORTH AMERICA", "EUR
 Select the continent that has the car you want to buy, then select a car.
 If you have enough credits, you can buy that car.
 
-Once you get a car, you can get into it from the "CHANGE CAR" menu.
+Once you buy a car, you can get into it from the "CHANGE CAR" menu.
 
 Once you get in a car, you can tune it in the "TUNING" menu, paint it any color you like in the "PAINTSHOP", or most importantly, race it by selecting "GO RACE".
 
@@ -86,26 +91,30 @@ After entering the difficulty, you'll be asked to specify the length of the road
    
 - Return to Home: This isn't a game mode. Selecting this option will send you back to the main menu.
 
+
 4. HOME MENU
 
 Upon starting the game, you will be greeted by the home menu.
+You have several options to choose from:
 
+ - Go Race: Brings you to the Event List, where you can select a race you want to enter.
 
-
- - Change Car: Self explanatory. Selecting this option lets you swap to another car you own. 
-
- - Dealership: Currently unavailiable
+ - Tuning: Brings you to the tuning menu, where you can upgrade your car.
+  -- There are three categories of upgrades: Engine, Weight, and Tires. Upgrading your engine increases horsepower & torque, which in turn increase acceleration and top speed but also slightly reduce grip,
+     Upgrading weight reduces the weight of your car and increases acceleration speed, and upgrading your tires increases grip.
 
  - Paintshop: Lets you paint your car by typing one of the numbers listed below. 
    -- Color guide: 10=Blue, 11=Red, 12=Black, 13=Magenta, 14=Green, 15=Orange, 16=Brown, 17=Navy, 18=LtBlue, 19=Yellow, 20=White, 21=LtGray, 22=MedGray, 23=Gray, and 24=DarkGray
 
- - Create Car: Once you progress past a certain point in the game, you can come here to create a new car from scratch. 
-   -- The initial cost of creating a car is 100000 Cr. per car- You can lower development costs substantially by winning Car Specific races as previously mentioned in section 3.
-   -- Cars you create will be overwritten once you switch to another car- If you want to save your creations, back up the list named "CAE" and the String Variable Str1 to your computer. Once you've backed them up, you can also share your custom cars with your friends by sending them these variables.
-   -- To load or restore a custom car, just send the files that contain the custom car data (namely CAE.8xl and Str1.8xs) to your calculator. They will appear in game when you next launch CSRACING. 
-   -- Refer to section 8 for more details on car creation.
+ - Change Car: Self explanatory. Selecting this option lets you swap to another car you own. 
 
- - Return: Returns to the main menu of CSRacing.
+ - Records: Check your game completion stats and Time Trials records here.
+
+ - Buy Cars: Go here to purchase cars. Cars are divided up by continent of origin, with each continent having 4 cars for sale.
+
+ - Quit: Exits CSRacing II and saves your game to Archive.
+
+
 
 < II. CSRACING IN DEPTH >
 
@@ -120,9 +129,10 @@ Upon starting the game, you will be greeted by the home menu.
  - There will be two cars availiable in each tier.
 
 
-
 6. CAR LIST (by car identifier number):
 
+1: CRX Si (1991) - T1
+2:
 3: Focus RS (2009) - T2
 4: Countach LP400 (1974) - T2
 
@@ -145,7 +155,7 @@ Upon starting the game, you will be greeted by the home menu.
 8. A SHORT GUIDE TO CSRACING JARGON
 
  - CSRacing = Calculator Street Racing
- - Cr. = Credits, the currency of CSRacing
+ - CR/Cr. = Credits, the currency of CSRacing
  - CIN = Car Identifier Number.
  - Oxiti = A fictional car brand. 
  - Tune = refers to the act of tuning a car, in this case for performance.
@@ -171,4 +181,3 @@ Redistribution of this software is welcome, but this document MUST accompany it.
 
 Email: weedleninja88@gmail.com
 Ticalc.org author profile: https://ticalc.org/archives/files/authors/117/11708.html
-

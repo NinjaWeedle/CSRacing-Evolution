@@ -43,7 +43,7 @@ If not(|LCSE(Ans
 Then
 	randInt(1,999->|LCSE(Ans
 	2|E4->|LCSE(1
-	10->|LCSE(2
+	15->|LCSE(2
 End
 36->dim(|LCSR
 25->dim(|LCAE
@@ -100,14 +100,14 @@ Text(85,17,"CHANGE CAR
 Text(105,17,"RECORDS
 DelVar BText(145,17,"QUIT
 Repeat B
-	C-((C!=0)(K=25->C
-	C+((K=34)(C<6->C
+	C-(C and K=25->C
+	C+(K=34 and C<6->C
 	Text(20C+25,4,">
 	getKey->K
 	K=21 or K=105->B
 	Text(~1,20C+23,4," 
 End
-DelVar AIf C=1
+DelVar ADelVar FIf C=1 and 15!=|LCAE(1
 Then
 	ClrDraw
 	Horizontal ~3
@@ -128,35 +128,20 @@ Then
 	Else
 		Text(150,95,"OWNED
 	End
-	If U=1
-	Then
-		Text(~1,30,90,"STREET
-		Text(80,20,"INSTALL A PERFORMANCE AIR
-		Text(100,20,"FILTER AND EXHAUST KIT.
-	End
-	If U=2
-	Then
-		Text(~1,30,90,"SPORT
-		Text(80,25,"INSTALL SPORT CAMSHAFTS, A
-		Text(100,25,"STEEL FLYWHEEL, AND A HI-FLOW
-		Text(120,25,"AIR FILTER.
-	End
-	If U=3
-	Then
-		Text(~1,30,95,"RACE
-		Text(80,40,"REMOVE EXCESS WEIGHT,
-		Text(100,40,"INSTALL DRAG SLICKS AND
-		Text(120,40,"RACING SHOCKS.
-	End
-	If U>=4
-	Then
-		Text(~1,30,95,"DRAG
-		Text(80,20,"INSTALL NITROUS, REMOVE
-		Text(100,20,"PASSENGER SEATS AND HEATER.
-	End
-	getKey->K
-	Repeat K>=11 and K<=15
+	Text(35,20,"ENGINE
+	Text(60,20,"WEIGHT
+	Text(85,20,"TIRES
+	Text(110,20,"BACK
+	Repeat B
+		Text(~1,25F+33,3," 
+		F-(F and K=25->F
+		F+(K=34 and F<3->F
+		Text(25F+35,4,">
 		getKey->K
+		K=21 or K=105->B
+	End
+	For(X,20,140,15
+		Text(~1,X,0,Str0
 	End
 	If K>=12 and K<=15 and U<=4 and int(U and C<=|LCSE(1
 	Then
@@ -194,7 +179,7 @@ Then
 		If C>=25 and A!=|LCAE(15
 		Then
 			A->|LCAE(15
-			(.01A)+int(|LCSE(5+|LCAE(1->|LCSE(5+|LCAE(1
+			.01A+int(|LCSE(5+|LCAE(1->|LCSE(5+|LCAE(1
 			TextColor(12
 			Text(~1,21,40,Str0
 			C-25->|LCSE(1
@@ -227,20 +212,24 @@ Then
 	Text(80,0,"TIER 2
 	Text(100,0,"TIER 3
 	For(F,1,3
-		Text(40+(20F),85,|LTTR(F
+		Text(40+20F,85,|LTTR(F
 	End
 	For(F,1,3
-		Text(40+(20F),195,|LTTR(3+F
+		Text(40+20F,195,|LTTR(3+F
 	End
 	Line(~4.4,2.2,~4.4,~1.8,12
 	TextColor(10
-	Text(140,50,"LADDER:
-	Text(140,105,|LCSE(2)-9
-	Text(140,125,"/30
+	Text(135,50,"LADDER:
+	Text(135,105,|LCSE(2)-14
+	Text(135,125,"/30
 	TextColor(15
-	Text(125,145,iPart(|LCSE(3)-.9
-	Text(125,50,"CAR SPECIFIC:
-	Text(125,165,"/6
+	Text(120,145,iPart(|LCSE(3)-.9
+	Text(120,50,"CAR SPECIFIC:
+	Text(120,165,"/6
+	TextColor(16
+	Text(150,50,"SPECIAL EVENTS:
+	Text(150,165,|LCSE(4
+	Text(150,185,"/6
 	Horizontal 1.2,11
 	Horizontal .2,14
 	Horizontal ~.8,18
@@ -378,7 +367,7 @@ Then
 					If C<=|LCSE(1
 					Then
 						|LCSE(1)-C->|LCSE(1
-						1->|LCSE(5+N
+						111->|LCSE(5+N
 						TextColor(14
 						Text(~1,80,50,"CAR PURCHASED
 					Else
@@ -429,13 +418,13 @@ Then
 	DelVar FText(145,20,"BACK
 	Repeat B
 		A-(A and K=25->A
-		A+((K=34)(A<6->A
+		A+(K=34 and A<6->A
 		F-((F and K=24->F
 		F+((not(F) and K=26->F
-		Text((20A+25),4+130F,">
+		Text(20A+25,4+130F,">
 		getKey->K
 		K=21 or K=105->B
-		Text(~1,(20A+23),4+130F," 
+		Text(~1,20A+23,4+130F," 
 	End
 	If F
 	Then
@@ -484,17 +473,37 @@ Then
 	Goto 0
 End
 Lbl 2
+15=|LCAE(1
+If Ans
+Pause "YOU NEED A CAR TO RACE.
 If 15=|LCAE(1
-Then
-	Pause "YOU NEED A CAR TO RACE.
-	Goto 0
-End
+Goto 0
 "CPU->Str2
 1->L
 DelVar thetaClrDraw
 Menu("EVENT LIST","REGULATION",A,"LADDER",B,"TIME TRIALS",C,"CAR SPECIFIC",D,"SPECIAL EVENTS",E,"BACK TO HOME",0
 Lbl E
 4->W
+Text(0,145,"SPECIAL EVENTS
+Horizontal 3.2,16
+Text(25,17,"small1. ECONOMY CAR TRAK MEET
+Text(45,17,"small2. TIER 1 CHAMPIONSHIP
+Text(65,17,"small3. JP TUNER TRIALS
+Text(85,17,"small4. TIER 2 CHAMPIONSHIP
+Text(105,17,"small5. SUPERCAR SHOWDOWN
+Text(125,17,"small6. TIER 3 CHAMPIONSHIP
+DelVar BText(145,17,"BACK
+Repeat B
+	C-(C and K=25->C
+	C+(K=34 and C<6->C
+	Text(20C+25,4,">
+	getKey->K
+	K=21 or K=105->B
+	Text(~1,20C+23,4," 
+End
+If C=6
+Goto 0
+Pause 
 Goto 1
 Lbl D
 5->W
@@ -541,11 +550,11 @@ Text(80,30,"SHORT TRACK
 Text(110,30,"BACK
 Repeat B
 	A-(A and K=25->A
-	A+((K=34)(A<2->A
+	A+(K=34 and A<2->A
 	Text(30A+50,14,">
 	getKey->K
 	Ans=105 or Ans=21->B
-	Text(~1,(30A+51),14," 
+	Text(~1,30A+51,14," 
 End
 If not(A
 Then
@@ -568,12 +577,13 @@ BorderColor 3
 Text(0,170,"LADDER RACE
 TextColor(18
 Horizontal 3.2,18
-Text(~1,80,95,|LCSE(2)-9
+Text(~1,80,95,|LCSE(2)-14
 Text(~1,80,120,"/30
 .1|LCSE(2->D
 Text(30,50,"CR. PRIZE:
+.5->L
 Text(30,125,W500D
-If 39=|LCSE(2
+If 44=|LCSE(2
 Text(30,125,1|E4
 Text(150,90,"PRESS ENTER
 Pause 
@@ -591,7 +601,7 @@ randInt(10,70->D
 D.1->D
 Input "LENGTH?",L
 abs(L->L
-If L>5 or not(L
+If L>5 xor not(L
 1->L
 Text(40,50,"CR. PRIZE:
 Text(40,130,W500D/L
@@ -618,6 +628,8 @@ Text(34,0,"YOU
 Text(55,1,"#
 Pt-On(~6.5,.95,Ans
 Pt-On(~6.15,.95,Ans
+If W=3
+|LCSE(2->rand
 If W!=2
 randInt(10,24->Q
 TextColor(Q
@@ -626,8 +638,8 @@ Pt-On(~6.5,~.3,Q
 Pt-On(~6.15,~.3,Q
 Text(99,0,Str2
 TextColor(12
-Text(150,190,"LENGTH:
-Text(150,245,L
+Text(150,188,"LENGTH:
+Text(150,243,L
 Text(0,60,"PRESS 2ND TO REV
 Repeat Ans=21
 	getKey
@@ -670,7 +682,7 @@ For(Z,3,0,~.05
 	If K and R<A
 	Then
 		R+(K=21->R
-		R+E2(K!=21->R
+		R+E2not(K=21->R
 	Else
 		If R>A
 		A->R
@@ -719,7 +731,7 @@ Repeat P>=240L
 		Text(~1,130,170,G
 	End
 	Text(~1,130,115,round(10S,0
-	round(((10S336FM)/|LCAE(19)),0)/1000->R
+	round((10S336FM)/|LCAE(19),0)/1000->R
 	Text(~1,130,25,R
 	If S10>|LCAE(4
 	.1|LCAE(4->S
@@ -764,14 +776,17 @@ Else
 	1+|LCSE(2->|LCSE(2
 	If 15>|LCSE(4
 	(5=W)+|LCSE(4->|LCSE(4
-	If W=3 and 39=|LCSE(2
+	If W=3 and 44=|LCSE(2
 	Then
 		5200+|LCSE(1->|LCSE(1
 		Text(95,30,"YOU'RE THE NEW LADDER CHAMP!
 	Else
 		(W=2)+|LCSE(2->|LCSE(2
 	End
-	int(|LCSE(1)+(W500D/L->|LCSE(1
+	W500D
+	If L>=1
+	Ans/L
+	int(|LCSE(1)+Ans->|LCSE(1
 End
 TextColor(12
 Text(150,80,"PRESS ENTER            
