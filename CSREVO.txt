@@ -110,15 +110,12 @@ End
 DelVar ADelVar FIf C=1 and 15!=|LCAE(1
 Then
 	ClrDraw
-	Horizontal ~3
 	Horizontal 3.2,19
-	Line(~4,~5,~4,~3
 	|LCAE(1->A
 	10fPart(.1int(|LCSE(5+A->U
 	Text(0,200,"TUNING
 	Text(0,0,"CR:
 	Text(0,25,|LCSE(1
-	Text(150,5,"BACK
 	If U<=4
 	Then
 		2500U|LCAE(16->C
@@ -131,11 +128,12 @@ Then
 	Text(35,20,"ENGINE
 	Text(60,20,"WEIGHT
 	Text(85,20,"TIRES
-	Text(110,20,"BACK
+	Text(110,20,"TRANSMISSION
+	Text(135,20,"BACK
 	Repeat B
 		Text(~1,25F+33,3," 
 		F-(F and K=25->F
-		F+(K=34 and F<3->F
+		F+(K=34 and F<4->F
 		Text(25F+35,4,">
 		getKey->K
 		K=21 or K=105->B
@@ -486,7 +484,7 @@ Lbl E
 4->W
 Text(0,145,"SPECIAL EVENTS
 Horizontal 3.2,16
-Text(25,17,"small1. ECONOMY CAR TRAK MEET
+Text(25,17,"small1. ECONOMY CAR TRACK MEET
 Text(45,17,"small2. TIER 1 CHAMPIONSHIP
 Text(65,17,"small3. JP TUNER TRIALS
 Text(85,17,"small4. TIER 2 CHAMPIONSHIP
@@ -544,7 +542,10 @@ Text(0,170,"TIME TRIALS
 Horizontal 3.2,11
 Horizontal 2.3,11
 Text(20,99,"TIER
-DelVar ADelVar BText(20,134,|LCAE(16
+|LCAE(16
+DelVar ADelVar BText(20,134,Ans
+Text(50,150,|LTTR(3+Ans
+Text(80,150,|LTTR(Ans
 Text(50,30,"LONG TRACK
 Text(80,30,"SHORT TRACK
 Text(110,30,"BACK
@@ -648,7 +649,7 @@ Text(~1,0,60,Str0
 Text(~1,32,0,Str0
 Text(~1,99,0,Str0
 |LCAE(1->A
-|LCSE(5+A->U
+10fPart(.1int(|LCSE(5+A->U
 .1(U-1->U
 |LCAE(2->A
 |LCAE(3->B
@@ -792,16 +793,21 @@ TextColor(12
 Text(150,80,"PRESS ENTER            
 Text(0,0,"CR:
 Text(0,20,|LCSE(1:Pause 
-If theta and theta=int(theta
+If theta
 Then
-	If Z<|LTTR(theta
+	If theta=int(theta
 	Then
-		Disp "NEW RECORD!
-		Z->|LTTR(theta
-	Else
-		Disp "RECORD TIED
+		If Z<|LTTR(theta
+		Then
+			Disp "NEW RECORD!
+			Z->|LTTR(theta
+		Else
+			Disp "RECORD TIED
+		End
+		DelVar thetaDisp "TIME:
+		Pause Z
 	End
-	Disp "TIME:
-	Pause Z
 End
+If theta
+Goto 1
 Goto 0

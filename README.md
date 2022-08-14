@@ -14,7 +14,7 @@ _________________________________________________________
 Table of contents:
 
 I. GETTING STARTED
- 1: How to install Calculator Street Racing on your TI-84+
+ 1: How to install Calculator Street Racing Evolution on your TI-84+ CE
  2: How to play
  3: Game modes
  4: Home menu
