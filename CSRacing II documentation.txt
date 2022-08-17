@@ -73,8 +73,9 @@ List CAE: (Car Data)
 20: Final drive ratio
 21: Car region (1=NA, 2=EU, 3=JP)
 22: Drag force
-23: Grip force
+23: Grip force (The higher the number, the more frames of wheelspin)
 24: Car Weight (kg)
+25: Drivetrain type (1 = FR, 2 = FF, 3 = AWD/4WD
 
 
 List L1:
@@ -118,7 +119,7 @@ R = RPM (x1000)
 S = Speed
 T = Race time
 U = Upgrade status
-V = 
+V = Wheelspin level
 W = Event type
 Z = Countdown
 (Theta) = Did the player win against a crew leader and if so which one (1 = tier 1 leader beaten, 2 = tier2 leader beaten)

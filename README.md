@@ -1,10 +1,12 @@
-CALCULATOR STREET RACING II: EVOLUTION
+CALCULATOR STREET RACING II: EVOLUTION - The Fake Driving Simulator
 
 A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
 
-
 WARNING: This game is still being worked on. A save file created mid-development may not work properly in the final release of the game.
 
+The ultimate drag racing game just got more intense. Powered by the most advanced racing engine ever seen in a TI-BASIC game on the 84+CE, CSRacing II allows you buy, upgrade, paint, tune, and race 13 different cars
+on 2 different tracks in 7 different event types. Compete against you and your friend's best times in Time Trials, Conquer the 6 different championships of Special Events, or just test your car's
+top speed in Machine Test. You can also race in returning events like Regulation, Ladder, Custom Spec and Car Specific races.
 
 
 NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run slowly on older models without use of a program like FASTER.
@@ -22,11 +24,12 @@ I. GETTING STARTED
 II. CSRACING II IN DEPTH
  5: Tips & Tricks 
  6: Car List
+ 7: Track List
 
 III. EXTRA INFORMATION
- 7: Developer's Notes & Technicalities
- 8: A short guide to CSRacing jargon
- 9: Credits and License
+ 8: Developer's Notes & Technicalities
+ 9: A short guide to CSRacing jargon
+ 10: Credits and License
 _________________________________________________________
 
 < I. GETTING STARTED >
@@ -88,6 +91,10 @@ After entering the difficulty, you'll be asked to specify the length of the road
 - Ladder: Race your way through 30 increasingly challenging races! The Grand Prize is 10000 Cr. Beware though: If you lose a race, you'll be knocked down a spot on the ladder.
 
 - Time Trials: Race to beat you and your friend's best times! There are six different race categories: The Short (1x length) & Long (2x length)
+
+- Car Specific: Race in unique races specific to each car in the game. Each one will test your mastery of a specific car. The difficulty is high, but so is the prize money!
+
+- Special Events: Race in 6 unique events with various restrictions and differences depending on the event
    
 - Return to Home: This isn't a game mode. Selecting this option will send you back to the main menu.
 
@@ -139,20 +146,28 @@ You have several options to choose from:
 *Cars with "*" next to their number cannot be purchased at the Car Dealer.
 
 
+7. TRACK LIST
+
+There are two tracks in the game: The Street and the Drag Strip.
+
+For Regulation, Ladder, and Time Trials races, you'll be racing on the streets, indicated by the double yellow line.
+
+For Car Specific races and Special Events, you'll be on the Drag strip. The Drag Strip has a christmas tree in the center of the track that counts down to the start of races and a different color palette than the streets.
+
+
 
 < III. EXTRA INFORMATION >
 
 
-7. DEVELOPER'S NOTES & TECHNICALITIES:
+8. DEVELOPER'S NOTES & TECHNICALITIES:
 
- - This game should run on TI-84+ CSE, but will run extremely slow on that hardware.
- - The cars in this game are intended to have the same gear ratios and top speeds as their real-world counterparts- but real world performance may differ. (The names are a bit different here due to copyright, but I'm sure you can figure out what cars they represent via the Developer's Documentation in the extras folder.)
+ - This game should still run on TI-84+ C Silver Edition, but will run extremely slow on that hardware and as such I do not reccommend it..
+ - The cars in this game are intended to have the same gear ratios and top speeds as their real-world counterparts- but real world performance may differ. This is a calculator game, not a simulator.
  - Cars with electronically limited top speeds in the real world (i.e. 155 MPH) have their limiters removed here.
- - Races take a couple seconds to start due to how slow the Shade( command is at drawing.
  - If you get ERR: UNDEFINED after the title screen, it's likely because you deleted Str1. To fix this, enter "A->Str1 on the homescreen in TI-OS.
 
 
-8. A SHORT GUIDE TO CSRACING JARGON
+9. A SHORT GUIDE TO CSRACING JARGON
 
  - CSRacing = Calculator Street Racing
  - CR/Cr. = Credits, the currency of CSRacing
@@ -162,7 +177,7 @@ You have several options to choose from:
  - Home = the homescreen of the game.
 
 
-9. CREDITS, LICENSE AND CONTACT INFORMATION
+10. CREDITS, LICENSE AND CONTACT INFORMATION
 
 Game created by Oxiti8 in 2022.
 
