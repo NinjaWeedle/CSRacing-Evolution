@@ -14,7 +14,7 @@ The numbers after the decimal is the car's paint color.
 the first whole number is the Car's engine tune. (1 = default)
 the tens digit is the Weight tune settings (1 = default)
 the hundreds digit is the tires you currently have equipped. (1 = default[a.k.a Street Tires], 2 = Sports Tires, 3 = Race tires, 4 = Drag Slicks)
-the thousands digit is the transmission. Upgrading this reduces shift time delay, and once maxed, you will be able to set gear ratios/
+the thousands digit is the transmission. Upgrading this reduces shift time delay, and once maxed, you will be able to set gear ratios(?)
 
 
 List CSE: (Primary Save File)
@@ -75,7 +75,7 @@ List CAE: (Car Data)
 22: Drag force
 23: Grip force (The higher the number, the more frames of wheelspin)
 24: Car Weight (kg)
-25: Drivetrain type (1 = FR, 2 = FF, 3 = AWD/4WD
+25: Drivetrain type (1 = FR, 2 = FF, 3 = AWD/4WD)
 
 
 List L1:
@@ -118,11 +118,11 @@ Q = Opponent car color
 R = RPM (x1000)
 S = Speed
 T = Race time
-U = Upgrade status
+U = 
 V = Wheelspin level
 W = Event type
 Z = Countdown
-(Theta) = Did the player win against a crew leader and if so which one (1 = tier 1 leader beaten, 2 = tier2 leader beaten)
+(Theta) = Special Event Flag 
 
 
 EVENT TYPES:

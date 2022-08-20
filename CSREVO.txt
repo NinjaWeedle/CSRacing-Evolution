@@ -1,40 +1,54 @@
 :DCS
 "6D9F894A8D8A854A6D5F000000001FC022204210FFFEA229C2279229BBDD1008
 Full
-BackgroundOff
+BackgroundOn 12
 BorderColor 4
 DetectAsymOff
-TextColor(12
 AxesOff
 ZStandard
 84->Xmin
 72->Ymax
 ZInteger
-Text(20,0,"CALCULATOR STREET RACING EVOLUTION
-Text(60,50,"PRESS ENTER
 14
-Line(1,15,1,10,11
-Line(1,10,9,5,Ans
-Line(1,15,25,19,Ans
-Line(25,13,25,19,Ans
-Line(25,19,37,19,Ans
-Line(51,13,25,13,12
-Line(52,13,45,6,12
-Line(29,6.5,25,13,12
-Line(45,6.5,22,6.5,12
-Line(15,14.5,25,13,Ans
-Line(15,14.5,1,14,Ans
-Line(37,19,52,13,Ans
-Line(52,13,58,12,Ans
-Line(58,12,70,7,Ans
-Line(70,7,68,4,Ans
-Line(68,4,61,4,Ans
-Line(61,11,65,Ans,Ans
-Line(65,Ans,65,10,19
-Line(50,4,21,4,Ans
-Circle(55,5,4,12
-Circle(15,5,4,12
+TextColor(Ans
+For(A,~40,50,7.5
+	If A=50
+	ClrDraw
+	Line(A-49,15,A-49,10,11
+	Line(A-49,10,A-41,5,Ans
+	Line(A-49,15,A-25,19,Ans
+	Line(A-25,13,A-25,19,Ans
+	Line(A-25,19,A-13,19,Ans
+	Line(A-35,14.5,A-25,13,Ans
+	Line(A-35,14.5,A-49,14,Ans
+	Line(A-13,19,A+2,13,Ans
+	Line(A+2,13,A+8,12,Ans
+	Line(A+8,12,A+20,7,Ans
+	Line(A+20,7,A+18,4,Ans
+	Line(A+18,4,A+11,4,Ans
+	Line(A+11,11,A+15,Ans,Ans
+	Line(A+15,Ans,A+15,10,19
+	Line(A,4,A-29,4,Ans
+End
+For(X,0,250,2
+	Text(~1,0,X," 
+End
+Text(0,30,"CALCULATOR STREET RACING II:
+12
+Line(51,13,25,13,Ans
+Line(45,6.5,22,6.5,Ans
+Line(52,13,45,6,Ans
+Line(29,6.5,25,13,Ans
+Circle(55,5,4,Ans
+Circle(15,5,4,Ans
+TextColor(Ans
+Text(~1,25,75,"EVOLUTION
+For(X,24,20,~1
+	BackgroundOn X
+End
+BorderColor 4
 Text(140,200,"OXITI8
+Text(60,80,"PRESS ENTER
 "                      ->Str0
 Pause 
 SetUpEditor CAE,CSE,TTR,CSR
@@ -76,8 +90,7 @@ Text(0,220,"HOME
 Horizontal 3.2,24
 Text(65,150,"TIER
 Text(65,185,|LCAE(16
-|LCAE(15
-TextColor(Ans
+TextColor(|LCAE(15
 Text(23,100,Str9
 Line(~1.8,1.1,7,1.1,24
 Line(~1.8,1.9,7,1.9,24
@@ -101,23 +114,26 @@ Text(85,17,"CHANGE CAR
 Text(105,17,"RECORDS
 DelVar BText(145,17,"QUIT
 Repeat B
+	If K
+	Text(~1,20C+23,4," 
 	C-(C and K=25->C
 	C+(K=34 and C<6->C
-	Text(20C+25,4,">
+	Text(20C+25,4,"[|>]
 	getKey->K
 	K=21 or K=105->B
-	Text(~1,20C+23,4," 
 End
 DelVar ADelVar FIf C=1 and 15!=|LCAE(1
 Then
 	ClrDraw
 	Horizontal 3.2,19
-	|LCAE(1->A
-	10fPart(.1int(|LCSE(5+A->U
+	|LCSE(5+|LCAE(1->U
 	Text(0,200,"TUNING
 	Text(0,0,"CR:
 	Line(~2,3.2,~2,~5,19
 	Text(0,25,|LCSE(1
+	~.1+fPart(.1int(U->L
+	~.1+.1remainder(100,int(.1U->M
+	2int(.001U->N
 	If U<=4:Then
 		2500U|LCAE(16->C
 		Text(60,80,"COST:
@@ -127,15 +143,15 @@ Then
 		Text(150,95,"OWNED
 	End
 	Text(35,20,"ENGINE
-	Text(60,20,"WEIGHT
-	Text(85,20,"TIRES
-	Text(110,20,"GEARBOX
-	Text(135,20,"BACK
+	Text(65,20,"WEIGHT
+	Text(95,20,"TIRES
+	Text(125,20,"BACK
 	Repeat B
-		Text(~1,25F+33,3," 
+		If K
+		Text(~1,30F+33,3," 
 		F-(F and K=25->F
-		F+(K=34 and F<4->F
-		Text(25F+35,4,">
+		F+(K=34 and F<3->F
+		Text(30F+35,4,"[|>]
 		getKey->K
 		K=21 or K=105->B
 	End
@@ -250,12 +266,12 @@ DelVar FIf C=5:Then
 		Text(80,70,"EUROPE
 		Text(105,70,"ASIA
 		Text(130,70,"BACK
-		TextColor(10
 		Repeat B
+			If K
 			Text(~1,25F+53,50," 
 			F-(F and K=25->F
 			F+(K=34 and F<3->F
-			Text(25F+55,50,">
+			Text(25F+55,50,"[|>]
 			getKey->K
 			K=21 or K=105->B
 		End
@@ -286,10 +302,11 @@ DelVar FIf C=5:Then
 		If not(F=3
 		Then
 			Repeat E
+				If K
 				Text(~1,25D+43,60," 
 				D-(D and K=25->D
 				D+(D<4 and K=34->D
-				Text(25D+45,60,">
+				Text(25D+45,60,"[|>]
 				getKey->K
 				K=21 or K=105->E
 			End
@@ -411,14 +428,15 @@ If C=3:Then
 	Text(125,20,"CAR 6
 	DelVar FText(145,20,"BACK
 	Repeat B
+		If K
+		Text(~1,20A+23,4+130F," 
 		A-(A and K=25->A
 		A+(K=34 and A<6->A
 		F-(F and K=24->F
 		F+(not(F) and K=26->F
-		Text(20A+25,4+130F,">
+		Text(20A+25,4+130F,"[|>]
 		getKey->K
 		K=21 or K=105->B
-		Text(~1,20A+23,4+130F," 
 	End
 	If F
 	Then
@@ -449,17 +467,27 @@ If C=3:Then
 	Text(0,180,"CHANGE CAR
 	Horizontal 3.2
 	Text(75,20,"GOT IN
-	60
 	Text(110,99,"CAR
 	Text(110,130,|LCAE(1
 	Text(150,93,"PRESS ENTER
-	|LCSE(5+|LCAE(1
-	If Ans=int(Ans
+	|LCSE(5+|LCAE(1->U
+	~.1+fPart(.1int(U->A
+	A+|LCAE(12->|LCAE(12
+	A10->A
+	A2+|LCAE(4->|LCAE(4
+	A+|LCAE(17->|LCAE(17
+	A+|LCAE(18->|LCAE(18
+	A+|LCAE(23->|LCAE(23
+	~.1+.1remainder(100,int(.1U->A
+	A+|LCAE(12->|LCAE(12
+	|LCAE(24)-500A->|LCAE(24
+	|LCAE(23)-2int(.001U->|LCAE(23
+	If U=int(U
 	Then
-		(.01|LCAE(15))+Ans->|LCSE(5+|LCAE(1
+		U+(sub(|LCAE(15->|LCSE(5+|LCAE(1
 		TextColor(|LCAE(15
 	Else
-		100fPart(Ans->|LCAE(15
+		100fPart(U->|LCAE(15
 		TextColor(Ans
 	End
 	Text(75,65,Str9
@@ -488,7 +516,7 @@ For(X,0,5
 	If |LCSE(21+X
 	TextColor(20
 	If not(X
-	Text(25,17,"small1. ECONOMY CAR TRACK MEET
+	Text(25,17,"small1. FF CHALLENGE
 	If X=1
 	Text(45,17,"small2. TIER 1 CHAMPIONSHIP
 	If X=2
@@ -496,7 +524,7 @@ For(X,0,5
 	If X=3
 	Text(85,17,"small4. TIER 2 CHAMPIONSHIP
 	If X=4
-	Text(105,17,"small5. SUPERCAR SHOWDOWN
+	Text(105,17,"small5. TOP SPEED SHOWDOWN
 	If X=5
 	Text(125,17,"small6. TIER 3 CHAMPIONSHIP
 End
@@ -504,18 +532,30 @@ TextColor(20
 Text(0,145,"SPECIAL EVENTS
 Text(145,17,"BACK
 Repeat B
+	If K
+	Text(~1,20C+23,4," 
 	C-(C and K=25->C
 	C+(K=34 and C<6->C
-	Text(20C+25,4,">
+	Text(20C+25,4,"[|>]
 	getKey->K
 	K=21 or K=105->B
-	Text(~1,20C+23,4," 
 End
-If C=6
-Goto 0
+|LCAE(21->B
+|LCAE(16->A
+If C=2
+Then
+	If B=3 and A=2
+	Then
+		
+	Else
+		6->C
+	End
+End
 .1(C+1->theta
 1->D
 .1->J
+If C=6
+Goto 0
 Goto 1
 Lbl D
 5->W
@@ -564,12 +604,13 @@ Text(50,30,"LONG TRACK
 Text(80,30,"SHORT TRACK
 Text(110,30,"BACK
 Repeat B
+	If K
+	Text(~1,30A+51,14," 
 	A-(A and K=25->A
 	A+(K=34 and A<2->A
-	Text(30A+50,14,">
+	Text(30A+50,14,"[|>]
 	getKey->K
 	Ans=105 or Ans=21->B
-	Text(~1,30A+51,14," 
 End
 If not(A
 Then
@@ -675,9 +716,6 @@ End
 Text(~1,0,60,Str0
 Text(~1,32,0,Str0
 Text(~1,99,0,Str0
-|LCAE(1->A
-fPart(.1int(|LCSE(5+A->U
-U-.1->U
 |LCAE(2->A
 |LCAE(3->B
 |LCAE(5->C
@@ -686,7 +724,7 @@ U-.1->U
 |LCAE(20->M
 |LCAE(23->V
 Text(106,10,"RPM (X1000)
-Text(5,98,"TIME
+Text(5,98,"Time
 For(Z,3,0,~.05
 	TextColor(12
 	Text(~1,130,25,R
@@ -777,9 +815,9 @@ Repeat P>=240L
 	If S10>|LCAE(4
 	.1|LCAE(4->S
 	If R>|LCAE(2
-	S-(.15(A+U)(1.1-GH->S
+	S-(.15A(1.1-GH->S
 	TextColor(19
-	S+(1.1-GH)(.1(A+U(1+(V>0).3->S
+	S+(1.1-GH)(.1(A(1+(V>0).3->S
 	If W>3
 	D+.1J->D
 	Text(~1,78,round(O/L,0)," 
