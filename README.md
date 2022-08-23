@@ -9,14 +9,14 @@ on 2 different tracks in 7 different event types. Compete against you and your f
 top speed in Machine Test. You can also race in returning events like Regulation, Ladder, Custom Spec and Car Specific races.
 
 
-NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run slowly on older models without use of a program like FASTER.
+NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run slowly on older models without use of a program like FASTER. It will still run on the 84+ CSE.
 Github: https://github.com/NinjaWeedle/CSRacing-Evolution - If there's a new version of CSRacing II Evolution, you'll find it here first.
 Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing II!
 _________________________________________________________
 Table of contents:
 
 I. GETTING STARTED
- 1: How to install Calculator Street Racing Evolution on your TI-84+ CE
+ 1: How to install Calculator Street Racing II Evolution on your TI-84+ CE
  2: How to play
  3: Game modes
  4: Home menu
@@ -58,6 +58,12 @@ Upon entering the "BUY CARS" menu, you will see 4 options: "NORTH AMERICA", "EUR
 Select the continent that has the car you want to buy, then select a car.
 If you have enough credits, you can buy that car.
 
+The interface for the car purchase screen is a bit different than the usual menu setup- rather than using 2nd/enter and the arrow keys to make a selection,
+you use the top 5 keys on the calculator. The leftmost key, "Y=", corresponds with the on-screen "BACK" button, and pressing it takes you to the previous menu.
+The 4 rightmost keys (window, zoom, trace, and graph) all do the same thing- pressing them allows you to buy the car you selected.
+
+TL;DR This works exactly the same as the car purchase screen in CSRacing I. This same interface is also used for the upgrade purchase screen.
+
 Once you buy a car, you can get into it from the "CHANGE CAR" menu.
 
 Once you get in a car, you can tune it in the "TUNING" menu, paint it any color you like in the "PAINTSHOP", or most importantly, race it by selecting "GO RACE".
@@ -75,7 +81,7 @@ Press 2ND to start your engine and begin the countdown to launch. To rev quickly
  - Pay attention to the text at the bottom of the screen- it'll tell you if your RPM is above, below, or at the number needed for the fastest launch.
 
 Once the race begins, your car will begin accelerating automatically. Press the up arrow key to shift up, and the down arrow key to shift down.
- - Every car drives differently. The best time to shift, the number of gears, redline, and many other stats differ from car to car, and certain cars may not need to shift at all for shorter races.
+ - Every car drives differently. The best time to shift, the number of gears, redline, and many other stats differ from car to car.
 
 
 3. GAME MODES
@@ -84,17 +90,23 @@ Upon selecting the "RACE" option in the main menu, you will be presented the eve
 Each mode has its own rules:
  
 - Regulation: Any car with any upgrades can enter. After selecting this option, you'll be asked to enter a difficulty level, and after that, the track length.
-The difficulty level is the MPH the opponent will travel at: Entering a difficulty of 10 will have the opponent drive at a constant 10 MPH, a difficulty of 35 equates to 35 MPH, and so on and so forth.
-The higher the difficulty level, the better the rewards!
-After entering the difficulty, you'll be asked to specify the length of the road. A length of 1 is the standard length, 2 is double length, 3 is triple length, 4 is quadruple length, and 5 is quintuple length. The track length does not affect the Cr. earned for winning, but does slightly increase the payment for losing.
+  -- The difficulty level is the MPH the opponent will travel at: Entering a difficulty of 10 will have the opponent drive at a constant 10 MPH, a difficulty of 35 equates to 35 MPH, and so on and so forth. The higher the difficulty level, the better the rewards!
+  -- After entering the difficulty, you'll be asked to specify the length of the road. A length of 1 is the standard length, 2 is double length, 3 is triple length, 4 is quadruple length, and 5 is quintuple length. The track length does not affect the Cr. earned for winning, but does slightly increase the payment for losing.
 
 - Ladder: Race your way through 30 increasingly challenging races! The Grand Prize is 10000 Cr. Beware though: If you lose a race, you'll be knocked down a spot on the ladder.
 
-- Time Trials: Race to beat you and your friend's best times! There are six different race categories: The Short (1x length) & Long (2x length)
+- Time Trials: Race to beat you and your friend's best times! There are six different race categories: The Short (1x length) & Long (2x length) races for each of the three tiers.
+  -- Feel free to post your best times on the Cemetech forum topic for CSRacing II.
 
 - Car Specific: Race in unique races specific to each car in the game. Each one will test your mastery of a specific car. The difficulty is high, but so is the prize money!
 
-- Special Events: Race in 6 unique events with various restrictions and differences depending on the event
+- *Custom Spec: This one does not appear on the event list. To access it, you must beat all 13 of the Car Specific races. Once you've beaten them all, selecting "Car Specifc" mode on the event list will bring you to Custom Spec mode.
+  -- Custom Spec allows you to mess with the race settings to your heart's content, even if it might cause an error. You can set the racetrack length as high or low as you want, mess with the more advanced opponent AI type (including making them go backwards if you really want although this will cause an error), and earn big prize money.
+
+- Special Events: Race in 6 unique events with various restrictions and differences depending on the event.
+
+- Machine Test: Test out your car's top speed here. There's no CR. prize here.
+
    
 - Return to Home: This isn't a game mode. Selecting this option will send you back to the main menu.
 
@@ -108,10 +120,11 @@ You have several options to choose from:
 
  - Tuning: Brings you to the tuning menu, where you can upgrade your car.
   -- There are three categories of upgrades: Engine, Weight, and Tires. Upgrading your engine increases horsepower & torque, which in turn increase acceleration and top speed but also slightly reduce grip,
-     Upgrading weight reduces the weight of your car and increases acceleration speed, and upgrading your tires increases grip.
+     Upgrading weight reduces the weight of your car and therefore increases acceleration, and upgrading your tires increases grip.
 
  - Paintshop: Lets you paint your car by typing one of the numbers listed below. 
    -- Color guide: 10=Blue, 11=Red, 12=Black, 13=Magenta, 14=Green, 15=Orange, 16=Brown, 17=Navy, 18=LtBlue, 19=Yellow, 20=White, 21=LtGray, 22=MedGray, 23=Gray, and 24=DarkGray
+   -- You can also input color tokens from the VARS/COLOR menu.
 
  - Change Car: Self explanatory. Selecting this option lets you swap to another car you own. 
 
@@ -133,15 +146,16 @@ You have several options to choose from:
  - Upgrades scale in cost based on the tier of the car you're upgrading- Tier 1 cars are the cheapest cars to upgrade, and Tier 3 cars are the most expensive to upgrade due to their exotic nature.
  - Upgrades offer a noticeable performance boost, but buying faster cars is eventually necessary to stay competitive.
  - Regulation races are a great way to earn Cr. - Just make sure to keep the difficulty at a level your car can handle.
- - There will be two cars availiable in each tier.
+ - There are at least four cars availiable in each tier.
 
 
 6. CAR LIST (by car identifier number):
 
-1: CRX Si (1991) - T1
+1: CRX Si (1991) - T1 - FWD
 2:
-3: Focus RS (2009) - T2
-4: Countach LP400 (1974) - T2
+3: Focus RS (2009) - T2 - FWD
+4: Countach LP400 (1974) - T2 - RWD
+5: 911 GT3 RS (2016) - T3 - RWD
 
 *Cars with "*" next to their number cannot be purchased at the Car Dealer.
 
@@ -152,7 +166,7 @@ There are two tracks in the game: The Street and the Drag Strip.
 
 For Regulation, Ladder, and Time Trials races, you'll be racing on the streets, indicated by the double yellow line.
 
-For Car Specific races and Special Events, you'll be on the Drag strip. The Drag Strip has a christmas tree in the center of the track that counts down to the start of races and a different color palette than the streets.
+For Car Specific races and Special Events, you'll be on the Drag Strip. The Drag Strip has a christmas tree in the center of the track that counts down to the start of races and a different color palette than the streets.
 
 
 
@@ -161,7 +175,7 @@ For Car Specific races and Special Events, you'll be on the Drag strip. The Drag
 
 8. DEVELOPER'S NOTES & TECHNICALITIES:
 
- - This game should still run on TI-84+ C Silver Edition, but will run extremely slow on that hardware and as such I do not reccommend it..
+ - This game should still run on TI-84+ C Silver Edition, but will run very slow on that hardware and as such I do not reccommend it.
  - The cars in this game are intended to have the same gear ratios and top speeds as their real-world counterparts- but real world performance may differ. This is a calculator game, not a simulator.
  - Cars with electronically limited top speeds in the real world (i.e. 155 MPH) have their limiters removed here.
  - If you get ERR: UNDEFINED after the title screen, it's likely because you deleted Str1. To fix this, enter "A->Str1 on the homescreen in TI-OS.
@@ -195,4 +209,5 @@ SOFTWARE.
 Redistribution of this software is welcome, but this document MUST accompany it.
 
 Email: weedleninja88@gmail.com
-Ticalc.org author profile: https://ticalc.org/archives/files/authors/117/11708.html
+ticalc.org author profile: https://ticalc.org/archives/files/authors/117/11708.html
+Looking for the original Calculator Street Racing? You can find it here: https://github.com/NinjaWeedle/CSRacing

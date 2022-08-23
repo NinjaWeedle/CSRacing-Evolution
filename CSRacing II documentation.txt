@@ -27,7 +27,7 @@ List CSE: (Primary Save File)
 7: 
 8: Ford Focus RS (2009) owned?
 9: Lamborghini Countach LP400 (1974) owned?
-10: car 5
+10: Porsche 911 GT3 RS (2016) owned?
 11: 
 12: 
 13: 
@@ -47,7 +47,7 @@ List CSE: (Primary Save File)
 27: 
 28: 
 29: 
-30: Unique player id (integer from 1 to 999)
+30: Unique player id (integer from 1 to 32768)
 
 
 List CAE: (Car Data)
@@ -72,10 +72,10 @@ List CAE: (Car Data)
 19: Tire diameter (in)
 20: Final drive ratio
 21: Car region (1=NA, 2=EU, 3=JP)
-22: Drag force
+22: Drag Force
 23: Grip force (The higher the number, the more frames of wheelspin)
 24: Car Weight (kg)
-25: Drivetrain type (1 = FR, 2 = FF, 3 = AWD/4WD)
+25: Drivetrain type (1 = RWD, 2 = FWD, 3 = AWD/4WD)
 
 
 List L1:
@@ -109,21 +109,24 @@ H = Reduction in speed gained in gears above first gear
 I = Multiplayer player identifier
 J = Opponent Acceleration level (Only affects Car Specific and Crew Battle)
 K = Key pressed
-L = Race Length
-M = Final drive ratio
-N = Player Car color
+L = Race Length, [Engine upgrade status]
+M = Final drive ratio [Weight upgrade status]
+N = Player Car color [Tires upgrade status]
 O = Opponent Car position
 P = Player Car position
 Q = Opponent car color
 R = RPM (x1000)
 S = Speed
 T = Race time
-U = 
-V = Wheelspin level
+U = Upgrade status in tuning menu
+V = Wheelspin level in races [upgrade type in tuning menu]
 W = Event type
+X = Temp 4
+Y = Temp 5
 Z = Countdown
 (Theta) = Special Event Flag 
 
+[] refers to the tuning menu
 
 EVENT TYPES:
 Regulation races: W=1
@@ -137,7 +140,7 @@ CAR LIST (by car identifier number):
 2:
 3: Ford Focus RS (2009)
 4: Lamborghini Countach LP400 (1974)
-5:
+5: Porsche 911 GT3 RS (2016)
 6:
 7:
 8:

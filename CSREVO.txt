@@ -11,7 +11,7 @@ ZStandard
 ZInteger
 14
 TextColor(Ans
-For(A,~40,50,7.5
+For(A,~40,50,10
 	If A=50
 	ClrDraw
 	Line(A-49,15,A-49,10,11
@@ -20,7 +20,7 @@ For(A,~40,50,7.5
 	Line(A-25,13,A-25,19,Ans
 	Line(A-25,19,A-13,19,Ans
 	Line(A-35,14.5,A-25,13,Ans
-	Line(A-35,14.5,A-49,14,Ans
+	Line(A-35,14.5,A-49,Ans,Ans
 	Line(A-13,19,A+2,13,Ans
 	Line(A+2,13,A+8,12,Ans
 	Line(A+8,12,A+20,7,Ans
@@ -55,7 +55,7 @@ SetUpEditor CAE,CSE,TTR,CSR
 30->dim(|LCSE
 If not(|LCSE(Ans
 Then
-	randInt(1,999->|LCSE(Ans
+	randInt(1,8^5->|LCSE(Ans
 	2|E4->|LCSE(1
 	15->|LCSE(2
 End
@@ -105,14 +105,15 @@ Text(150,100,"REGION:
 Text(150,165,|LCAE(21
 DelVar CText(0,0,"CR:
 Text(0,20,|LCSE(1
-Text(125,17,"BUY CARS
+17
+Text(125,Ans,"BUY CARS
 Vertical ~1.8,22
-Text(25,17,"GO RACE
-Text(45,17,"TUNING
-Text(65,17,"PAINTSHOP
-Text(85,17,"CHANGE CAR
-Text(105,17,"RECORDS
-DelVar BText(145,17,"QUIT
+Text(25,Ans,"GO RACE
+Text(45,Ans,"TUNING
+Text(65,Ans,"PAINTSHOP
+Text(85,Ans,"CHANGE CAR
+Text(105,Ans,"RECORDS
+DelVar BText(145,Ans,"QUIT
 Repeat B
 	If K
 	Text(~1,20C+23,4," 
@@ -126,26 +127,22 @@ DelVar ADelVar FIf C=1 and 15!=|LCAE(1
 Then
 	ClrDraw
 	Horizontal 3.2,19
-	|LCSE(5+|LCAE(1->U
+	|LCSE(5+|LCAE(1->A
 	Text(0,200,"TUNING
 	Text(0,0,"CR:
 	Line(~2,3.2,~2,~5,19
 	Text(0,25,|LCSE(1
-	~.1+fPart(.1int(U->L
-	~.1+.1remainder(100,int(.1U->M
-	2int(.001U->N
-	If U<=4:Then
-		2500U|LCAE(16->C
-		Text(60,80,"COST:
-		Text(60,120,C
-		Text(150,90,"BUY AND INSTALL
-	Else
-		Text(150,95,"OWNED
-	End
-	Text(35,20,"ENGINE
-	Text(65,20,"WEIGHT
-	Text(95,20,"TIRES
-	Text(125,20,"BACK
+	10fPart(.1int(A->L
+	remainder(100,int(.1A->M
+	1+2int(.001A->N
+	20
+	Text(35,Ans,"ENGINE
+	Text(65,Ans,"WEIGHT
+	Text(95,Ans,"TIRES
+	Text(125,Ans,"BACK
+	Text(35,5Ans,L
+	Text(65,5Ans,M
+	Text(95,5Ans,N
 	Repeat B
 		If K
 		Text(~1,30F+33,3," 
@@ -156,15 +153,34 @@ Then
 		K=21 or K=105->B
 	End
 	For(X,20,140,15
-		Text(~1,X,90,Str0
+		Text(~1,X,0,Str0
 	End
-	If K>=12 and K<=15 and U<=4 and int(U and C<=|LCSE(1
+	If not(F
+	L->U
+	If F=1
+	M->U
+	If F=2
+	N->U
+	Vertical 0
+	If U=1
+	Text(~1,30,90,"STREET
+	If U=2
+	Text(~1,30,95,"SPORT
+	If U=3
+	Text(~1,30,100,"RACE
+	2500U|LCAE(16->C
+	Text(60,100,C
+	
+	
+	Pause 
+	If K>=12 and K<=15
 	Then
-		|LCSE(1)-C->|LCSE(1
-		U+1->|LCSE(A+5
-		Text(~1,70,70,"OWNED
-		Repeat getKey
+		If U<=3 and U and C<=|LCSE(1
+		Then
+			|LCSE(1)-C->|LCSE(1
+			A+(U|EF->|LCSE(5+|LCAE(1
 		End
+		Text(~1,70,70,"OWNED
 	End
 End
 If C=2:Then
@@ -293,6 +309,7 @@ DelVar FIf C=5:Then
 		Then
 			Text(20,90,"EUROPE
 			Text(45,80,"COUNTACH LP400 '74
+			Text(70,80,"911 GT3 RS '16
 		End
 		If F=2
 		Then
@@ -333,6 +350,14 @@ DelVar FIf C=5:Then
 						2->I
 						15->B
 					End
+					If D=1
+					Then
+						"911 GT3 RS '16->Str3
+						15|E4->C
+						5->N
+						3->I
+						15->B
+					End
 				End
 				If F=2
 				Then
@@ -352,6 +377,8 @@ DelVar FIf C=5:Then
 				Horizontal ~3.2
 				Text(0,0,"CR:
 				Text(0,25,|LCSE(1
+				If not(Z
+				B->Z
 				TextColor(B
 				Text(50,60,Str3
 				Text(75,128,"#
@@ -423,7 +450,7 @@ If C=3:Then
 	If |LCSE(9
 	Text(85,20,"COUNTACH LP400
 	If |LCSE(10
-	Text(105,20,"CAR 5
+	Text(105,20,"911 GT3 RS
 	If |LCSE(11
 	Text(125,20,"CAR 6
 	DelVar FText(145,20,"BACK
@@ -442,6 +469,11 @@ If C=3:Then
 	Then
 		
 	Else
+		If A=4 and |LCSE(10
+		Then
+			"911 GT3 RS '16->Str9
+			{5,8.8,6,193,6,3.75,2.38,1.72,1.34,1.11,.96,3.1,.25,.1,15,3,500,339,28.7,4.19,2,0,10,1420,1->CAE
+		End
 		If A=3 and |LCSE(9
 		Then
 			"COUNTACH LP400 '74->Str9
@@ -584,7 +616,7 @@ Else
 	If W
 	Text(120,40,Str1
 	If not(W
-	Text(80,80,"REQUIRE\D
+	Text(80,80,"REQUIRed
 	Pause 
 End
 If not(W
