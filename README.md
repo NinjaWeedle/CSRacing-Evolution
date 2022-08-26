@@ -8,7 +8,6 @@ The ultimate drag racing game just got more intense. Powered by the most advance
 on 2 different tracks in 7 different event types. Compete against you and your friend's best times in Time Trials, Conquer the 6 different championships of Special Events, or just test your car's
 top speed in Machine Test. You can also race in returning events like Regulation, Ladder, Custom Spec and Car Specific races.
 
-
 NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run slowly on older models without use of a program like FASTER. It will still run on the 84+ CSE.
 Github: https://github.com/NinjaWeedle/CSRacing-Evolution - If there's a new version of CSRacing II Evolution, you'll find it here first.
 Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing II!
@@ -38,6 +37,8 @@ _________________________________________________________
 1. HOW TO INSTALL:
 
 Send CSREVO.8xp to either RAM or Archive.
+
+NOTE: This game seems to have a myriad of issues occur when ASMHOOK is installed, so make sure to disable that before playing if you use it.
 
 
 2. HOW TO PLAY:

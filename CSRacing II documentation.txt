@@ -44,10 +44,7 @@ List CSE: (Primary Save File)
 24: Special Event 4 completion status
 25: Special Event 5 completion status
 26: Special Event 6 completion status
-27: 
-28: 
-29: 
-30: Unique player id (integer from 1 to 32768)
+27: Unique player id (integer from 1 to 32768)
 
 
 List CAE: (Car Data)
@@ -62,17 +59,17 @@ List CAE: (Car Data)
 9: Gear 4 Ratio
 10: Gear 5 Ratio
 11: Gear 6 Ratio
-12: Acceleration level (maximum increase in pixels moved per cycle)
-13: Amount of rpm (x1000) lost per cycle while revving
-14: Reduction in speed gained in gears above first gear (1.1 - (LCAE(14)* Current Gear) * Acceleration level)
-15: Car color (10=Blue, 11=Red, 12=Black, 13=Magenta, 14=Green, 15=Orange, 16=Brown, 17=Navy, 18=LtBlue, 19=Yellow, 20=White, 21=LtGray, 22=MedGray, 23=Gray, and 24=DarkGray)
-16: Car Tier
-17: Peak Horsepower
-18: Peak Torque (Lb-Ft)
-19: Tire diameter (in)
-20: Final drive ratio
-21: Car region (1=NA, 2=EU, 3=JP)
-22: Drag Force
+12: Gear 7 Ratio
+13: Acceleration level (maximum increase in pixels moved per cycle)
+14: Amount of rpm (x1000) lost per cycle while revving
+15: Reduction in speed gained in gears above first gear (1.1 - (LCAE(14)* Current Gear) * Acceleration level)
+16: Car color (10=Blue, 11=Red, 12=Black, 13=Magenta, 14=Green, 15=Orange, 16=Brown, 17=Navy, 18=LtBlue, 19=Yellow, 20=White, 21=LtGray, 22=MedGray, 23=Gray, and 24=DarkGray)
+17: Car Tier
+18: Peak Horsepower
+19: Peak Torque (Lb-Ft)
+20: Tire diameter (in)
+21: Final drive ratio
+22: Car region (1=NA, 2=EU, 3=JP)
 23: Grip force (The higher the number, the more frames of wheelspin)
 24: Car Weight (kg)
 25: Drivetrain type (1 = RWD, 2 = FWD, 3 = AWD/4WD)
