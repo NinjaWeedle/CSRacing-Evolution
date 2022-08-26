@@ -38,7 +38,7 @@ _________________________________________________________
 
 Send CSREVO.8xp to either RAM or Archive.
 
-NOTE: This game seems to have a myriad of issues occur when ASMHOOK is installed, so make sure to disable that before playing if you use it.
+Note to ASMHOOK users: Make sure you update to ASMHOOK V1.0.2 (or disable ASMHOOK) before playing, as it fixes a bug that this game causes.
 
 
 2. HOW TO PLAY:
@@ -157,6 +157,14 @@ You have several options to choose from:
 3: Focus RS (2009) - T2 - FWD
 4: Countach LP400 (1974) - T2 - RWD
 5: 911 GT3 RS (2016) - T3 - RWD
+6:
+7:
+8:
+9:
+10:
+11:
+12:
+13*:
 
 *Cars with "*" next to their number cannot be purchased at the Car Dealer.
 

@@ -23,11 +23,11 @@ List CSE: (Primary Save File)
 3: Current stage in Car Specific Races
 4: Number of Special Events completed
 5: 
-6: Honda CRX Si (1991) owned?(1 or above=owned, 0=not owned)
+6: CRX Si (1991) owned?(1 or above=owned, 0=not owned)
 7: 
-8: Ford Focus RS (2009) owned?
-9: Lamborghini Countach LP400 (1974) owned?
-10: Porsche 911 GT3 RS (2016) owned?
+8: Focus RS (2009) owned?
+9: Countach LP400 (1974) owned?
+10: 911 GT3 RS (2016) owned?
 11: 
 12: 
 13: 
@@ -133,11 +133,11 @@ Car Specific/ Custom Spec (Was restriction races): W=5
 Time Trials: W=2 
 
 CAR LIST (by car identifier number):
-1: Honda CRX Si (1991)
+1: CRX Si (1991)
 2:
-3: Ford Focus RS (2009)
-4: Lamborghini Countach LP400 (1974)
-5: Porsche 911 GT3 RS (2016)
+3: Focus RS (2009)
+4: Countach LP400 (1974)
+5: 911 GT3 RS (2016)
 6:
 7:
 8:

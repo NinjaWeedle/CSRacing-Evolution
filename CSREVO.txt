@@ -43,6 +43,7 @@ Circle(55,5,4,Ans
 Circle(15,5,4,Ans
 TextColor(Ans
 Text(~1,25,75,"EVOLUTION
+BackgroundOn 22
 BackgroundOn 20
 Text(140,200,"OXITI8
 Text(60,80,"PRESS ENTER
@@ -162,7 +163,7 @@ Then
 		Text(~1,30,95,"STREET
 		If U=2
 		Text(~1,30,100,"SPORT
-		If U=3
+		If U>=3
 		Text(~1,30,105,"RACE
 		"IMPROVES 
 		If F<=1
@@ -242,8 +243,8 @@ If C=2:Then
 		12->A
 		If C>=25 and A!=|LCAE(16
 		Then
-			A->|LCAE(15
-			.01A+int(|LCSE(5+|LCAE(1->|LCSE(5+|LCAE(1
+			A->|LCAE(16
+			sub(A)+int(|LCSE(5+|LCAE(1->|LCSE(5+|LCAE(1
 			TextColor(12
 			Text(20,50,Str0
 			C-25->|LCSE(1
@@ -263,22 +264,22 @@ If C=2:Then
 	Full
 End
 If C=4:Then
-	1->A
+	20->A
 	ClrDraw
 	Text(0,195,"RECORDS
 	Horizontal 3.2,12
-	Text(20,92,"TIME TRIALS
+	Text(A,92,"TIME TRIALS
 	Horizontal 2.3,12
 	Text(40,190,"LONG
 	Text(40,80,"SHORT
 	Text(60,0,"TIER 1
 	Text(80,0,"TIER 2
-	Text(100,0,"TIER 3
+	Text(A5,0,"TIER 3
 	For(F,1,3
-		Text(40+20F,85,|LTTR(F
+		Text(40+AF,85,|LTTR(F
 	End
 	For(F,1,3
-		Text(40+20F,195,|LTTR(3+F
+		Text(40+AF,195,|LTTR(3+F
 	End
 	Line(~4.4,2.2,~4.4,~1.8,12
 	TextColor(10
@@ -286,9 +287,9 @@ If C=4:Then
 	Text(135,105,|LCSE(2)-14
 	Text(135,125,"/30
 	TextColor(15
-	Text(120,145,iPart(|LCSE(3)-.9
-	Text(120,50,"CAR SPECIFIC:
-	Text(120,165,"/13
+	Text(6A,145,iPart(|LCSE(3)-.9
+	Text(6A,50,"CAR SPECIFIC:
+	Text(6A,165,"/13
 	TextColor(16
 	Text(150,50,"SPECIAL EVENTS:
 	Text(150,165,|LCSE(4
@@ -441,7 +442,7 @@ DelVar FIf C=5:Then
 					If C<=|LCSE(1
 					Then
 						|LCSE(1)-C->|LCSE(1
-						111->|LCSE(5+N
+						111+sub(B->|LCSE(5+N
 						TextColor(14
 						Text(~1,80,50,"CAR PURCHASED
 					Else
@@ -549,14 +550,8 @@ If C=3:Then
 		A+|LCAE(13->|LCAE(13
 		|LCAE(24)-500A->|LCAE(24
 		|LCAE(23)-2int(.01U->|LCAE(23
-		If not(fPart(U
-		Then
-			U+(sub(|LCAE(16->|LCSE(5+|LCAE(1
-			TextColor(|LCAE(16
-		Else
-			100fPart(U->|LCAE(16
-			TextColor(Ans
-		End
+		100fPart(U->|LCAE(16
+		TextColor(Ans
 	End
 	Text(75,65,Str9
 	Pause 
