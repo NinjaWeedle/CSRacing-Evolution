@@ -172,10 +172,10 @@ Then
 		Ans+"& TOP SPEED
 		If F=2
 		Ans+"GRIP
-		Text(120,0,Ans
+		Text(120,0,Ans+".
 		"INSTALL 
 		If U=1 and not(F
-		Ans+"HI-FLOW AIR FILTER & EXHAUST
+		Ans+"HI~FLOW AIR FILTER & EXHAUST
 		If U=1 and F=1
 		"REMOVE SPARE TIRE & REAR SEATS
 		If U=1 and F=2
@@ -187,7 +187,7 @@ Then
 		If U=2 and F=2
 		"SOFT COMPOUND SPORTS TIRES
 		If U>=3 and not(F
-		Ans+"HIGH-PERFORMANCE CAMS
+		Ans+"HIGH~PERFORMANCE CAMS
 		If U>=3 and F=1
 		"STRIP OUT INTERIOR TRIM
 		If U>=3 and F=2
@@ -196,9 +196,9 @@ Then
 		2500U|LCAE(17->C
 		Text(60,140,C
 		Text(60,95,"COST:
-		Text(150,5,"BACK
+		Text(150,15,"BACK
 		If U<=3
-		Text(150,90,"PURCHASE
+		Text(150,120,"PURCHASE
 		Repeat K>=11 and K<=15
 			getKey->K
 		End
@@ -207,7 +207,7 @@ Then
 			If U<=3 and U and C<=|LCSE(1
 			Then
 				|LCSE(1)-C->|LCSE(1
-				A+(10^(F->|LCSE(5+|LCAE(1
+				A+10^(F->|LCSE(5+|LCAE(1
 				TextColor(14
 				Text(~1,70,95,"OWNED
 				DelVar CText(90,20,"SWITCH CARS TO INSTALL URGRADES
@@ -336,7 +336,7 @@ DelVar FIf C=5:Then
 		Then
 			Text(20,80,"NORTH AMERICA
 			Text(45,80,"FOCUS RS '09
-			Text(70,80,"CAR*0
+			Text(70,80,"CAMARO SS '69
 			Text(95,80,"CAR=0
 			Text(120,80,"not(CAR
 		End
@@ -373,6 +373,14 @@ DelVar FIf C=5:Then
 						3->N
 						2->I
 						14->B
+					End
+					If D=1
+					Then
+						"CAMARO SS '69->Str3
+						4|E4->C
+						2->N
+						2->I
+						19->B
 					End
 				End
 				If F=1
@@ -478,7 +486,7 @@ If C=3:Then
 	If |LCSE(6
 	Text(25,20,"CRX Si
 	If |LCSE(7
-	Text(45,20,"1500 LARAMIE HEMI
+	Text(45,20,"CAMARO SS
 	If |LCSE(8
 	Text(65,20,"FOCUS RS
 	If |LCSE(9
@@ -516,12 +524,12 @@ If C=3:Then
 		If A=2 and |LCSE(8
 		Then
 			"FOCUS RS '09->Str9
-			{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,0,1.9,.25,.15,14,2,300,318,25.5,4.06,1,9,1741,2->CAE
+			{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,0,2,.25,.15,14,2,300,318,25.5,4.06,1,9,1741,2->CAE
 		End
 		If A=1 and |LCSE(7
 		Then
-			"LARAMIE->Str9
-			{2->CAE
+			"CAMARO SS '69->Str9
+			{2,6,5,138,4,2.52,1.88,1.46,1,0,0,2.59,1.4,.2,.15,19,1,299,380,25.3,3.73,1,11,1577,1->CAE
 		End
 		If |LCSE(6)not(A
 		Then
@@ -546,10 +554,10 @@ If C=3:Then
 		A10+|LCAE(18->|LCAE(18
 		A10+|LCAE(19->|LCAE(19
 		A+|LCAE(23->|LCAE(23
-		~.1+.1remainder(100,int(.1U->A
+		~.1+fPart(.1int(.1U->A
 		A+|LCAE(13->|LCAE(13
 		|LCAE(24)-500A->|LCAE(24
-		|LCAE(23)-2int(.01U->|LCAE(23
+		|LCAE(23)-2int(sub(U->|LCAE(23
 		100fPart(U->|LCAE(16
 		TextColor(Ans
 	End
@@ -574,12 +582,12 @@ Lbl E
 4->W
 BackgroundOn 22
 Horizontal 3.2,16
-For(X,0,5
+For(X,0,|LCSE(4
 	TextColor(12
 	If |LCSE(21+X
 	TextColor(20
 	If not(X
-	Text(25,17,"small1. FF CHALLENGE
+	Text(25,17,"small1. CLASSIC CAR CUP
 	If X=1
 	Text(45,17,"small2. TIER 1 CHAMPIONSHIP
 	If X=2
@@ -593,32 +601,41 @@ For(X,0,5
 End
 TextColor(20
 Text(0,145,"SPECIAL EVENTS
-Text(145,17,"BACK
+Text(25+20X,17,"BACK
 Repeat B
 	If K
 	Text(~1,20C+23,4," 
 	C-(C and K=25->C
-	C+(K=34 and C<6->C
+	C+(K=34 and C<=|LCSE(4->C
 	Text(20C+25,4,"[|>]
 	getKey->K
 	K=21 or K=105->B
 End
 |LCAE(22->B
 |LCAE(17->A
+If C>|LCSE(4
+Goto 2
+If not(C
+Then
+	.1->J
+	1->D
+End
 If C=2
 Then
 	If B=3 and A=2
 	Then
-		
+		"MAYEO->Str2
+		.2->D
+		2->J
 	Else
-		6->C
+		Pause "TIER 2 JP CARS ONLY
+		9->C
 	End
 End
+If C=9
+Goto 2
+0->|LCSE(21+C
 .1(C+1->theta
-1->D
-.1->J
-If C=6
-Goto 0
 Goto 1
 Lbl D
 5->W
@@ -626,7 +643,7 @@ Lbl D
 TextColor(15
 Horizontal 3
 Text(0,75,"CAR SPECIFIC
-If A>=31
+If A>=14
 Then
 	TextColor(12
 	Text(~1,80,60,"CUSTOM SPEC
@@ -654,6 +671,7 @@ If not(W
 Goto 2
 Goto 1
 Lbl C
+TextColor(12
 2->W
 Text(0,170,"TIME TRIALS
 Horizontal 3.2,11
@@ -740,9 +758,12 @@ Text(0,99,Str2
 If W>=4
 20
 TextColor(Ans
-Text(~1,51,0,Str0
-Text(~1,65,0,Str0
-Text(~1,80,0,Str0
+For(Y,0,250,250
+	Text(~1,51,Y,Str0
+	Text(~1,65,Y,Str0
+	Text(~1,80,Y,Str0
+	TextColor(11
+End
 Line(0,.3,250,.3,Ans
 Line(0,.5,250,.5,Ans
 12
@@ -762,7 +783,7 @@ Pt-On(1,.95,Ans
 Pt-On(8,.95,Ans
 If W=3
 |LCSE(2->rand
-If W!=2
+If W!=2 and W!=4
 randInt(10,24->Q
 TextColor(Q
 Text(80,0,"#
@@ -919,6 +940,8 @@ Then
 	Text(60,30,Str3
 	If W=2 and 11<=|LCSE(2
 	|LCSE(2)-1->|LCSE(2
+	If W=4
+	0->|LCSE(21+10theta
 Else
 	TextColor(14
 	Text(~1,53,80,"YOU WIN
@@ -945,6 +968,8 @@ TextColor(12
 Text(150,80,"PRESS ENTER            
 Text(0,0,"CR:
 Text(0,20,|LCSE(1:Pause 
+ClrDraw
+ClrHome
 If theta
 Then
 	If not(fPart(theta
@@ -958,6 +983,69 @@ Then
 		End
 		DelVar thetaDisp "TIME:
 		Pause Z
+	Else
+		10theta->A
+		1+|LCSE(20+A->|LCSE(20+A
+		Ans->B
+		If fPart(A/2
+		Then
+			If A>|LCSE(4
+			A->|LCSE(4
+			Disp "EVENT
+			DelVar thetaOutput(1,7,A
+			Output(1,9,"COMPLETE
+		Else
+			If 3<=B
+			Then
+				If A>|LCSE(4
+				A->|LCSE(4
+				Disp "EVENT
+				DelVar thetaOutput(1,7,A
+				Output(1,9,"COMPLETE
+			Else
+				Output(5,1,"RACE"
+				Output(5,6,B+1
+				If B=1
+				Then
+					If A=2
+					Then
+						
+						"MILLER->Str2
+					End
+					If A=4
+					Then
+						
+						"ROCKY->Str2
+					End
+					If A=6
+					Then
+						
+					End
+				Else
+					If A=2
+					Then
+						
+						
+						"WINNACE->Str2
+					End
+					If A=4
+					Then
+						.3->D
+						2.2->J
+						"KENIDO->Str2
+					End
+					If A=6
+					Then
+						
+						
+						
+					End
+				End
+				Output(8,1,"VS.
+				Output(8,5,Str2
+			End
+		End
+		Pause 
 	End
 End
 If theta

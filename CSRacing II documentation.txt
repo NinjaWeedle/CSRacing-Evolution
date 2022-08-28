@@ -24,11 +24,11 @@ List CSE: (Primary Save File)
 4: Number of Special Events completed
 5: 
 6: CRX Si (1991) owned?(1 or above=owned, 0=not owned)
-7: 
+7: Camaro SS (1969)
 8: Focus RS (2009) owned?
 9: Countach LP400 (1974) owned?
 10: 911 GT3 RS (2016) owned?
-11: 
+11: Corvette C8 (2020) owned?
 12: 
 13: 
 14: 
@@ -131,15 +131,34 @@ Ladder races: W=3
 Special Events: W=4
 Car Specific/ Custom Spec (Was restriction races): W=5
 Time Trials: W=2 
+Machine Test: W=0
+
+SPECIAL EVENT INFO:
+
+Event 1: Classic Car Cup - Allows cars over 30 years old
+Event 2: Tier 1 Championship - Allows all Tier 1 cars
+Event 3: JP Tuner Trials - Allows only JP cars
+
+Variables when in menu:
+C = Event Selected
+B = Car Tier
+A = Car region
+
+If C is 9, current car does not meet regulations for event selected
+
+.1+(C/10)-> Theta
+
+
+
 
 CAR LIST (by car identifier number):
 1: CRX Si (1991)
-2:
+2: Camaro SS (1969)
 3: Focus RS (2009)
 4: Countach LP400 (1974)
 5: 911 GT3 RS (2016)
-6:
-7:
+6: Corvette (2020)
+7: 
 8:
 9:
 10:

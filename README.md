@@ -1,4 +1,4 @@
-CALCULATOR STREET RACING II: EVOLUTION - The Fake Driving Simulator
+CALCULATOR STREET RACING II: EVOLUTION
 
 A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
 
@@ -99,12 +99,12 @@ Each mode has its own rules:
 - Time Trials: Race to beat you and your friend's best times! There are six different race categories: The Short (1x length) & Long (2x length) races for each of the three tiers.
   -- Feel free to post your best times on the Cemetech forum topic for CSRacing II.
 
-- Car Specific: Race in unique races specific to each car in the game. Each one will test your mastery of a specific car. The difficulty is high, but so is the prize money!
+- Car Specific: Race in unique races specific to each car in the game. Each one will test your mastery of a specific car. However, there's a catch: you can't use any upgrades. The difficulty is high, but so is the prize money!
 
 - *Custom Spec: This one does not appear on the event list. To access it, you must beat all 13 of the Car Specific races. Once you've beaten them all, selecting "Car Specifc" mode on the event list will bring you to Custom Spec mode.
   -- Custom Spec allows you to mess with the race settings to your heart's content, even if it might cause an error. You can set the racetrack length as high or low as you want, mess with the more advanced opponent AI type (including making them go backwards if you really want although this will cause an error), and earn big prize money.
 
-- Special Events: Race in 6 unique events with various restrictions and differences depending on the event.
+- Special Events: Race in 6 unique events with various restrictions and differences depending on the event. Beat each event in order to unlock the next one.
 
 - Machine Test: Test out your car's top speed here. There's no CR. prize here.
 
@@ -153,7 +153,7 @@ You have several options to choose from:
 6. CAR LIST (by car identifier number):
 
 1: CRX Si (1991) - T1 - FWD
-2:
+2: Camaro SS (1969) - T1 - RWD
 3: Focus RS (2009) - T2 - FWD
 4: Countach LP400 (1974) - T2 - RWD
 5: 911 GT3 RS (2016) - T3 - RWD
