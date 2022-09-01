@@ -1,3 +1,4 @@
+
 Calculator Street Racing II: Evolution DEVELOPER'S DOCUMENTATION
 
 STRINGS USED:
@@ -29,7 +30,7 @@ List CSE: (Primary Save File)
 9: Countach LP400 (1974) owned?
 10: 911 GT3 RS (2016) owned?
 11: Corvette C8 (2020) owned?
-12: 
+12: DMC-12 (1982) owned?
 13: 
 14: 
 15: 
@@ -158,7 +159,7 @@ CAR LIST (by car identifier number):
 4: Countach LP400 (1974)
 5: 911 GT3 RS (2016)
 6: Corvette (2020)
-7: 
+7: DMC-12 (1982)
 8:
 9:
 10:

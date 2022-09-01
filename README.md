@@ -1,16 +1,16 @@
-CALCULATOR STREET RACING II: EVOLUTION
+CALCULATOR STREET RACING II: EVOLUTION -  Race your way.
 
 A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
 
 WARNING: This game is still being worked on. A save file created mid-development may not work properly in the final release of the game.
 
-The ultimate drag racing game just got more intense. Powered by the most advanced racing engine ever seen in a TI-BASIC game on the 84+CE, CSRacing II allows you buy, upgrade, paint, tune, and race 13 different cars
-on 2 different tracks in 7 different event types. Compete against you and your friend's best times in Time Trials, Conquer the 6 different championships of Special Events, or just test your car's
-top speed in Machine Test. You can also race in returning events like Regulation, Ladder, Custom Spec and Car Specific races.
+The ultimate drag racing game just got more intense. Powered by the most advanced racing engine ever seen in a TI-BASIC game, CSRacing II allows you buy, upgrade, paint, tune, and race 13 different cars
+on 2 different tracks in 7 different event types. Race for the best time in Time Trials, Conquer the 6 different championships of Special Events, or just test your car's
+top speed in Machine Test. You can also race in returning events like Regulation, Ladder, Custom Spec and the challenging Car Specific races.
 
 NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run slowly on older models without use of a program like FASTER. It will still run on the 84+ CSE.
 Github: https://github.com/NinjaWeedle/CSRacing-Evolution - If there's a new version of CSRacing II Evolution, you'll find it here first.
-Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing II!
+Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing II! You can also post your time trials records here.
 _________________________________________________________
 Table of contents:
 
@@ -87,7 +87,7 @@ Once the race begins, your car will begin accelerating automatically. Press the 
 
 3. GAME MODES
 
-Upon selecting the "RACE" option in the main menu, you will be presented the event list that shows the different kinds of races you can enter.
+Upon selecting the "GO RACE" option in the main menu, you will be presented the event list that shows the different kinds of races you can enter.
 Each mode has its own rules:
  
 - Regulation: Any car with any upgrades can enter. After selecting this option, you'll be asked to enter a difficulty level, and after that, the track length.
@@ -104,7 +104,7 @@ Each mode has its own rules:
 - *Custom Spec: This one does not appear on the event list. To access it, you must beat all 13 of the Car Specific races. Once you've beaten them all, selecting "Car Specifc" mode on the event list will bring you to Custom Spec mode.
   -- Custom Spec allows you to mess with the race settings to your heart's content, even if it might cause an error. You can set the racetrack length as high or low as you want, mess with the more advanced opponent AI type (including making them go backwards if you really want although this will cause an error), and earn big prize money.
 
-- Special Events: Race in 6 unique events with various restrictions and differences depending on the event. Beat each event in order to unlock the next one.
+- Special Events: Race in 6 unique events with various restrictions and differences depending on the event. Beat each event in order to unlock the next one. Every even Special Event is a championship, meaning it consists of three back to back races.
 
 - Machine Test: Test out your car's top speed here. There's no CR. prize here.
 
@@ -157,8 +157,8 @@ You have several options to choose from:
 3: Focus RS (2009) - T2 - FWD
 4: Countach LP400 (1974) - T2 - RWD
 5: 911 GT3 RS (2016) - T3 - RWD
-6:
-7:
+6: Corvette (2020) - T3 - RWD
+7: DMC-12 (1982) - T1 - RWD
 8:
 9:
 10:
@@ -171,11 +171,11 @@ You have several options to choose from:
 
 7. TRACK LIST
 
-There are two tracks in the game: The Street and the Drag Strip.
+There are two tracks in the game: The Street and the Team Oxiti Drag Strip.
 
-For Regulation, Ladder, and Time Trials races, you'll be racing on the streets, indicated by the double yellow line.
+For Regulation, Ladder, and Time Trials races, you'll be racing on the streets, indicated by the double yellow line. 
 
-For Car Specific races and Special Events, you'll be on the Drag Strip. The Drag Strip has a christmas tree in the center of the track that counts down to the start of races and a different color palette than the streets.
+For Car Specific races and Special Events, you'll be on the Team Oxiti Drag Strip. The Drag Strip has a christmas tree in the center of the track that counts down to the start of races and a different color palette than the streets.
 
 
 

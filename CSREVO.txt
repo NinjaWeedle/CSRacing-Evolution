@@ -97,7 +97,14 @@ Text(110,165,|LCAE(19
 Text(130,100,"WT(KG):
 Text(130,165,|LCAE(24
 Text(150,100,"REGION:
-Text(150,165,|LCAE(22
+|LCAE(22->X
+If X=1
+"USA
+If X=2
+"EUR
+If X=3
+"JPN
+Text(150,165,Ans
 DelVar CText(0,0,"CR:
 Text(0,20,|LCSE(1
 17
@@ -335,21 +342,26 @@ DelVar FIf C=5:Then
 		If not(F
 		Then
 			Text(20,80,"NORTH AMERICA
-			Text(45,80,"FOCUS RS '09
-			Text(70,80,"CAMARO SS '69
-			Text(95,80,"CAR=0
-			Text(120,80,"not(CAR
+			Text(45,80,"CAMARO SS '69
+			Text(70,80,"DMC-12 '82
+			Text(95,80,"FOCUS RS '09
+			Text(120,80,"CORVETTE '20
 		End
 		If F=1
 		Then
 			Text(20,90,"EUROPE
 			Text(45,80,"COUNTACH LP400 '74
 			Text(70,80,"911 GT3 RS '16
+			Text(95,80,"NONE
+			Text(120,80,"NONE
 		End
 		If F=2
 		Then
 			Text(20,110,"ASIA
 			Text(45,80,"CRX SI '91
+			Text(70,80,"NONE
+			Text(95,80,"NONE
+			Text(120,80,"NONE
 		End
 		If F!=3
 		Then
@@ -368,19 +380,35 @@ DelVar FIf C=5:Then
 				Then
 					If not(D
 					Then
+						"CAMARO SS '69->Str3
+						4|E4->C
+						2->N
+						2->I
+						19->B
+					End
+					If D=1
+					Then
+						"DMC-12 '82->Str3
+						2|E4->C
+						7->N
+						1->I
+						22->B
+					End
+					If D=2
+					Then
 						"FOCUS RS '09->Str3
 						35|E3->C
 						3->N
 						2->I
 						14->B
 					End
-					If D=1
+					If D=3
 					Then
-						"CAMARO SS '69->Str3
-						4|E4->C
-						2->N
-						2->I
-						19->B
+						"CORVETTE '20->Str3
+						9|E4->C
+						6->N
+						3->I
+						18->B
 					End
 				End
 				If F=1
@@ -494,7 +522,9 @@ If C=3:Then
 	If |LCSE(10
 	Text(105,20,"911 GT3 RS
 	If |LCSE(11
-	Text(125,20,"CAR 6
+	Text(125,20,"CORVETTE
+	If |LCSE(12
+	Text(25,150,"DMC-12
 	DelVar FText(145,20,"BACK
 	Repeat B
 		If K
@@ -509,8 +539,17 @@ If C=3:Then
 	End
 	If F
 	Then
-		
+		If not(A)|LCSE(12
+		Then
+			"DMC-12 '82->Str9
+			{7,7.5,7,130,5,3.36,2.06,1.38,1.06,.82,0,0,1,.1,.2,21,1,130,152,26.1,1,8,1233,1->CAE
+		End
 	Else
+		If A=5 and |LCSE(11
+		Then
+			"CORVETTE '20->Str9
+			{6->CAE
+		End
 		If A=4 and |LCSE(10
 		Then
 			"911 GT3 RS '16->Str9
@@ -534,7 +573,7 @@ If C=3:Then
 		If |LCSE(6)not(A
 		Then
 			"CRX SI '91->Str9
-			{1,8.2,6,153,5,3.166,2.052,1.416,1.103,.87,0,0,1.4,.1,.15,11,1,108,100,22.5,4.266,3,8,954,2->CAE
+			{1,8.2,6,153,5,3.166,2.052,1.416,1.103,.87,0,0,1.2,.1,.15,11,1,108,100,22.5,4.266,3,8,954,2->CAE
 		End
 	End
 	ClrDraw
@@ -755,7 +794,7 @@ ZDecimal
 Text(0,75,"VS.
 Text(0,99,Str2
 19
-If W>=4
+If W>=4 or W=2
 20
 TextColor(Ans
 For(Y,0,250,250
@@ -766,9 +805,10 @@ For(Y,0,250,250
 End
 Line(0,.3,250,.3,Ans
 Line(0,.5,250,.5,Ans
+Line(262,~.8,262,1.6,20
 12
 Shade(~.8,1.6,250,264,4,2,Ans
-If W>=4
+If W>=4 or W=2
 Then
 	Line(15,.4,35,.4,Ans
 	23
@@ -815,7 +855,7 @@ For(Z,3,0,~.05
 	If R=round(R,0
 	Text(~1,130,37,".0
 	Text(~1,20,90,Z
-	If W>=4 and not(fPart(Z
+	If (W>=4 or W=2) and not(fPart(Z
 	Pt-On(18+4Z,.4,19
 	getKey->K
 	If R<B
@@ -843,7 +883,7 @@ For(Z,3,0,~.05
 	End
 	TextColor(12
 End
-If W>=4
+If W>=4 or W=2
 Pt-On(18,.4,14
 Text(~1,20,90,Str0
 DelVar ZText(~1,130,25,R
@@ -894,14 +934,14 @@ Repeat P>=240L
 		Text(~1,130,170,G
 	End
 	Text(~1,130,115,round(10S,0
-	round(10S336FM/|LCAE(20),0)/1|E3->R
+	round(SFM3360/|LCAE(20),0)/1|E3->R
 	Text(~1,130,25,R
 	If S10>|LCAE(4
 	.1|LCAE(4->S
 	If R>|LCAE(2
 	S-(.15A(1.1-GH->S
 	TextColor(19
-	S+(1.1-GH)(.1(A(1+(V>0).3->S
+	S+(1.1-GH)(.1(A(1-.5(V>0->S
 	If W>3
 	D+.1J->D
 	Text(~1,78,round(O/L,0)," 
@@ -1003,8 +1043,8 @@ Then
 				DelVar thetaOutput(1,7,A
 				Output(1,9,"COMPLETE
 			Else
-				Output(5,1,"RACE"
-				Output(5,6,B+1
+				Output(4,11,"RACE"
+				Output(4,16,B+1
 				If B=1
 				Then
 					If A=2
@@ -1041,8 +1081,8 @@ Then
 						
 					End
 				End
-				Output(8,1,"VS.
-				Output(8,5,Str2
+				Output(7,8,"VS.
+				Output(7,12,Str2
 			End
 		End
 		Pause 
