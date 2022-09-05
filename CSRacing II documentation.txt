@@ -1,4 +1,3 @@
-
 Calculator Street Racing II: Evolution DEVELOPER'S DOCUMENTATION
 
 STRINGS USED:
@@ -74,6 +73,9 @@ List CAE: (Car Data)
 23: Grip force (The higher the number, the more frames of wheelspin)
 24: Car Weight (kg)
 25: Drivetrain type (1 = RWD, 2 = FWD, 3 = AWD/4WD)
+26: Custom car body type
+
++ Idea 
 
 
 List L1:

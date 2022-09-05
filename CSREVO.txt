@@ -57,7 +57,7 @@ Then
 	2|E4->|LCSE(1
 	15->|LCSE(2
 End
-25->dim(|LCAE
+26->dim(|LCAE
 6->dim(|LTTR
 If not(|LTTR(1
 Fill(255,|LTTR
@@ -138,26 +138,27 @@ Then
 	10fPart(.1int(.1A->M
 	int(.01A->N
 	18
-	Text(35,Ans,"ENGINE
-	Text(65,Ans,"WEIGHT
-	Text(95,Ans,"TIRES
-	Text(125,Ans,"BACK
-	Text(35,5Ans,L
-	Text(65,5Ans,M
-	Text(95,5Ans,N
+	Text(30,Ans,"ENGINE
+	Text(60,Ans,"WEIGHT
+	Text(90,Ans,"TIRES
+	Text(120,Ans,"RESET
+	Text(150,Ans,"BACK
+	Text(30,5Ans,L
+	Text(60,5Ans,M
+	Text(90,5Ans,N
 	Repeat B
 		If K
-		Text(~1,30F+33,1," 
+		Text(~1,30F+28,1," 
 		F-(F and K=25->F
-		F+(K=34 and F<3->F
-		Text(30F+35,2,"[|>]
+		F+(K=34 and F<4->F
+		Text(30F+30,2,"[|>]
 		getKey->K
 		K=21 or K=105->B
 	End
-	For(X,20,130,10
+	For(X,20,130,11
 		Text(~1,X,0,Str0
 	End
-	If F!=3
+	If F<3
 	Then
 		If not(F
 		L->U
@@ -203,9 +204,12 @@ Then
 		2500U|LCAE(17->C
 		Text(60,140,C
 		Text(60,95,"COST:
-		Text(150,15,"BACK
 		If U<=3
-		Text(150,120,"PURCHASE
+		Then
+			Text(150,120,"PURCHASE
+		Else
+			Text(150,125,"OWNED
+		End
 		Repeat K>=11 and K<=15
 			getKey->K
 		End
@@ -215,14 +219,52 @@ Then
 			Then
 				|LCSE(1)-C->|LCSE(1
 				A+10^(F->|LCSE(5+|LCAE(1
+				If F=1
+				Then
+					.1+|LCAE(13->|LCAE(13
+					10+|LCAE(18->|LCAE(18
+					10+|LCAE(19->|LCAE(19
+					1+|LCAE(4->|LCAE(4
+				End
+				If F=2
+				Then
+					.1+|LCAE(13->|LCAE(13
+					|LCAE(24)-500->|LCAE(24
+				End
+				If F=3
+				|LCAE(23)-2->|LCAE(23
 				TextColor(14
-				Text(~1,70,95,"OWNED
-				DelVar CText(90,20,"SWITCH CARS TO INSTALL URGRADES
+				DelVar CText(~1,70,95,"OWNED
+				Pause 
 			End
-			If C
-			Text(~1,80,20,"INSUFFICIENT FUNDS
-			Pause 
+			If C and U<=3
+			Then
+				Text(~1,80,20,"INSUFFICIENT FUNDS
+				Pause 
+			End
 		End
+	End
+	If F=3
+	Then
+		Text(~1,146,0,Str0
+		DelVar HText(40,70,"SELL ALL UPGRADES?
+		Text(70,105,"NO
+		Text(95,105,"YES
+		Repeat B
+			If K
+			Text(~1,25H+68,89," 
+			H-(H and K=25->H
+			H+(K=34 and not(H->H
+			Text(25H+70,90,"[|>]
+			getKey->K
+			K=21 or K=105->B
+		End
+		If H
+		Then
+			DelVar C|LCSE(1)+int(~111+|LCSE(5+|LCAE(1->|LCSE(1
+			
+		End
+		
 	End
 End
 If C=2:Then
@@ -254,7 +296,14 @@ If C=2:Then
 			sub(A)+int(|LCSE(5+|LCAE(1->|LCSE(5+|LCAE(1
 			TextColor(12
 			Text(20,50,Str0
+			Text(20,90,"REPAINTING...
 			C-25->|LCSE(1
+			For(Y,43,53
+				For(X,128,138)
+					If 2fPart(.5(X+Y
+					Pxl-On(Y,X,A
+				End
+			End
 			TextColor(A
 			Text(20,85,"COLOR CHANGED
 		End
@@ -542,38 +591,38 @@ If C=3:Then
 		If not(A)|LCSE(12
 		Then
 			"DMC-12 '82->Str9
-			{7,7.5,7,130,5,3.36,2.06,1.38,1.06,.82,0,0,1,.1,.2,21,1,130,152,26.1,1,8,1233,1->CAE
+			{7,7.5,7,130,5,3.36,2.06,1.38,1.06,.82,0,0,1,.1,.2,21,1,130,152,26.1,3.44,1,8,1233,1,0->CAE
 		End
 	Else
 		If A=5 and |LCSE(11
 		Then
 			"CORVETTE '20->Str9
-			{6->CAE
+			{6,6.6,3.5,194,7,2.91,1.76,1.22,.88,.65,.51,.4,3.1,.25,.1,18,3,490,465,27.2,4.9,1,10,1654,1,0->CAE
 		End
 		If A=4 and |LCSE(10
 		Then
 			"911 GT3 RS '16->Str9
-			{5,8.8,6,193,7,3.75,2.38,1.72,1.34,1.11,.96,.84,3.2,.25,.1,15,3,500,339,28.7,4.19,2,10,1420,1->CAE
+			{5,8.8,6,193,7,3.75,2.38,1.72,1.34,1.11,.96,.84,3.2,.25,.1,15,3,500,339,28.7,4.19,2,10,1420,1,0->CAE
 		End
 		If A=3 and |LCSE(9
 		Then
 			"COUNTACH LP400 '74->Str9
-			{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,0,2.2,.2,.13,15,2,375,365,25.3,4.091,2,12,1300,1->CAE
+			{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,0,2.2,.2,.13,15,2,375,365,25.3,4.091,2,12,1300,1,0->CAE
 		End
 		If A=2 and |LCSE(8
 		Then
 			"FOCUS RS '09->Str9
-			{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,0,2,.25,.15,14,2,300,318,25.5,4.06,1,9,1741,2->CAE
+			{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,0,2,.25,.15,14,2,300,318,25.5,4.06,1,9,1741,2,0->CAE
 		End
 		If A=1 and |LCSE(7
 		Then
 			"CAMARO SS '69->Str9
-			{2,6,5,138,4,2.52,1.88,1.46,1,0,0,2.59,1.4,.2,.15,19,1,299,380,25.3,3.73,1,11,1577,1->CAE
+			{2,6,5,138,4,2.52,1.88,1.46,1,0,0,2.59,1.4,.2,.15,19,1,299,380,25.3,3.73,1,11,1577,1,0->CAE
 		End
 		If |LCSE(6)not(A
 		Then
 			"CRX SI '91->Str9
-			{1,8.2,6,153,5,3.166,2.052,1.416,1.103,.87,0,0,1.2,.1,.15,11,1,108,100,22.5,4.266,3,8,954,2->CAE
+			{1,8.2,6,153,5,3.166,2.052,1.416,1.103,.87,0,0,1.2,.1,.15,11,1,108,100,22.5,4.266,3,8,954,2,0->CAE
 		End
 	End
 	ClrDraw
@@ -605,11 +654,11 @@ If C=3:Then
 	Goto 0
 End
 Lbl 2
-15=|LCAE(1
-If Ans
+If 15=|LCAE(1
 Pause "YOU NEED A CAR TO RACE.
-If Ans
+If 15=|LCAE(1
 Goto 0
+BackgroundOff
 "CPU->Str2
 1->L
 DelVar BDelVar DDelVar JDelVar WDelVar thetaClrDraw
@@ -626,7 +675,7 @@ For(X,0,|LCSE(4
 	If |LCSE(21+X
 	TextColor(20
 	If not(X
-	Text(25,17,"small1. CLASSIC CAR CUP
+	Text(25,17,"small1. [CLASSIC] CAR CUP
 	If X=1
 	Text(45,17,"small2. TIER 1 CHAMPIONSHIP
 	If X=2
@@ -786,13 +835,12 @@ Lbl 1
 Full
 BackgroundOff
 BorderColor 1
-DelVar SDelVar RDelVar PDelVar OClrDraw
-ZDecimal
+DelVar SDelVar RDelVar PDelVar OZDecimal
 0->Xmin
 264->Xmax
-1->G
 Text(0,75,"VS.
 Text(0,99,Str2
+1->G
 19
 If W>=4 or W=2
 20
@@ -807,7 +855,12 @@ Line(0,.3,250,.3,Ans
 Line(0,.5,250,.5,Ans
 Line(262,~.8,262,1.6,20
 12
-Shade(~.8,1.6,250,264,4,2,Ans
+For(Y,14,~8,~1.5
+	For(X,251,263,3)
+		If 2fPart(.5(X+2fPart(Y
+		Pt-On(X,.1Y+.05,Ans
+	End
+End
 If W>=4 or W=2
 Then
 	Line(15,.4,35,.4,Ans
@@ -1041,9 +1094,9 @@ Then
 				A->|LCSE(4
 				Disp "EVENT
 				DelVar thetaOutput(1,7,A
-				Output(1,9,"COMPLETE
+				Output(1,9,"COMPLETE!
 			Else
-				Output(4,11,"RACE"
+				Output(4,11,"RACE
 				Output(4,16,B+1
 				If B=1
 				Then
