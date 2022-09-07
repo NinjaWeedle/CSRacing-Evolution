@@ -57,26 +57,24 @@ Then
 	2|E4->|LCSE(1
 	15->|LCSE(2
 End
-26->dim(|LCAE
 6->dim(|LTTR
 If not(|LTTR(1
 Fill(255,|LTTR
-|LCAE(1->A
-If not(A
+If not(|LCSE(3
+1->|LCSE(3
+Lbl 0
+26->dim(|LCAE
+If not(|LCAE(1
 Then
 	12->|LCAE(16
 	15->|LCAE(1
 	"NONE->Str9
 End
-If not(|LCSE(3
-1->|LCSE(3
-Lbl 0
 BackgroundOff
 Full
 TextColor(19
 BorderColor 1
 ClrHome
-ClrDraw
 DelVar KZDecimal
 Text(~1,44,96,Str0
 TextColor(12
@@ -115,15 +113,13 @@ Text(45,Ans,"TUNING
 Text(65,Ans,"PAINTSHOP
 Text(85,Ans,"CHANGE CAR
 Text(105,Ans,"RECORDS
-DelVar BText(145,Ans,"QUIT
-Repeat B
+Text(145,Ans,"QUIT
+Repeat K=21 or K=105
 	If K
 	Text(~1,20C+23,4," 
-	C-(C and K=25->C
-	C+(K=34 and C<6->C
+	C-(C and K=25)+(K=34 and C<6->C
 	Text(20C+25,4,"[|>]
 	getKey->K
-	K=21 or K=105->B
 End
 DelVar ADelVar FIf C=1 and 15!=|LCAE(1
 Then
@@ -146,14 +142,12 @@ Then
 	Text(30,5Ans,L
 	Text(60,5Ans,M
 	Text(90,5Ans,N
-	Repeat B
+	Repeat K=21 or K=105
 		If K
 		Text(~1,30F+28,1," 
-		F-(F and K=25->F
-		F+(K=34 and F<4->F
+		F-(F and K=25)+(K=34 and F<4->F
 		Text(30F+30,2,"[|>]
 		getKey->K
-		K=21 or K=105->B
 	End
 	For(X,20,130,11
 		Text(~1,X,0,Str0
@@ -224,7 +218,7 @@ Then
 					.1+|LCAE(13->|LCAE(13
 					10+|LCAE(18->|LCAE(18
 					10+|LCAE(19->|LCAE(19
-					1+|LCAE(4->|LCAE(4
+					2+|LCAE(4->|LCAE(4
 				End
 				If F=2
 				Then
@@ -250,21 +244,21 @@ Then
 		DelVar HText(40,70,"SELL ALL UPGRADES?
 		Text(70,105,"NO
 		Text(95,105,"YES
-		Repeat B
+		Repeat K=21 or K=105
 			If K
 			Text(~1,25H+68,89," 
-			H-(H and K=25->H
-			H+(K=34 and not(H->H
+			H-(H and K=25)+(K=34 and not(H->H
 			Text(25H+70,90,"[|>]
 			getKey->K
-			K=21 or K=105->B
 		End
 		If H
 		Then
 			DelVar C|LCSE(1)+int(~111+|LCSE(5+|LCAE(1->|LCSE(1
 			
+			
+			
+			Pause 
 		End
-		
 	End
 End
 If C=2:Then
@@ -328,9 +322,9 @@ If C=4:Then
 	Horizontal 2.3,12
 	Text(40,190,"LONG
 	Text(40,80,"SHORT
-	Text(60,0,"TIER 1
-	Text(80,0,"TIER 2
-	Text(A5,0,"TIER 3
+	Text(60,2,"TIER 1
+	Text(80,2,"TIER 2
+	Text(A5,2,"TIER 3
 	For(F,1,3
 		Text(40+AF,85,|LTTR(F
 	End
@@ -338,27 +332,29 @@ If C=4:Then
 		Text(40+AF,195,|LTTR(3+F
 	End
 	Line(~4.4,2.2,~4.4,~1.8,12
+	Text(6A,8A,"RECORD MPH:
+	Text(7A,8A,|LCSE(5
 	TextColor(10
-	Text(135,50,"LADDER:
-	Text(135,105,|LCSE(2)-14
-	Text(135,125,"/30
+	Text(135,0,"LADDER:
+	Text(135,55,|LCSE(2)-14
+	Text(135,75,"/30
 	TextColor(15
-	Text(6A,145,iPart(|LCSE(3)-.9
-	Text(6A,50,"CAR SPECIFIC:
-	Text(6A,165,"/13
+	Text(6A,95,iPart(|LCSE(3)-.9
+	Text(6A,0,"CAR SPECIFIC:
+	Text(6A,115,"/13
 	TextColor(16
-	Text(150,50,"SPECIAL EVENTS:
-	Text(150,165,|LCSE(4
-	Text(150,185,"/6
+	Text(150,0,"SPECIAL EVENTS:
+	Text(150,115,|LCSE(4
+	Text(150,130,"/6
 	Horizontal 1.2,11
 	Horizontal .2,14
 	Horizontal ~.8,18
 	Horizontal ~1.8,12
-	Line(1,2.2,1,~1.8,12
+	Line(1,2.2,1,~7,12
 	Pause 
 End
 DelVar FIf C=5:Then
-	DelVar EDelVar DDelVar BBorderColor 3
+	DelVar DBorderColor 3
 	1->A
 	Repeat F=3 or D=3
 		ClrDraw
@@ -373,14 +369,12 @@ DelVar FIf C=5:Then
 		Text(80,70,"EUROPE
 		Text(105,70,"ASIA
 		Text(130,70,"BACK
-		Repeat B
+		Repeat K=21 or K=105
 			If K
 			Text(~1,25F+53,50," 
-			F-(F and K=25->F
-			F+(K=34 and F<3->F
+			F-(F and K=25)+(K=34 and F<3->F
 			Text(25F+55,50,"[|>]
 			getKey->K
-			K=21 or K=105->B
 		End
 		For(X,20,140,15
 			Text(~1,X,0,Str0
@@ -391,37 +385,35 @@ DelVar FIf C=5:Then
 		If not(F
 		Then
 			Text(20,80,"NORTH AMERICA
-			Text(45,80,"CAMARO SS '69
-			Text(70,80,"DMC-12 '82
-			Text(95,80,"FOCUS RS '09
-			Text(120,80,"CORVETTE '20
+			Text(45,80,"CAMACO SS '69
+			Text(70,80,"DMCA-12 '82
+			Text(95,80,"FORKUS RS '09
+			Text(120,80,"'VETTE '20
 		End
 		If F=1
 		Then
 			Text(20,90,"EUROPE
-			Text(45,80,"COUNTACH LP400 '74
-			Text(70,80,"911 GT3 RS '16
+			Text(45,80,"CONTACT LP400 '74
+			Text(70,80,"7-11 GT3 RS '16
 			Text(95,80,"NONE
 			Text(120,80,"NONE
 		End
 		If F=2
 		Then
 			Text(20,110,"ASIA
-			Text(45,80,"CRX SI '91
-			Text(70,80,"NONE
-			Text(95,80,"NONE
+			Text(45,80,"CRUX SI '91
+			Text(70,80,"SUPER-A '98
+			Text(95,80,"GTR R33 '97
 			Text(120,80,"NONE
 		End
 		If F!=3
 		Then
-			Repeat E
+			Repeat K=21 or K=105
 				If K
 				Text(~1,25D+43,60," 
-				D-(D and K=25->D
-				D+(D<4 and K=34->D
+				D-(D and K=25)+(D<4 and K=34->D
 				Text(25D+45,60,"[|>]
 				getKey->K
-				K=21 or K=105->E
 			End
 			If D!=4
 			Then
@@ -429,7 +421,7 @@ DelVar FIf C=5:Then
 				Then
 					If not(D
 					Then
-						"CAMARO SS '69->Str3
+						"CAMACO SS '69->Str3
 						4|E4->C
 						2->N
 						2->I
@@ -437,7 +429,7 @@ DelVar FIf C=5:Then
 					End
 					If D=1
 					Then
-						"DMC-12 '82->Str3
+						"DMCA-12 '82->Str3
 						2|E4->C
 						7->N
 						1->I
@@ -445,7 +437,7 @@ DelVar FIf C=5:Then
 					End
 					If D=2
 					Then
-						"FOCUS RS '09->Str3
+						"FORKUS RS '09->Str3
 						35|E3->C
 						3->N
 						2->I
@@ -453,7 +445,7 @@ DelVar FIf C=5:Then
 					End
 					If D=3
 					Then
-						"CORVETTE '20->Str3
+						"'VETTE '20->Str3
 						9|E4->C
 						6->N
 						3->I
@@ -464,7 +456,7 @@ DelVar FIf C=5:Then
 				Then
 					If not(D
 					Then
-						"COUNTACH LP400 '74->Str3
+						"CONTACT LP400 '74->Str3
 						11|E4->C
 						4->N
 						2->I
@@ -472,7 +464,7 @@ DelVar FIf C=5:Then
 					End
 					If D=1
 					Then
-						"911 GT3 RS '16->Str3
+						"7-11 GT3 RS '16->Str3
 						15|E4->C
 						5->N
 						3->I
@@ -483,7 +475,7 @@ DelVar FIf C=5:Then
 				Then
 					If not(D
 					Then
-						"CRX SI '91->Str3
+						"CRUX SI '91->Str3
 						18|E3->C
 						1->N
 						1->I
@@ -552,7 +544,7 @@ If C=6:Then
 	Return
 End
 If C=3:Then
-	DelVar FDelVar BClrDraw
+	DelVar FClrDraw
 	Text(0,180,"CHANGE CAR
 	Horizontal 3.2
 	For(Y,0,1
@@ -560,69 +552,86 @@ If C=3:Then
 			Text(20X+25,20+130Y,"???
 		End
 	End
+	20
 	If |LCSE(6
-	Text(25,20,"CRX Si
+	Text(25,Ans,"CRUX Si
 	If |LCSE(7
-	Text(45,20,"CAMARO SS
+	Text(45,Ans,"CAMACO SS
 	If |LCSE(8
-	Text(65,20,"FOCUS RS
+	Text(65,Ans,"FORKUS RS
 	If |LCSE(9
-	Text(85,20,"COUNTACH LP400
+	Text(85,Ans,"CONTACT LP400
 	If |LCSE(10
-	Text(105,20,"911 GT3 RS
+	Text(105,Ans,"7-11 GT3 RS
 	If |LCSE(11
-	Text(125,20,"CORVETTE
+	Text(125,Ans,"'VETTE
+	DelVar FText(145,Ans,"BACK
+	150
 	If |LCSE(12
-	Text(25,150,"DMC-12
-	DelVar FText(145,20,"BACK
-	Repeat B
+	Text(25,Ans,"DMCA-12
+	If |LCSE(13
+	Text(45,Ans,"SUPER-A
+	If |LCSE(14
+	Text(65,Ans,"GTR R33
+	If |LCSE(15
+	Text(85,Ans,"CAR
+	If |LCSE(16
+	Text(105,Ans,"CAR
+	If |LCSE(17
+	Text(125,Ans,"CAR
+	If |LCSE(18
+	Text(145,Ans,"INCRECEBA
+	Repeat K=21 or K=105
 		If K
 		Text(~1,20A+23,4+130F," 
-		A-(A and K=25->A
-		A+(K=34 and A<6->A
-		F-(F and K=24->F
-		F+(K=26 and not(F->F
+		A-(A and K=25)+(K=34 and A<6->A
+		F-(F and K=24)+(K=26 and not(F->F
 		Text(20A+25,4+130F,"[|>]
 		getKey->K
-		K=21 or K=105->B
 	End
+	26-not(A=6 and not(F->dim(|LCAE
 	If F
 	Then
+		If A=6 and |LCSE(18
+		Then
+			"OXITI INCRECEBA '23->Str9
+			{13,9,6,230,7,3.75,2.38,1.72,1.34,1.11,.96,.84,3.2,.25,.1,15,3,525,486,28.7,3.7,1,12,1420,3->CAE
+		End
 		If not(A)|LCSE(12
 		Then
-			"DMC-12 '82->Str9
-			{7,7.5,7,130,5,3.36,2.06,1.38,1.06,.82,0,0,1,.1,.2,21,1,130,152,26.1,3.44,1,8,1233,1,0->CAE
+			"DMCA-12 '82->Str9
+			{7,7.5,7,130,5,3.36,2.06,1.38,1.06,.82,0,0,1,.1,.2,21,1,130,152,26.1,3.44,1,8,1233,1->CAE
 		End
 	Else
 		If A=5 and |LCSE(11
 		Then
-			"CORVETTE '20->Str9
-			{6,6.6,3.5,194,7,2.91,1.76,1.22,.88,.65,.51,.4,3.1,.25,.1,18,3,490,465,27.2,4.9,1,10,1654,1,0->CAE
+			"'VETTE '20->Str9
+			{6,6.6,3.5,194,7,2.91,1.76,1.22,.88,.65,.51,.4,3.1,.25,.1,18,3,490,465,27.2,4.9,1,10,1654,1->CAE
 		End
 		If A=4 and |LCSE(10
 		Then
-			"911 GT3 RS '16->Str9
-			{5,8.8,6,193,7,3.75,2.38,1.72,1.34,1.11,.96,.84,3.2,.25,.1,15,3,500,339,28.7,4.19,2,10,1420,1,0->CAE
+			"7-11 GT3 RS '16->Str9
+			{5,8.8,6,193,7,3.75,2.38,1.72,1.34,1.11,.96,.84,3.2,.25,.1,15,3,500,339,28.7,4.19,2,10,1420,1->CAE
 		End
 		If A=3 and |LCSE(9
 		Then
-			"COUNTACH LP400 '74->Str9
-			{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,0,2.2,.2,.13,15,2,375,365,25.3,4.091,2,12,1300,1,0->CAE
+			"CONTACT LP400 '74->Str9
+			{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,0,2.2,.2,.13,15,2,375,365,25.3,4.091,2,12,1300,1->CAE
 		End
 		If A=2 and |LCSE(8
 		Then
-			"FOCUS RS '09->Str9
-			{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,0,2,.25,.15,14,2,300,318,25.5,4.06,1,9,1741,2,0->CAE
+			"FORKUS RS '09->Str9
+			{3,7,6.5,156,6,3.23,1.95,1.32,1.03,.821,.685,0,2,.25,.15,14,2,300,318,25.5,4.06,1,9,1741,2->CAE
 		End
 		If A=1 and |LCSE(7
 		Then
-			"CAMARO SS '69->Str9
-			{2,6,5,138,4,2.52,1.88,1.46,1,0,0,2.59,1.4,.2,.15,19,1,299,380,25.3,3.73,1,11,1577,1,0->CAE
+			"CAMACO SS '69->Str9
+			{2,6,5,138,4,2.52,1.88,1.46,1,0,0,2.59,1.4,.2,.15,19,1,299,380,25.3,3.73,1,11,1577,1->CAE
 		End
-		If |LCSE(6)not(A
+		If not(A)|LCSE(6
 		Then
-			"CRX SI '91->Str9
-			{1,8.2,6,153,5,3.166,2.052,1.416,1.103,.87,0,0,1.2,.1,.15,11,1,108,100,22.5,4.266,3,8,954,2,0->CAE
+			"CRUX SI '91->Str9
+			{1,8.2,6,153,5,3.166,2.052,1.416,1.103,.87,0,0,1.2,.1,.15,11,1,108,100,22.5,4.266,3,8,954,2->CAE
 		End
 	End
 	ClrDraw
@@ -690,14 +699,12 @@ End
 TextColor(20
 Text(0,145,"SPECIAL EVENTS
 Text(25+20X,17,"BACK
-Repeat B
+Repeat K=21 or K=105
 	If K
 	Text(~1,20C+23,4," 
-	C-(C and K=25->C
-	C+(K=34 and C<=|LCSE(4->C
+	C-(C and K=25)+(K=34 and C<=|LCSE(4->C
 	Text(20C+25,4,"[|>]
 	getKey->K
-	K=21 or K=105->B
 End
 |LCAE(22->B
 |LCAE(17->A
@@ -707,6 +714,13 @@ If not(C
 Then
 	.1->J
 	1->D
+End
+If C=1
+Then
+	If 
+	
+	
+	
 End
 If C=2
 Then
@@ -772,23 +786,14 @@ Text(80,150,|LTTR(Ans
 Text(50,30,"LONG TRACK
 Text(80,30,"SHORT TRACK
 Text(110,30,"BACK
-Repeat B
+Repeat K=21 or K=105
 	If K
 	Text(~1,30A+51,14," 
-	A-(A and K=25->A
-	A+(K=34 and A<2->A
+	A-(A and K=25)+(K=34 and A<2->A
 	Text(30A+50,14,"[|>]
 	getKey->K
-	Ans=105 or Ans=21->B
 End
-If not(A
-Then
-	2->L
-End
-If A=1
-Then
-	1->L
-End
+2-A->L
 If A=2
 Goto 2
 |LCAE(17)+3(L=2->theta
@@ -805,11 +810,11 @@ Horizontal 3.2,18
 Text(~1,80,95,|LCSE(2)-14
 Text(~1,80,120,"/30
 .1|LCSE(2->D
-Text(30,50,"CR. PRIZE:
+Text(40,70,"CR. PRIZE:
 .5->L
-Text(30,125,W500D
+Text(40,145,W500D
 If 44=|LCSE(2
-Text(30,125,1|E4
+Text(40,145,1|E4
 Text(150,90,"PRESS ENTER
 Pause 
 Goto 1
@@ -884,6 +889,11 @@ Pt-On(1,~.3,Q
 Pt-On(8,~.3,Q
 Text(99,0,Str2
 TextColor(12
+If not(W
+Then
+	Text(34,120,"RECORD MPH:
+	Text(34,202,|LCSE(5
+End
 Text(150,188,"LENGTH:
 Text(150,243,L
 Text(0,60,"PRESS 2ND TO REV
@@ -988,11 +998,14 @@ Repeat P>=240L
 	End
 	Text(~1,130,115,round(10S,0
 	round(SFM3360/|LCAE(20),0)/1|E3->R
+	If R>|LCAE(2
+	Then
+		S-(.15A(1.1-GH->S
+		TextColor(11
+	End
 	Text(~1,130,25,R
 	If S10>|LCAE(4
 	.1|LCAE(4->S
-	If R>|LCAE(2
-	S-(.15A(1.1-GH->S
 	TextColor(19
 	S+(1.1-GH)(.1(A(1-.5(V>0->S
 	If W>3
@@ -1004,11 +1017,13 @@ Repeat P>=240L
 	Else
 		~9->D
 	End
+	round(P/L,0
+	Text(~1,53,Ans," 
 	If V>0
 	Then
+		Pt-On(Ans,1.15,12
+		Pt-On(Ans,.85,12
 		V-1->V
-	Else
-		Text(~1,53,round(P/L,0)," 
 	End
 	P+S->P
 	TextColor(N
@@ -1025,9 +1040,12 @@ Repeat P>=240L
 	Z+1->Z
 	Text(~1,20,98,Z
 End
+Text(0,0,"CR:
+|LCSE(1->E
+Text(0,20,E
 If D=~9
 Then
-	int(L+|LCSE(1->|LCSE(1
+	int(L+E->|LCSE(1
 	DelVar thetaText(~1,78,75,"YOU LOSE
 	If W=5
 	Text(60,30,Str3
@@ -1059,10 +1077,18 @@ Else
 End
 TextColor(12
 Text(150,80,"PRESS ENTER            
-Text(0,0,"CR:
-Text(0,20,|LCSE(1:Pause 
+TextColor(14
+Text(15,12,"+
+Text(15,20,abs(E-|LCSE(1:Pause 
 ClrDraw
 ClrHome
+10S
+If not(W) and Ans>|LCSE(20
+Then
+	Disp "NEW SPEED RECORD!","MPH:
+	Ans->|LCSE(5
+	Pause Ans
+End
 If theta
 Then
 	If not(fPart(theta

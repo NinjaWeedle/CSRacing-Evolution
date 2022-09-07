@@ -22,22 +22,22 @@ List CSE: (Primary Save File)
 2: Current stage in Ladder races
 3: Current stage in Car Specific Races
 4: Number of Special Events completed
-5: 
-6: CRX Si (1991) owned?(1 or above=owned, 0=not owned)
-7: Camaro SS (1969)
-8: Focus RS (2009) owned?
-9: Countach LP400 (1974) owned?
-10: 911 GT3 RS (2016) owned?
-11: Corvette C8 (2020) owned?
-12: DMC-12 (1982) owned?
+5: Machine Test max speed Record
+6: CRUX Si (1991) owned?(1 or above=owned, 0=not owned)
+7: Camaco SS (1969)
+8: Forkus RS (2009) owned?
+9: Contact LP400 (1974) owned?
+10: 7-11 GT3 RS (2016) owned?
+11: 'Vette C8 (2020) owned?
+12: DMCA-12 (1982) owned?
 13: 
-14: 
-15: 
+14: Super-a (1998) owned?
+15: GTR R33 (1997) owned?
 16: 
 17: 
-18: car 13 (Increceba)
-19: 
-20: No car fall back tune spot (If somehow modifications are made to the "none" ""car"" they will go here)
+18: Oxiti Increceba (2023) owned?
+19: Custom Car
+20: No car fallback spot
 21: Special Event 1 completion status
 22: Special Event 2 completion status
 23: Special Event 3 completion status
@@ -69,7 +69,7 @@ List CAE: (Car Data)
 19: Peak Torque (Lb-Ft)
 20: Tire diameter (in)
 21: Final drive ratio
-22: Car region (1=NA, 2=EU, 3=JP)
+22: Car region (1=USA, 2=EUR, 3=JPN)
 23: Grip force (The higher the number, the more frames of wheelspin)
 24: Car Weight (kg)
 25: Drivetrain type (1 = RWD, 2 = FWD, 3 = AWD/4WD)
@@ -155,19 +155,19 @@ If C is 9, current car does not meet regulations for event selected
 
 
 CAR LIST (by car identifier number):
-1: CRX Si (1991)
-2: Camaro SS (1969)
-3: Focus RS (2009)
-4: Countach LP400 (1974)
-5: 911 GT3 RS (2016)
-6: Corvette (2020)
-7: DMC-12 (1982)
+1: CRUX Si (1991)
+2: Camaco SS (1969)
+3: Forkus RS (2009)
+4: Contact LP400 (1974)
+5: 7-11 GT3 RS (2016)
+6: 'Vette (2020)
+7: DMCA-12 (1982)
 8:
-9:
-10:
+9: Super-A (1998)
+10: GTR R33 (1997)
 11:
 12:
-13*:
+13*: Oxiti Increceba (2023)
 14: Identifies custom cars
 15*: None
 *Not purchaseable at dealer
