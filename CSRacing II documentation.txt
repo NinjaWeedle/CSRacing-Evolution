@@ -30,11 +30,11 @@ List CSE: (Primary Save File)
 10: 7-11 GT3 RS (2016) owned?
 11: 'Vette C8 (2020) owned?
 12: DMCA-12 (1982) owned?
-13: 
+13: Sacks-O (1997) owned?
 14: Super-a (1998) owned?
 15: GTR R33 (1997) owned?
-16: 
-17: 
+16: GTR R35 (2017) owned?
+17: Enso (2003) owned?
 18: Oxiti Increceba (2023) owned?
 19: Custom Car
 20: No car fallback spot
@@ -51,7 +51,7 @@ List CAE: (Car Data)
 1: Car Identifier Number
 2: Max RPM
 3: Best launch RPM
-4: Actual Top speed
+4: Actual Top speed (MPH)
 5: Number of Gears
 6: Gear 1 Ratio
 7: Gear 2 Ratio
@@ -82,11 +82,10 @@ List L1:
 1: Launch speed for car challenge 1
 2: Launch speed for car challenge 2
 ...etc...this repeats until all 13 cars have their own challenges...
-13: Launch speed for car challenge 13
-14: Acceleration level for car challenge 1
+14: Accelleration level for car challenge 1
 15: Acceleration level for car challenge 2
 ...etc...this repeats until all 13 cars have their own challenges...
-26: Acceleration level for car challenge 13
+26: Accelleration level for car challenge 13
 
 List TTR:
 1: Short Tier 1 Record
@@ -130,10 +129,10 @@ Z = Countdown
 
 EVENT TYPES:
 Regulation races: W=1
+Time Trials: W=2 
 Ladder races: W=3
 Special Events: W=4
-Car Specific/ Custom Spec (Was restriction races): W=5
-Time Trials: W=2 
+Car Specific/Custom Spec : W=5
 Machine Test: W=0
 
 SPECIAL EVENT INFO:
@@ -141,6 +140,9 @@ SPECIAL EVENT INFO:
 Event 1: Classic Car Cup - Allows cars over 30 years old
 Event 2: Tier 1 Championship - Allows all Tier 1 cars
 Event 3: JP Tuner Trials - Allows only JP cars
+Event 4: Tier 2 Championship - Allows all Tier 2 cars
+Event 5: Top speed Showdown - All cars allowed
+Event 6: Tier 3 Championship - Allows all Tier 3 cars
 
 Variables when in menu:
 C = Event Selected
@@ -153,7 +155,6 @@ If C is 9, current car does not meet regulations for event selected
 
 
 
-
 CAR LIST (by car identifier number):
 1: CRUX Si (1991)
 2: Camaco SS (1969)
@@ -162,11 +163,11 @@ CAR LIST (by car identifier number):
 5: 7-11 GT3 RS (2016)
 6: 'Vette (2020)
 7: DMCA-12 (1982)
-8:
+8: Sacks-O (1997)
 9: Super-A (1998)
 10: GTR R33 (1997)
-11:
-12:
+11: GTR R35 (2017)
+12: Enso (2003)
 13*: Oxiti Increceba (2023)
 14: Identifies custom cars
 15*: None

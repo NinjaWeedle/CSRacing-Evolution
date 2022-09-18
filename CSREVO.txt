@@ -1,5 +1,5 @@
 :DCS
-"6D9F894A8D8A854A6D5F000000001FC022204210FFFEA229C2279229BBDD1008
+"03303303300555553000300303005050300033033000505030000303030050500330330303055555BBBBBBBBBBBBBBBB9999999999999999999999999999999999999999999999999993333339999999993CC3CCC399999953555355553555992555535555355AA9533355355533355533D33333333D33339333999999333999
 Full
 BackgroundOn 12
 BorderColor 4
@@ -78,23 +78,27 @@ ClrHome
 DelVar KZDecimal
 Text(~1,44,96,Str0
 TextColor(12
-Text(45,140,"CAR INFO
+Text(45,145,"CAR INFO
 Text(0,220,"HOME
 Horizontal 3.2,24
-Text(65,150,"TIER
-Text(65,185,|LCAE(17
+Text(65,155,"TIER
+Text(65,190,|LCAE(17
 TextColor(|LCAE(16
-Text(23,100,Str9
-Line(~1.8,1.1,7,1.1,24
-Line(~1.8,1.9,7,1.9,24
+~1.8
+Line(Ans,1.1,7,1.1,24
+Line(Ans,1.9,7,1.9,24
+Vertical Ans,22
+Line(6.6,1.1,6.6,~Ans,22
+100
+Text(23,Ans,Str9
 TextColor(12
-Text(90,100,"HP:
+Text(90,Ans,"HP:
 Text(90,165,|LCAE(18
-Text(110,100,"LB-FT:
+Text(110,Ans,"LB-FT:
 Text(110,165,|LCAE(19
-Text(130,100,"WT(KG):
+Text(130,Ans,"WT(KG):
 Text(130,165,|LCAE(24
-Text(150,100,"REGION:
+Text(150,Ans,"REGION:
 |LCAE(22->X
 If X=1
 "USA
@@ -107,7 +111,6 @@ DelVar CText(0,0,"CR:
 Text(0,20,|LCSE(1
 17
 Text(125,Ans,"BUY CARS
-Vertical ~1.8,22
 Text(25,Ans,"GO RACE
 Text(45,Ans,"TUNING
 Text(65,Ans,"PAINTSHOP
@@ -213,25 +216,26 @@ Then
 			Then
 				|LCSE(1)-C->|LCSE(1
 				A+10^(F->|LCSE(5+|LCAE(1
-				If F=1
+				If not(F
 				Then
 					.1+|LCAE(13->|LCAE(13
 					10+|LCAE(18->|LCAE(18
 					10+|LCAE(19->|LCAE(19
 					2+|LCAE(4->|LCAE(4
 				End
-				If F=2
+				If F=1
 				Then
 					.1+|LCAE(13->|LCAE(13
-					|LCAE(24)-500->|LCAE(24
+					|LCAE(24)-50->|LCAE(24
 				End
-				If F=3
+				If F=2
 				|LCAE(23)-2->|LCAE(23
 				TextColor(14
-				DelVar CText(~1,70,95,"OWNED
+				8->C
+				Text(~1,70,95,"OWNED
 				Pause 
 			End
-			If C and U<=3
+			If C>9 and U<=3
 			Then
 				Text(~1,80,20,"INSUFFICIENT FUNDS
 				Pause 
@@ -253,10 +257,22 @@ Then
 		End
 		If H
 		Then
-			DelVar C|LCSE(1)+int(~111+|LCSE(5+|LCAE(1->|LCSE(1
-			
-			
-			
+			int(|LCSE(5+|LCAE(1->U
+			|LCSE(1)+U-111->|LCSE(1
+			~.1+fPart(.1U->A
+			|LCAE(13)-A->|LCAE(13
+			A10->A
+			|LCAE(4)-A2->|LCAE(4
+			|LCAE(18)-A10->|LCAE(18
+			|LCAE(19)-A10->|LCAE(19
+			|LCAE(23)-A->|LCAE(23
+			~.1+fPart(.1int(.1U->A
+			|LCAE(13)-A->|LCAE(13
+			|LCAE(24)+500A->|LCAE(24
+			|LCAE(23)+2int(sub(U->|LCAE(23
+			|LCSE(5+|LCAE(1->A
+			111+fPart(A->|LCSE(5+|LCAE(1
+			Text(70,60,"CAR RESET.
 			Pause 
 		End
 	End
@@ -395,8 +411,8 @@ DelVar FIf C=5:Then
 			Text(20,90,"EUROPE
 			Text(45,80,"CONTACT LP400 '74
 			Text(70,80,"7-11 GT3 RS '16
-			Text(95,80,"NONE
-			Text(120,80,"NONE
+			Text(95,80,"SACKS-O '97
+			Text(120,80,"ENSO '03
 		End
 		If F=2
 		Then
@@ -404,7 +420,7 @@ DelVar FIf C=5:Then
 			Text(45,80,"CRUX SI '91
 			Text(70,80,"SUPER-A '98
 			Text(95,80,"GTR R33 '97
-			Text(120,80,"NONE
+			Text(120,80,"GTR R35 '17
 		End
 		If F!=3
 		Then
@@ -470,6 +486,22 @@ DelVar FIf C=5:Then
 						3->I
 						15->B
 					End
+					If D=2
+					Then
+						"SACKS-O '97->Str3
+						19|E3->C
+						8->N
+						2->I
+						12->B
+					End
+					If D=3
+					Then
+						"ENSO '03->Str3
+						1|E6->C
+						12->N
+						3->I
+						11->B
+					End
 				End
 				If F=2
 				Then
@@ -480,6 +512,30 @@ DelVar FIf C=5:Then
 						1->N
 						1->I
 						14->B
+					End
+					If D=1
+					Then
+						"SUPER-A '98->Str3
+						4|E4->C
+						9->N
+						2->I
+						20->B
+					End
+					If D=2
+					Then
+						"GTR R33 '97->Str3
+						5|E4->C
+						10->N
+						2->I
+						N->B
+					End
+					If D=3
+					Then
+						"GTR R35 '17->Str3
+						115|E3->C
+						11->N
+						3->I
+						17->B
 					End
 				End
 				ClrDraw
@@ -533,8 +589,6 @@ DelVar FIf C=5:Then
 		End
 	End
 End
-If A
-Goto 0
 If C=6:Then
 	ClrHome
 	Disp "SAVING
@@ -545,14 +599,15 @@ If C=6:Then
 End
 If C=3:Then
 	DelVar FClrDraw
-	Text(0,180,"CHANGE CAR
+	20
+	Text(0,9Ans,"CHANGE CAR
 	Horizontal 3.2
 	For(Y,0,1
 		For(X,0,5
-			Text(20X+25,20+130Y,"???
+			Text(AnsX+25,Ans+130Y,"???
 		End
 	End
-	20
+	DelVar FText(145,Ans,"BACK
 	If |LCSE(6
 	Text(25,Ans,"CRUX Si
 	If |LCSE(7
@@ -565,20 +620,19 @@ If C=3:Then
 	Text(105,Ans,"7-11 GT3 RS
 	If |LCSE(11
 	Text(125,Ans,"'VETTE
-	DelVar FText(145,Ans,"BACK
 	150
 	If |LCSE(12
 	Text(25,Ans,"DMCA-12
 	If |LCSE(13
-	Text(45,Ans,"SUPER-A
+	Text(45,Ans,"SACKS-O
 	If |LCSE(14
-	Text(65,Ans,"GTR R33
+	Text(65,Ans,"SUPER-A
 	If |LCSE(15
-	Text(85,Ans,"CAR
+	Text(85,Ans,"GTR R33
 	If |LCSE(16
-	Text(105,Ans,"CAR
+	Text(105,Ans,"GTR R35
 	If |LCSE(17
-	Text(125,Ans,"CAR
+	Text(125,Ans,"ENSO
 	If |LCSE(18
 	Text(145,Ans,"INCRECEBA
 	Repeat K=21 or K=105
@@ -595,7 +649,32 @@ If C=3:Then
 		If A=6 and |LCSE(18
 		Then
 			"OXITI INCRECEBA '23->Str9
-			{13,9,6,230,7,3.75,2.38,1.72,1.34,1.11,.96,.84,3.2,.25,.1,15,3,525,486,28.7,3.7,1,12,1420,3->CAE
+			{13,9,6,230,7,3.75,2.38,1.72,1.34,1.11,.95,.8,3.2,.25,.12,15,3,525,486,26.6,3.7,1,12,1389,3->CAE
+		End
+		If A=5 and |LCSE(17
+		Then
+			"ENSO '03->Str9
+			{12,8.2,4,218,6,3.15,2.18,1.57,1.19,.94,.76,0,3.3,.2,.15,11,3,651,485,28.5,4.1,2,15,1255,1->CAE
+		End
+		If A=4 and |LCSE(16
+		Then
+			"GTR R35 '17->Str9
+			{11,7.1,4.6,199,6,4.056,2.301,1.595,1.248,1.001,.796,0,3.3,.2,.16,17,3,565,467,27.9,3.7,3,9,1760,3->CAE
+		End
+		If A=3 and |LCSE(15
+		Then
+			"GTR R33 '97->Str9
+			{10,8.5,8,162,5,3.214,1.92,1.302,1,.752,0,0,2.1,.2,.2,10,2,276,260,26,4.111,3,7,1530,3->CAE
+		End
+		If A=2 and |LCSE(14
+		Then
+			"SUPER-A '98->Str9
+			{9,7.5,5,167,6,3.827,2.36,1.685,1.312,1,.793,0,2,.2,.16,20,2,320,315,25,3.133,3,9,1590,1->CAE
+		End
+		If A=1 and |LCSE(13
+		Then
+			"SACKS-O '97->Str9
+			{8,7,3,124,5,3.333,1.955,1.286,.926,.733,0,0,1.6,.1,.22,12,1,120,107,22.7,4.056,2,6,935,2->CAE
 		End
 		If not(A)|LCSE(12
 		Then
@@ -611,12 +690,12 @@ If C=3:Then
 		If A=4 and |LCSE(10
 		Then
 			"7-11 GT3 RS '16->Str9
-			{5,8.8,6,193,7,3.75,2.38,1.72,1.34,1.11,.96,.84,3.2,.25,.1,15,3,500,339,28.7,4.19,2,10,1420,1->CAE
+			{5,8.8,6,193,7,3.75,2.38,1.72,1.34,1.11,.96,.84,3.2,.25,.11,15,3,500,339,28.7,4.19,2,10,1420,1->CAE
 		End
 		If A=3 and |LCSE(9
 		Then
 			"CONTACT LP400 '74->Str9
-			{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,0,2.2,.2,.13,15,2,375,365,25.3,4.091,2,12,1300,1->CAE
+			{4,8,5,186,5,2.256,1.769,1.31,.99,.775,0,0,2.2,.2,.14,15,2,375,365,25.3,4.091,2,12,1300,1->CAE
 		End
 		If A=2 and |LCSE(8
 		Then
@@ -631,7 +710,7 @@ If C=3:Then
 		If not(A)|LCSE(6
 		Then
 			"CRUX SI '91->Str9
-			{1,8.2,6,153,5,3.166,2.052,1.416,1.103,.87,0,0,1.2,.1,.15,11,1,108,100,22.5,4.266,3,8,954,2->CAE
+			{1,8.2,6,153,5,3.166,2.052,1.416,1.103,.87,0,0,1.2,.13,.15,11,1,108,100,22.5,4.266,3,8,954,2->CAE
 		End
 	End
 	ClrDraw
@@ -653,32 +732,38 @@ If C=3:Then
 		A+|LCAE(23->|LCAE(23
 		~.1+fPart(.1int(.1U->A
 		A+|LCAE(13->|LCAE(13
-		|LCAE(24)-500A->|LCAE(24
+		|LCAE(24)-50A->|LCAE(24
 		|LCAE(23)-2int(sub(U->|LCAE(23
 		100fPart(U->|LCAE(16
 		TextColor(Ans
 	End
 	Text(75,65,Str9
 	Pause 
-	Goto 0
 End
+If C
+Goto 0
 Lbl 2
+TextColor(12
 If 15=|LCAE(1
 Pause "YOU NEED A CAR TO RACE.
 If 15=|LCAE(1
 Goto 0
+ClrHome
 BackgroundOff
 "CPU->Str2
 1->L
-DelVar BDelVar DDelVar JDelVar WDelVar thetaClrDraw
-Menu("EVENT LIST","REGULATION",A,"LADDER",B,"TIME TRIALS",C,"CAR SPECIFIC",D,"SPECIAL EVENTS",E,"MACHINE TEST",F,"BACK TO HOME",0
+"CAR SPECIFIC
+If 14=|LCSE(3
+"CUSTOM SPEC
+DelVar DDelVar JDelVar WDelVar thetaClrDraw
+Menu("        EVENT LIST"+Str0,"REGULATION",A,"LADDER",B,"TIME TRIALS",C,Ans,D,"SPECIAL EVENTS",E,"MACHINE TEST",F,"BACK TO HOME",0
 Lbl F
 8->L
 Goto 1
 Lbl E
 4->W
 BackgroundOn 22
-Horizontal 3.2,16
+DelVar CHorizontal 3.2,16
 For(X,0,|LCSE(4
 	TextColor(12
 	If |LCSE(21+X
@@ -708,29 +793,76 @@ Repeat K=21 or K=105
 End
 |LCAE(22->B
 |LCAE(17->A
+11->Q
 If C>|LCSE(4
 Goto 2
 If not(C
 Then
-	.1->J
-	1->D
+	expr(sub(Str9,length(Str9)-1,2
+	If 92>=Ans and 45<Ans
+	Then
+		"STEVE O->Str2
+		1.4->J
+		.4->D
+	Else
+		Pause "CAR MUST BE PRE-1992
+		9->C
+	End
 End
 If C=1
 Then
-	If 
-	
-	
-	
+	If A=1
+	Then
+		1.4->J
+		19->Q
+		"TJ->Str2
+	Else
+		Pause "TIER 1 CARS ONLY
+		9->C
+	End
 End
 If C=2
 Then
 	If B=3 and A=2
 	Then
 		"MAYEO->Str2
-		.2->D
+		.3->D
 		2->J
+		10->Q
 	Else
 		Pause "TIER 2 JP CARS ONLY
+		9->C
+	End
+End
+If C=3
+Then
+	If A=2
+	Then
+		2.1->J
+		"B.D->Str2
+		13->Q
+	Else
+		Pause "TIER 2 CARS ONLY
+		9->C
+	End
+End
+If C=4
+Then
+	4->L
+	.5->D
+	2.3->J
+	14->Q
+	"GAMMA->Str2
+End
+If C=5
+Then
+	If A=3
+	Then
+		2.9->J
+		17->Q
+		"BANCHOR->Str2
+	Else
+		Pause "TIER 3 CARS ONLY
 		9->C
 	End
 End
@@ -742,38 +874,39 @@ Goto 1
 Lbl D
 5->W
 |LCSE(3->A
+Text(0,165,"CAR SPECIFIC
 TextColor(15
-Horizontal 3
-Text(0,75,"CAR SPECIFIC
+Horizontal 3.2,15
 If A>=14
 Then
-	TextColor(12
-	Text(~1,80,60,"CUSTOM SPEC
-	Pause 
-	Input "LAUNCH SPD?",D
-	Input "ACCEL LV?",J
+	Horiz
+	Text(~1,35,60,"CUSTOM SPEC
+	Input "LAUNCH MPH?",D
+	Input "ACCEL. LVL?",J
 	Input "LENGTH?",L
-	.1D->D
 Else
 	SetUpEditor L1
-	.5->B
-	.2->C
+	{0,9,1,12,9,1,2,3,3,0,0,3,9,1,.9,1.6,1.4,2.1,2.2,.9,1.25,1.7,1.9,2.3,2.2,2->L1
 	L1(A->D
-	L1(6+A->J
+	L1(13+A->J
+	1+(A=13->L
 	W(A=|LCAE(1->W
-	Text(~1,50,80,"CAR
-	Text(~1,50,120,A
+	Text(~1,50,95,"CAR
+	Text(~1,50,135,A
 	If W
-	Text(120,40,Str1
+	Text(90,65,Str9
+	TextColor(11
 	If not(W
-	Text(80,80,"REQUIRE\D
+	Text(80,90,"REQUIRE\D
+	If 111!=int(|LCSE(5+|LCAE(1
+	DelVar WText(120,70,"CAR MUST BE STOCK
 	Pause 
 End
+.1D->D
 If not(W
 Goto 2
 Goto 1
 Lbl C
-TextColor(12
 2->W
 Text(0,170,"TIME TRIALS
 Horizontal 3.2,11
@@ -1047,9 +1180,7 @@ If D=~9
 Then
 	int(L+E->|LCSE(1
 	DelVar thetaText(~1,78,75,"YOU LOSE
-	If W=5
-	Text(60,30,Str3
-	If W=2 and 11<=|LCSE(2
+	If W=3 and 11<=|LCSE(2
 	|LCSE(2)-1->|LCSE(2
 	If W=4
 	0->|LCSE(21+10theta
@@ -1057,18 +1188,17 @@ Else
 	TextColor(14
 	Text(~1,53,80,"YOU WIN
 	TextColor(12
-	If W=5 and 14>|LCSE(3
-	1+|LCSE(3->|LCSE(3
-	If W=3 and 41>|LCSE(2
-	1+|LCSE(2->|LCSE(2
-	If 15>|LCSE(4
-	(5=W)+|LCSE(4->|LCSE(4
-	If W=3 and 44=|LCSE(2
+	If 14>|LCSE(3
+	(W=5)+|LCSE(3->|LCSE(3
+	If W=3
 	Then
-		5200+|LCSE(1->|LCSE(1
-		Text(95,30,"YOU'RE THE NEW LADDER CHAMP!
-	Else
-		(W=2)+|LCSE(2->|LCSE(2
+		If 44<=|LCSE(2
+		Then
+			3400+|LCSE(1->|LCSE(1
+			Text(95,30,"YOU'RE THE NEW LADDER CHAMP!
+		Else
+			1+|LCSE(2->|LCSE(2
+		End
 	End
 	W500D
 	If L>=1
@@ -1083,7 +1213,7 @@ Text(15,20,abs(E-|LCSE(1:Pause
 ClrDraw
 ClrHome
 10S
-If not(W) and Ans>|LCSE(20
+If not(W) and Ans>|LCSE(5
 Then
 	Disp "NEW SPEED RECORD!","MPH:
 	Ans->|LCSE(5
@@ -1112,7 +1242,12 @@ Then
 			A->|LCSE(4
 			Disp "EVENT
 			DelVar thetaOutput(1,7,A
-			Output(1,9,"COMPLETE
+			Output(1,9,"COMPLETE!
+			If A=5 and not(|LCSE(18
+			Then
+				111.11->|LCSE(18
+				Disp "OXITI INCRECEBA UNLOCKED
+			End
 		Else
 			If 3<=B
 			Then
@@ -1121,6 +1256,11 @@ Then
 				Disp "EVENT
 				DelVar thetaOutput(1,7,A
 				Output(1,9,"COMPLETE!
+				If A=6 and not(|LCSE(19
+				Then
+					111.12->|LCSE(19
+					Disp "CUSTOM CAR LICENSE","OBTAINED
+				End
 			Else
 				Output(4,11,"RACE
 				Output(4,16,B+1
@@ -1128,36 +1268,46 @@ Then
 				Then
 					If A=2
 					Then
-						
+						.3->D
+						1.5->J
+						16->Q
 						"MILLER->Str2
 					End
 					If A=4
 					Then
-						
+						.2->D
+						2.2->J
+						12->Q
 						"ROCKY->Str2
 					End
 					If A=6
 					Then
-						
+						.3->D
+						2.8->J
+						24->Q
+						"GIO->Str2
 					End
 				Else
 					If A=2
 					Then
-						
-						
+						.5->D
+						1.52->J
+						11->Q
 						"WINNACE->Str2
 					End
 					If A=4
 					Then
 						.3->D
-						2.2->J
+						2.3->J
+						10->Q
 						"KENIDO->Str2
 					End
 					If A=6
 					Then
-						
-						
-						
+						.2->D
+						3->J
+						"MUNCHER->Str2
+						18->Q
 					End
 				End
 				Output(7,8,"VS.

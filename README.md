@@ -2,13 +2,11 @@ CALCULATOR STREET RACING II: EVOLUTION -  Race your way.
 
 A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
 
-WARNING: This game is still being worked on. A save file created mid-development may not work properly in the final release of the game.
-
 The ultimate drag racing game just got more intense. Powered by the one of the most advanced racing engines ever seen in a pure TI-BASIC game, CSRacing II allows you buy, paint, tune, and race 13 different cars
 on 2 detailed tracks in 7 different event types. Compete with your friends for the best times in Time Trials, Conquer the 6 championships of Special Events, or just test your car's
 top speed in Machine Test. You can also race in returning events like Regulation, Ladder, Custom Spec and the challenging Car Specific races. How you race is for you to decide.
 
-NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run slowly on older models without use of a program like FASTER. It will still run on the 84+ CSE.
+NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run a bit slow on older models without use of a program like FASTER.
 Github: https://github.com/NinjaWeedle/CSRacing-Evolution - If there's a new version of CSRacing II Evolution, you'll find it here first.
 Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing II! You can also post your time trials records here.
 _________________________________________________________
@@ -128,11 +126,13 @@ Each mode has its own rules:
 - Car Specific: Race in unique races specific to each car in the game. Each one will test your mastery of a specific car. 
   -- There's a catch: you can't use any upgrades. The difficulty is high, but so is the prize money!
 
-- *Custom Spec: This one does not appear on the event list. To access it, you must beat all 13 of the Car Specific races. Once you've beaten them all, selecting "Car Specifc" mode on the event list will bring you to Custom Spec mode.
+- *Custom Spec: This one does not appear on the event list initially. To access it, you must beat all 13 of the Car Specific races. Once you've beaten them all, the "Car Specific" option on the event list will be replaced with "Custom Spec".
   -- Custom Spec allows you to mess with the race settings to your heart's content, even if it might cause an error. You can set the racetrack length as high or low as you want, mess with the more advanced opponent AI type (including making them go backwards if you really want although this will cause an error), and earn big prize money.
 
 - Special Events: Race in 6 unique events with various restrictions and differences depending on the event. Beat each event in order to unlock the next one.
   -- Every even-numbered Special Event is a championship, meaning it consists of three back-to-back races as opposed to one.
+  -- Beating the fifth Special Event unlocks the Oxiti Increceba- an incredibly fast car!
+  -- Beating the sixth and final Special Event gets you a Custom Car license, allowing you to use Custom Cars you've created in CSRacing II.
 
 - Machine Test: Test out your car's top speed here. There's no CR. prize here.
   -- Your top speed is recorded in this mode- try to shoot for a high score!
@@ -163,11 +163,11 @@ Each mode has its own rules:
 5: 7-11 GT3 RS (2016) - T3 - RWD - EUR
 6: 'Vette (2020) - T3 - RWD - USA
 7: DMCA-12 (1982) - T1 - RWD - USA
-8:
+8: Sacks-O (1997) - T1 - FWD - EUR
 9: Super-A (1998) - T2 - RWD - JPN
 10: GTR R33 (1997) - T2 - AWD - JPN
-11:
-12:
+11: GTR R35 (2017) - T3 - AWD - JPN
+12: Enso (2003) - T3 - RWD - EUR
 13*: Oxiti Increceba (2023) - T3 - AWD - USA
 14*: Custom Cars
 
@@ -189,10 +189,10 @@ For Car Specific races and Special Events, you'll be on the Team Oxiti Drag Stri
 
 8. DEVELOPER'S NOTES & TECHNICALITIES:
 
- - This game should still run on TI-84+ C Silver Edition, but will run very slow on that hardware and as such I do not reccommend it.
+ - This game still runs on TI-84+ C Silver Edition, but it will run very slow on that hardware and as such I do not reccommend it.
  - The cars in this game are intended to have the same gear ratios and top speeds as their real-world counterparts- but real world performance may differ. This is a calculator game, not a simulator.
  - Cars with electronically limited top speeds in the real world (i.e. 155 MPH) have their limiters removed here.
- - If you get ERR: UNDEFINED after the title screen, it's likely because you deleted Str1. To fix this, enter "A->Str1 on the homescreen in TI-OS.
+ - If you get ERR: UNDEFINED after the title screen, it's likely because you deleted Str9. To fix this, enter "A->Str9 on the homescreen in TI-OS.
 
 
 9. A SHORT GUIDE TO CSRACING JARGON
@@ -209,7 +209,8 @@ For Car Specific races and Special Events, you'll be on the Team Oxiti Drag Stri
 
 Game created by Oxiti8 in 2022.
 
-Special thanks to Mr. Womp Womp and fghsgh on Cemetech for help with optimization.
+Special thanks to Mr. Womp Womp, LogicalJoe, and fghsgh on Cemetech for help with optimization.
+Also thanks to Epsilon5 and DJ Omnimaga for car ideas and inspiration on graphical techniques.
 
 
 THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
