@@ -783,7 +783,9 @@ For(X,0,|LCSE(4
 End
 TextColor(20
 Text(0,145,"SPECIAL EVENTS
+X-(X=7->X
 Text(25+20X,17,"BACK
+X-1->X
 Repeat K=21 or K=105
 	If K
 	Text(~1,20C+23,4," 
@@ -794,7 +796,7 @@ End
 |LCAE(22->B
 |LCAE(17->A
 11->Q
-If C>|LCSE(4
+If C>X
 Goto 2
 If not(C
 Then
@@ -1251,7 +1253,7 @@ Then
 		Else
 			If 3<=B
 			Then
-				If A>|LCSE(4
+				If 6>A and A>|LCSE(4
 				A->|LCSE(4
 				Disp "EVENT
 				DelVar thetaOutput(1,7,A
