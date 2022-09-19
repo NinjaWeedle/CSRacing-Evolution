@@ -1,4 +1,4 @@
-CALCULATOR STREET RACING II: EVOLUTION -  Race your way.
+CALCULATOR STREET RACING II: EVOLUTION V1.1 -  Race your way.
 
 A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
 
@@ -22,11 +22,12 @@ II. CSRACING II IN DEPTH
  5: Tips & Tricks 
  6: Car List
  7: Track List
+ 8: Special Event List
 
 III. EXTRA INFORMATION
- 8: Developer's Notes & Technicalities
- 9: A short guide to CSRacing jargon
- 10: Credits and License
+ 9: Developer's Notes & Technicalities
+ 10: A short guide to CSRacing jargon
+ 11: Credits and License
 _________________________________________________________
 
 < I. GETTING STARTED >
@@ -34,7 +35,7 @@ _________________________________________________________
 
 1. HOW TO INSTALL:
 
-Send CSREVO.8xp to either RAM or Archive.
+Send CSREVO.8xp to either RAM or Archive on your calculator using a program like TI-Connect CE.
 
 Note to ASMHOOK users: Make sure you update to ASMHOOK V1.0.2 (or disable ASMHOOK) before playing, as it fixes a bug that this game causes.
 
@@ -95,6 +96,7 @@ You have several options to choose from:
   -- There are three categories of upgrades: Engine, Weight, and Tires.
   -- Upgrading your engine increases horsepower & torque, which in turn increases acceleration and top speed but also slightly reduces grip, upgrading weight reduces the weight of your car and therefore increases acceleration, and upgrading your tires increases grip.
   -- If you need to reset your car to its stock form for car specific races, you can do so by selecting the "RESET" option in the tuning menu. Note that you will have to repurchase any upgrades you remove.
+  -- The "RATIOS" section of the Tuning menu displays your car's gear and final drive ratios. Press enter to exit this screen.
 
  - Paintshop: Lets you paint your car by typing one of the numbers listed below. 
    -- Color guide: 10=Blue, 11=Red, 12=Black, 13=Magenta, 14=Green, 15=Orange, 16=Brown, 17=Navy, 18=LtBlue, 19=Yellow, 20=White, 21=LtGray, 22=MedGray, 23=Gray, and 24=DarkGray
@@ -183,11 +185,21 @@ For Regulation, Ladder, and Time Trials races, you'll be racing on the streets, 
 For Car Specific races and Special Events, you'll be on the Team Oxiti Drag Strip. The Drag Strip has a christmas tree in the center of the track that counts down to the start of races and a different color palette than the streets.
 
 
+8. SPECIAL EVENT LIST
+
+Event 1: Classic Car Cup - Allows cars over 30 years old
+Event 2: Tier 1 Championship - Allows all Tier 1 cars
+Event 3: JP Tuner Trials - Allows only JP cars
+Event 4: Tier 2 Championship - Allows all Tier 2 cars
+Event 5: Top speed Showdown - All cars allowed
+Event 6: Tier 3 Championship - Allows all Tier 3 cars
+
+
 
 < III. EXTRA INFORMATION >
 
 
-8. DEVELOPER'S NOTES & TECHNICALITIES:
+9. DEVELOPER'S NOTES & TECHNICALITIES:
 
  - This game still runs on TI-84+ C Silver Edition, but it will run very slow on that hardware and as such I do not reccommend it.
  - The cars in this game are intended to have the same gear ratios and top speeds as their real-world counterparts- but real world performance may differ. This is a calculator game, not a simulator.
@@ -195,7 +207,7 @@ For Car Specific races and Special Events, you'll be on the Team Oxiti Drag Stri
  - If you get ERR: UNDEFINED after the title screen, it's likely because you deleted Str9. To fix this, enter "A->Str9 on the homescreen in TI-OS.
 
 
-9. A SHORT GUIDE TO CSRACING JARGON
+10. A SHORT GUIDE TO CSRACING JARGON
 
  - CSRacing = Calculator Street Racing
  - CR/Cr. = Credits, the currency of CSRacing
@@ -205,7 +217,7 @@ For Car Specific races and Special Events, you'll be on the Team Oxiti Drag Stri
  - Home = the homescreen of the game.
 
 
-10. CREDITS, LICENSE AND CONTACT INFORMATION
+11. CREDITS, LICENSE AND CONTACT INFORMATION
 
 Game created by Oxiti8 in 2022.
 

@@ -14,7 +14,6 @@ The numbers after the decimal is the car's paint color.
 the first whole number is the Car's engine tune. (1 = default)
 the tens digit is the Weight tune settings (1 = default)
 the hundreds digit is the tires you currently have equipped. (1 = default[a.k.a Street Tires], 2 = Sports Tires, 3 = Race tires, 4 = Drag Slicks)
-the thousands digit is the transmission. Upgrading this reduces shift time delay, and once maxed, you will be able to set gear ratios(?)
 
 
 List CSE: (Primary Save File)
@@ -46,6 +45,8 @@ List CSE: (Primary Save File)
 26: Special Event 6 completion status
 27: Unique player id (integer from 1 to 32768)
 
+13 cars+ 30 + 13+ 6 = 49 things to complete
+
 
 List CAE: (Car Data)
 1: Car Identifier Number
@@ -74,8 +75,6 @@ List CAE: (Car Data)
 24: Car Weight (kg)
 25: Drivetrain type (1 = RWD, 2 = FWD, 3 = AWD/4WD)
 26: Custom car body type
-
-+ Idea 
 
 
 List L1:

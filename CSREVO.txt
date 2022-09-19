@@ -14,7 +14,7 @@ TextColor(Ans
 For(A,~40,50,10
 	If A=50
 	ClrDraw
-	Line(A-49,15,A-49,10,11
+	DelVar HLine(A-49,15,A-49,10,11
 	Line(A-49,10,A-41,5,Ans
 	Line(A-49,15,A-25,19,Ans
 	Line(A-25,13,A-25,19,Ans
@@ -137,19 +137,20 @@ Then
 	10fPart(.1int(.1A->M
 	int(.01A->N
 	18
-	Text(30,Ans,"ENGINE
-	Text(60,Ans,"WEIGHT
-	Text(90,Ans,"TIRES
-	Text(120,Ans,"RESET
+	Text(25,Ans,"ENGINE
+	Text(50,Ans,"WEIGHT
+	Text(75,Ans,"TIRES
+	Text(100,Ans,"RESET
+	Text(125,Ans,"RATIOS
 	Text(150,Ans,"BACK
-	Text(30,5Ans,L
-	Text(60,5Ans,M
-	Text(90,5Ans,N
+	Text(25,5Ans,L
+	Text(50,5Ans,M
+	Text(75,5Ans,N
 	Repeat K=21 or K=105
 		If K
-		Text(~1,30F+28,1," 
-		F-(F and K=25)+(K=34 and F<4->F
-		Text(30F+30,2,"[|>]
+		Text(~1,25F+23,1," 
+		F-(F and K=25)+(K=34 and F<5->F
+		Text(25F+25,2,"[|>]
 		getKey->K
 	End
 	For(X,20,130,11
@@ -242,9 +243,9 @@ Then
 			End
 		End
 	End
+	Text(~1,146,0,Str0
 	If F=3
 	Then
-		Text(~1,146,0,Str0
 		DelVar HText(40,70,"SELL ALL UPGRADES?
 		Text(70,105,"NO
 		Text(95,105,"YES
@@ -275,6 +276,18 @@ Then
 			Text(70,60,"CAR RESET.
 			Pause 
 		End
+	End
+	If F=4
+	Then
+		For(F,1,7
+			5+18F
+			Text(Ans,5,"GEAR      :
+			Text(Ans,40,F
+			Text(Ans,64,|LCAE(5+F
+		End
+		Text(149,5,"FINAL:
+		Text(149,64,|LCAE(21
+		Pause 
 	End
 End
 If C=2:Then
@@ -332,6 +345,7 @@ End
 If C=4:Then
 	20->A
 	ClrDraw
+	Text(0,0,|LCSE(27
 	Text(0,195,"RECORDS
 	Horizontal 3.2,12
 	Text(A,92,"TIME TRIALS
@@ -351,17 +365,19 @@ If C=4:Then
 	Text(6A,8A,"RECORD MPH:
 	Text(7A,8A,|LCSE(5
 	TextColor(10
-	Text(135,0,"LADDER:
-	Text(135,55,|LCSE(2)-14
-	Text(135,75,"/30
+	135
+	Text(Ans,0,"LADDER:
+	Text(Ans,55,|LCSE(2)-14
+	Text(Ans,75,"/30
 	TextColor(15
 	Text(6A,95,iPart(|LCSE(3)-.9
 	Text(6A,0,"CAR SPECIFIC:
 	Text(6A,115,"/13
 	TextColor(16
-	Text(150,0,"SPECIAL EVENTS:
-	Text(150,115,|LCSE(4
-	Text(150,130,"/6
+	150
+	Text(Ans,0,"SPECIAL EVENTS:
+	Text(Ans,115,|LCSE(4
+	Text(Ans,130,"/6
 	Horizontal 1.2,11
 	Horizontal .2,14
 	Horizontal ~.8,18
@@ -380,11 +396,12 @@ DelVar FIf C=5:Then
 		Text(0,0,"CR:
 		|LCSE(1->C
 		Text(0,25,C
-		Text(20,70,"SELECT CONTINENT
-		Text(55,70,"NORTH AMERICA
-		Text(80,70,"EUROPE
-		Text(105,70,"ASIA
-		Text(130,70,"BACK
+		70
+		Text(20,Ans,"SELECT CONTINENT
+		Text(55,Ans,"NORTH AMERICA
+		Text(80,Ans,"EUROPE
+		Text(105,Ans,"ASIA
+		Text(130,Ans,"BACK
 		Repeat K=21 or K=105
 			If K
 			Text(~1,25F+53,50," 
@@ -732,7 +749,7 @@ If C=3:Then
 		A+|LCAE(23->|LCAE(23
 		~.1+fPart(.1int(.1U->A
 		A+|LCAE(13->|LCAE(13
-		|LCAE(24)-50A->|LCAE(24
+		|LCAE(24)-500A->|LCAE(24
 		|LCAE(23)-2int(sub(U->|LCAE(23
 		100fPart(U->|LCAE(16
 		TextColor(Ans
