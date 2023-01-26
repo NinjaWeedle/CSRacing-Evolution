@@ -1,3 +1,4 @@
+:"CALCULATOR STREET RACING II
 :DCS
 "03303303300555553000300303005050300033033000505030000303030050500330330303055555BBBBBBBBBBBBBBBB9999999999999999999999999999999999999999999999999993333339999999993CC3CCC399999953555355553555992555535555355AA9533355355533355533D33333333D33339333999999333999
 Full
@@ -46,14 +47,49 @@ Text(~1,25,75,"EVOLUTION
 BackgroundOn 22
 BackgroundOn 20
 Text(140,200,"OXITI8
-Text(60,80,"PRESS ENTER
-"                      ->Str0
-Pause 
 SetUpEditor CAE,CSE,TTR
+Text(55,40,"PRESS ENTER TO START GAME
 27->dim(|LCSE
-If not(|LCSE(Ans
+If |LCSE(19
+Text(75,35,"PRESS 2ND TO LOAD CUSTOM CAR
+"                      ->Str0
+Repeat Ans=105 or Ans=21
+	getKey
+End
+If Ans=21 and |LCSE(19
 Then
-	randInt(1,8^5->|LCSE(Ans
+	If 90>det([[20
+	Then
+		Pause "CELTIC CE REQUIRE\D
+	Else
+		Disp "ENTER CUSTOM CAR APPVAR
+		Input "NAME: CAR",Str0
+		"rowSwap(CAR"+Str0->Str0
+		det(8
+		Disp Str9,"LOADING...
+		If inString(Str9,"A
+		det(5
+		0
+		det(0
+		If theta!=26
+		Then
+			Pause "INVALID CAR!
+		Else
+			14->|LCAE(1
+			For(A,2,theta
+				A
+				det(0
+				expr(Str9->|LCAE(A
+			End
+			1
+			det(0
+			Disp "LOAD COMPLETE.
+		End
+	End
+End
+If not(|LCSE(27
+Then
+	randInt(1,8^5->|LCSE(27
 	2|E4->|LCSE(1
 	15->|LCSE(2
 End
@@ -279,7 +315,7 @@ Then
 	End
 	If F=4
 	Then
-		For(F,1,7
+		For(F,1,|LCAE(5
 			5+18F
 			Text(Ans,5,"GEAR      :
 			Text(Ans,40,F
@@ -457,7 +493,7 @@ DelVar FIf C=5:Then
 						"CAMACO SS '69->Str3
 						4|E4->C
 						2->N
-						2->I
+						1->I
 						19->B
 					End
 					If D=1
@@ -760,6 +796,7 @@ End
 If C
 Goto 0
 Lbl 2
+ClrHome
 TextColor(12
 If 15=|LCAE(1
 Pause "YOU NEED A CAR TO RACE.
@@ -927,6 +964,10 @@ Goto 2
 Goto 1
 Lbl C
 2->W
+If 14=|LCAE(1
+Pause "NO CUSTOM CARS ALLOWED!
+If 14=|LCAE(1
+Goto 2
 Text(0,170,"TIME TRIALS
 Horizontal 3.2,11
 Horizontal 2.3,11
@@ -1113,7 +1154,7 @@ Else
 	TextColor(11
 	If R>B
 	Then
-		V+int(R/2->V
+		V+int(R.5->V
 		B.1->S
 	Else
 		V-1->V
@@ -1126,7 +1167,7 @@ Then
 	TextColor(14
 	Text(150,80,"PERFECT START
 	8+|LCSE(1->|LCSE(1
-	.05(R->S
+	R.05->S
 End
 |LCAE(6->F
 TextColor(12
@@ -1149,7 +1190,7 @@ Repeat P>=240L
 		Text(~1,130,170,G
 	End
 	Text(~1,130,115,round(10S,0
-	round(SFM3360/|LCAE(20),0)/1|E3->R
+	round(SFM3360/|LCAE(20),0)/|E3->R
 	If R>|LCAE(2
 	Then
 		S-(.15A(1.1-GH->S
@@ -1249,7 +1290,7 @@ Then
 		Else
 			Disp "RECORD TIED
 		End
-		DelVar thetaDisp "TIME:
+		DelVar thetaDisp Str9,"TIME:
 		Pause Z
 	Else
 		10theta->A
