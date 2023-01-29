@@ -52,7 +52,6 @@ Text(55,40,"PRESS ENTER TO START GAME
 27->dim(|LCSE
 If |LCSE(19
 Text(75,35,"PRESS 2ND TO LOAD CUSTOM CAR
-"                      ->Str0
 Repeat Ans=105 or Ans=21
 	getKey
 End
@@ -83,10 +82,12 @@ Then
 			End
 			1
 			det(0
-			Disp "LOAD COMPLETE.
+			111+sub(|LCAE(16->|LCSE(19
+			Pause "LOAD COMPLETE.
 		End
 	End
 End
+"                      ->Str0
 If not(|LCSE(27
 Then
 	randInt(1,8^5->|LCSE(27
@@ -855,7 +856,7 @@ Goto 2
 If not(C
 Then
 	expr(sub(Str9,length(Str9)-1,2
-	If 92>=Ans and 45<Ans
+	If 92>=Ans and 40<Ans
 	Then
 		"STEVE O->Str2
 		1.4->J
@@ -1167,7 +1168,7 @@ Then
 	TextColor(14
 	Text(150,80,"PERFECT START
 	8+|LCSE(1->|LCSE(1
-	R.05->S
+	R.12->S
 End
 |LCAE(6->F
 TextColor(12
@@ -1275,7 +1276,7 @@ ClrHome
 10S
 If not(W) and Ans>|LCSE(5
 Then
-	Disp "NEW SPEED RECORD!","MPH:
+	Disp "NEW SPEED RECORD!",Str9,"MPH:
 	Ans->|LCSE(5
 	Pause Ans
 End
