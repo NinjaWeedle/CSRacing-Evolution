@@ -1,4 +1,4 @@
-CALCULATOR STREET RACING II: EVOLUTION V1.1 -  Race your way.
+CALCULATOR STREET RACING II: EVOLUTION V2.0 -  Race your way.
 
 A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
 
@@ -23,11 +23,12 @@ II. CSRACING II IN DEPTH
  6: Car List
  7: Track List
  8: Special Event List
+ 9: Loading Custom Cars
 
 III. EXTRA INFORMATION
- 9: Developer's Notes & Technicalities
- 10: A short guide to CSRacing jargon
- 11: Credits and License
+ 10: Developer's Notes & Technicalities
+ 11: A short guide to CSRacing jargon
+ 12: Credits and License
 _________________________________________________________
 
 < I. GETTING STARTED >
@@ -37,7 +38,7 @@ _________________________________________________________
 
 Send CSREVO.8xp to either RAM or Archive on your calculator using a program like TI-Connect CE.
 
-Note to ASMHOOK users: Make sure you update to ASMHOOK V1.0.2 (or disable ASMHOOK) before playing, as it fixes a bug that this game causes.
+Note to ASMHOOK users: Make sure you update to ASMHOOK V1.0.2 or later (or disable ASMHOOK) before playing, as it fixes a bug that this game causes.
 
 
 2. HOW TO PLAY:
@@ -195,11 +196,24 @@ Event 5: Top speed Showdown - All cars allowed
 Event 6: Tier 3 Championship - Allows all Tier 3 cars
 
 
+9. LOADING CUSTOM CARS
+
+CSRacing II allows you to use custom cars created with the CSRacing II Car Studio program (availiable separately).
+
+To load custom cars, you will need to install the Celtic CE library, which you can find here: https://github.com/RoccoLoxPrograms/CelticCE
+ - If you do not have Celtic CE installed and attempt to load a custom car, the program will tell you to install Celtic CE before you can proceed.
+
+Once you beat Special Event 6, a new option on the title screen will appear: "Press 2nd to load a custom car".
+Selecting this option will bring you to a prompt asking you to enter the name of the car you want to load.
+ - For example, if you wanted to load "CARR33.8xv", you would enter "R33" at this prompt. CSRacing II automatically adds the "CAR" portion of the appvar name for you, as every CSRacing II custom car has that prefix.
+
+Once you have entered the name of the car you want to load, press enter. Once it is done loading, press enter again to open the main menu and use your newly imported car!
+
 
 < III. EXTRA INFORMATION >
 
 
-9. DEVELOPER'S NOTES & TECHNICALITIES:
+10. DEVELOPER'S NOTES & TECHNICALITIES:
 
  - This game still runs on TI-84+ C Silver Edition, but it will run very slow on that hardware and as such I do not reccommend it.
  - The cars in this game are intended to have the same gear ratios and top speeds as their real-world counterparts- but real world performance may differ. This is a calculator game, not a simulator.
@@ -207,7 +221,7 @@ Event 6: Tier 3 Championship - Allows all Tier 3 cars
  - If you get ERR: UNDEFINED after the title screen, it's likely because you deleted Str9. To fix this, enter "A->Str9 on the homescreen in TI-OS.
 
 
-10. A SHORT GUIDE TO CSRACING JARGON
+11. A SHORT GUIDE TO CSRACING JARGON
 
  - CSRacing = Calculator Street Racing
  - CR/Cr. = Credits, the currency of CSRacing
@@ -217,9 +231,9 @@ Event 6: Tier 3 Championship - Allows all Tier 3 cars
  - Home = the homescreen of the game.
 
 
-11. CREDITS, LICENSE AND CONTACT INFORMATION
+12. CREDITS, LICENSE AND CONTACT INFORMATION
 
-Game created by Oxiti8 in 2022.
+Game created by Oxiti8 2022-2023.
 
 Special thanks to Mr. Womp Womp, LogicalJoe, and fghsgh on Cemetech for help with optimization.
 Also thanks to Epsilon5 and DJ Omnimaga for car ideas and inspiration on graphical techniques.
