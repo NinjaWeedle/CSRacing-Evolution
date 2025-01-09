@@ -6,7 +6,6 @@ BackgroundOn 12
 BorderColor 4
 DetectAsymOff
 AxesOff
-ZStandard
 84->Xmin
 72->Ymax
 ZInteger
@@ -602,17 +601,30 @@ DelVar FIf C=5:Then
 				If not(Z
 				B->Z
 				TextColor(B
-				Text(50,60,Str3
-				Text(75,128,"#
+				128
+				Text(50,70,Str3
+				Text(75,Ans,"#
 				Pt-On(.2,0,B
 				Pt-On(~.15,0,B
+				Pxl-On(80,137,19
+				Pxl-On(85,137,19
+				Pxl-On(80,Ans,11
+				Pxl-On(85,Ans,11
 				TextColor(12
-				Text(25,110,"TIER
-				Text(25,150,I
+				Text(25,109,"TIER
+				Text(25,149,I
 				Text(97,84,"COST:
 				Text(120,84,"CAR #:
 				Text(120,140,N
 				Text(97,140,C
+				~3.35->K
+				21->U
+				Repeat K=~4.15
+					Horizontal K,U
+					K-.2->K
+					Horizontal K+.1,U
+					U+1->U
+				End
 				Text(150,5,"BACK
 				If O
 				Then
@@ -1040,9 +1052,7 @@ DelVar SDelVar RDelVar PDelVar OZDecimal
 Text(0,75,"VS.
 Text(0,99,Str2
 1->G
-19
-If W>=4 or W=2
-20
+19+(W>=4 or W=2
 TextColor(Ans
 For(Y,0,250,250
 	Text(~1,51,Y,Str0

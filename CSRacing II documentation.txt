@@ -7,7 +7,7 @@ Str3: Car to buy name
 Str0: temporary string (often used to create grey "bands")
 
 Car save format:
-A car's tune setup is all saved in its list entry in |LCSE, much like CSRacing 1. However, more data is stored there than in CSR 1:
+A car's tune setup is all saved in its list entry in |LCSE, much like CSRacing I. However, more data is stored there than in CSRacing I:
 
 111.14
 The numbers after the decimal is the car's paint color.
@@ -49,7 +49,7 @@ List CSE: (Primary Save File)
 
 
 List CAE: (Car Data)
-1: Car Identifier Number
+1: Car Identifier Number (In Custom Car appvars, this line is replaced with the car name as the CIN for custom cars is always 14)
 2: Max RPM
 3: Best launch RPM
 4: Actual Top speed (MPH)
@@ -76,15 +76,17 @@ List CAE: (Car Data)
 25: Drivetrain type (1 = RWD, 2 = FWD, 3 = AWD/4WD)
 26: Custom car body type
 
+This structure is also used for custom car appvars
+
 
 List L1:
 1: Launch speed for car challenge 1
 2: Launch speed for car challenge 2
 ...etc...this repeats until all 13 cars have their own challenges...
-14: Accelleration level for car challenge 1
+14: Acceleration level for car challenge 1
 15: Acceleration level for car challenge 2
 ...etc...this repeats until all 13 cars have their own challenges...
-26: Accelleration level for car challenge 13
+26: Acceleration level for car challenge 13
 
 List TTR:
 1: Short Tier 1 Record
@@ -99,7 +101,7 @@ VARIABLES:
 A = temp var. 1
 B = temp var. 2
 C = temp var. 3
-D = Difficulty (affects opponent's speed directly in Regulation and Ladder races, just affects their launch speed in Car SPecific and Crew Battle)
+D = Difficulty (affects opponent's speed directly in Regulation and Ladder races, just affects their launch speed in Car Specific and Crew Battle)
 E = Rev loss rate per cycle
 F = Temp var. 4
 G = Gear
@@ -170,4 +172,4 @@ CAR LIST (by car identifier number):
 13*: Oxiti Increceba (2023)
 14: Identifies custom cars
 15*: None
-*Not purchaseable at dealer
+*Not purchasable at dealer
