@@ -1,4 +1,4 @@
-CALCULATOR STREET RACING II: EVOLUTION V2.0 -  Race your way.
+CALCULATOR STREET RACING II: EVOLUTION V2.0.1 -  Race your way.
 
 A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
 
@@ -6,7 +6,7 @@ The ultimate drag racing game just got more intense. Powered by the one of the m
 on 2 detailed tracks in 7 different event types. Compete with your friends for the best times in Time Trials, Conquer the 6 championships of Special Events, or just test your car's
 top speed in Machine Test. You can also race in returning events like Regulation, Ladder, Custom Spec and the challenging Car Specific races. How you race is for you to decide.
 
-NOTE: This game is designed for the M+ revisons and/or Python Editions of the CE, and as a result it may run a bit slow on older models without use of a program like FASTER.
+NOTE: This game is designed for the M+ revisions and/or Python Editions of the CE, and as a result it may run a bit slow on older models without use of a program like FASTER.
 Github: https://github.com/NinjaWeedle/CSRacing-Evolution - If there's a new version of CSRacing II Evolution, you'll find it here first.
 Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing II! You can also post your time trials records here.
 _________________________________________________________
@@ -83,7 +83,7 @@ Press 2ND to start your engine and begin the countdown to launch. To rev quickly
 Once the race begins, your car will begin accelerating automatically, so you should not hold 2nd or any other key once you begin moving.
  - Press the up arrow key to shift up, and the down arrow key to shift down.
  - Every car drives differently. The best time to shift, the number of gears, redline, and various other stats differ from car to car.
- - When you hit redline in a gear, the RPM indicator will turn red. This is a sign that you need to shift up to continue accellerating.
+ - When you hit redline in a gear, the RPM indicator will turn red. This is a sign that you need to shift up to continue accelerating.
 
 
 3. HOME MENU
@@ -124,7 +124,7 @@ Each mode has its own rules:
 - Ladder: Race your way through 30 increasingly challenging races! The Grand Prize is 10000 Cr. Beware though: If you lose a race, you'll be knocked down a spot on the ladder.
 
 - Time Trials: Race to beat you and your friend's best times! There are six different race categories: The Short (1x length) & Long (2x length) races for each of the three tiers.
-  -- Feel free to post your best times on the Cemetech forum topic for CSRacing II.
+  -- Feel free to post your best times on the Cemetech forum topic for CSRacing II!
 
 - Car Specific: Race in unique races specific to each car in the game. Each one will test your mastery of a specific car. 
   -- There's a catch: you can't use any upgrades. The difficulty is high, but so is the prize money!
@@ -154,7 +154,7 @@ Each mode has its own rules:
  - Upgrades scale in cost based on the tier of the car you're upgrading- Tier 1 cars are the cheapest cars to upgrade, and Tier 3 cars are the most expensive to upgrade due to their exotic nature.
  - Upgrades offer a noticeable performance boost, but buying faster cars is eventually necessary to stay competitive.
  - Regulation races are a great way to earn Cr. - Just make sure to keep the difficulty at a level your car can handle.
- - There are at least four cars availiable in each tier.
+ - There are at least four cars available in each tier.
 
 
 6. CAR LIST (by car identifier number):
@@ -198,7 +198,7 @@ Event 6: Tier 3 Championship - Allows all Tier 3 cars
 
 9. LOADING CUSTOM CARS
 
-CSRacing II allows you to use custom cars created with the CSRacing II Car Studio program (availiable separately).
+CSRacing II allows you to use custom cars created with the CSRacing II Car Studio program (available separately).
 
 To load custom cars, you will need to install the Celtic CE library, which you can find here: https://github.com/RoccoLoxPrograms/CelticCE
  - If you do not have Celtic CE installed and attempt to load a custom car, the program will tell you to install Celtic CE before you can proceed.
@@ -215,7 +215,7 @@ Once you have entered the name of the car you want to load, press enter. Once it
 
 10. DEVELOPER'S NOTES & TECHNICALITIES:
 
- - This game still runs on TI-84+ C Silver Edition, but it will run very slow on that hardware and as such I do not reccommend it.
+ - This game still runs on TI-84+ C Silver Edition, but it will run very slow on that hardware and as such I do not recommend it.
  - The cars in this game are intended to have the same gear ratios and top speeds as their real-world counterparts- but real world performance may differ. This is a calculator game, not a simulator.
  - Cars with electronically limited top speeds in the real world (i.e. 155 MPH) have their limiters removed here.
  - If you get ERR: UNDEFINED after the title screen, it's likely because you deleted Str9. To fix this, enter "A->Str9 on the homescreen in TI-OS.
@@ -233,7 +233,7 @@ Once you have entered the name of the car you want to load, press enter. Once it
 
 12. CREDITS, LICENSE AND CONTACT INFORMATION
 
-Game created by Oxiti8 2022-2023.
+Game created by Oxiti8 2022-2024.
 
 Special thanks to Mr. Womp Womp, LogicalJoe, and fghsgh on Cemetech for help with optimization.
 Also thanks to Epsilon5 and DJ Omnimaga for car ideas and inspiration on graphical techniques.
