@@ -233,7 +233,7 @@ Once you have entered the name of the car you want to load, press enter. Once it
 
 12. CREDITS, LICENSE AND CONTACT INFORMATION
 
-Game created by Oxiti8 2022-2024.
+Game created by Oxiti8 2022-2025.
 
 Special thanks to Mr. Womp Womp, LogicalJoe, and fghsgh on Cemetech for help with optimization.
 Also thanks to Epsilon5 and DJ Omnimaga for car ideas and inspiration on graphical techniques.
