@@ -1,19 +1,17 @@
-CALCULATOR STREET RACING II: EVOLUTION V2.0.1 -  Race your way.
+CALCULATOR STREET RACING II: EVOLUTION X (Alpha) -  Expand your horizons.
 
-A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Plus CE.
+A drag racing game written by Oxiti8 in pure TI-BASIC for the TI-84 Evo and TI-84 Plus CE.
 
-The ultimate drag racing game just got more intense. Powered by the one of the most advanced racing engines ever seen in a pure TI-BASIC game, CSRacing II allows you buy, paint, tune, and race 13 different cars
-on 2 detailed tracks in 7 different event types. Compete with your friends for the best times in Time Trials, Conquer the 6 championships of Special Events, or just test your car's
+The ultimate drag racing game just got more intense. Powered by the one of the most advanced racing engines ever seen in a pure TI-BASIC game, CSRacing II allows you buy, paint, tune, and race 17 different cars
+on 2 detailed tracks in 7 different event types. Compete with your friends for the best times in Time Trials, Conquer the 8 championships of Special Events, or just test your car's
 top speed in Machine Test. You can also race in returning events like Regulation, Ladder, Custom Spec and the challenging Car Specific races. How you race is for you to decide.
 
-NOTE: This game is designed for the M+ revisions and/or Python Editions of the CE, and as a result it may run a bit slow on older models without use of a program like FASTER.
-Github: https://github.com/NinjaWeedle/CSRacing-Evolution - If there's a new version of CSRacing II Evolution, you'll find it here first.
-Cemetech topic: https://www.cemetech.net/forum/viewtopic.php?p=299757 - Check out this forum topic for the latest updates on CSRacing II! You can also post your time trials records here.
+NOTE: This version of the game is designed for the TI-84 Evo only.  If you are looking for the TI-84 Plus CE version, you can find it here: https://github.com/NinjaWeedle/CSRacing-Evolution/tree/master
 _________________________________________________________
 Table of contents:
 
 I. GETTING STARTED
- 1: How to install Calculator Street Racing II Evolution on your TI-84+ CE
+ 1: How to install Calculator Street Racing II Evolution X on your TI-84 Evo
  2: How to play
  3: Home menu
  4: Game modes
@@ -23,7 +21,6 @@ II. CSRACING II IN DEPTH
  6: Car List
  7: Track List
  8: Special Event List
- 9: Loading Custom Cars
 
 III. EXTRA INFORMATION
  10: Developer's Notes & Technicalities
@@ -36,14 +33,11 @@ _________________________________________________________
 
 1. HOW TO INSTALL:
 
-Send CSREVO.8xp to either RAM or Archive on your calculator using a program like TI-Connect CE.
-
-Note to ASMHOOK users: Make sure you update to ASMHOOK V1.0.2 or later (or disable ASMHOOK) before playing, as it fixes a bug that this game causes.
-
+Send CSRIIEX.8xp2 to RAM on your calculator using TI-Connect Evo.
 
 2. HOW TO PLAY:
 
-When you first start CSRacing II: Evolution, you wont be given a car, but rather 20000 Credits to use to purchase a car.
+When you first start CSRacing II: Evolution S, you wont be given a car, but rather 20000 Credits to use to purchase a car.
 To buy your first car, navigate to the "BUY CARS" option in the home menu and press 2nd or Enter to select it.
 
 CR:20000____________HOME_
@@ -173,6 +167,10 @@ Each mode has its own rules:
 12: Enso (2003) - T3 - RWD - EUR
 13*: Oxiti Increceba (2023) - T3 - AWD - USA
 14*: Custom Cars
+15:
+16:
+17:
+18:
 
 *Cars with "*" next to their number cannot be purchased at the Car Dealer.
 
@@ -194,20 +192,8 @@ Event 3: JP Tuner Trials - Allows only JP cars
 Event 4: Tier 2 Championship - Allows all Tier 2 cars
 Event 5: Top speed Showdown - All cars allowed
 Event 6: Tier 3 Championship - Allows all Tier 3 cars
-
-
-9. LOADING CUSTOM CARS
-
-CSRacing II allows you to use custom cars created with the CSRacing II Car Studio program (available separately).
-
-To load custom cars, you will need to install the Celtic CE library, which you can find here: https://github.com/RoccoLoxPrograms/CelticCE
- - If you do not have Celtic CE installed and attempt to load a custom car, the program will tell you to install Celtic CE before you can proceed.
-
-Once you beat Special Event 6, a new option on the title screen will appear: "Press 2nd to load a custom car".
-Selecting this option will bring you to a prompt asking you to enter the name of the car you want to load.
- - For example, if you wanted to load "CARR33.8xv", you would enter "R33" at this prompt. CSRacing II automatically adds the "CAR" portion of the appvar name for you, as every CSRacing II custom car has that prefix.
-
-Once you have entered the name of the car you want to load, press enter. Once it is done loading, press enter again to open the main menu and use your newly imported car!
+Event 7:
+Event 8:
 
 
 < III. EXTRA INFORMATION >
@@ -215,7 +201,6 @@ Once you have entered the name of the car you want to load, press enter. Once it
 
 10. DEVELOPER'S NOTES & TECHNICALITIES:
 
- - This game still runs on TI-84+ C Silver Edition, but it will run very slow on that hardware and as such I do not recommend it.
  - The cars in this game are intended to have the same gear ratios and top speeds as their real-world counterparts- but real world performance may differ. This is a calculator game, not a simulator.
  - Cars with electronically limited top speeds in the real world (i.e. 155 MPH) have their limiters removed here.
  - If you get ERR: UNDEFINED after the title screen, it's likely because you deleted Str9. To fix this, enter "A->Str9 on the homescreen in TI-OS.
@@ -233,10 +218,11 @@ Once you have entered the name of the car you want to load, press enter. Once it
 
 12. CREDITS, LICENSE AND CONTACT INFORMATION
 
-Game created by Oxiti8 2022-2024.
+Game created by Oxiti8 2022-2026.
 
 Special thanks to Mr. Womp Womp, LogicalJoe, and fghsgh on Cemetech for help with optimization.
 Also thanks to Epsilon5 and DJ Omnimaga for car ideas and inspiration on graphical techniques.
+Yet more thanks to Adriweb for the TI-Planet Project Builder, particularly the Evo export function.
 
 
 THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -252,3 +238,5 @@ Redistribution of this software is permitted, but this document MUST accompany i
 Email: weedleninja88@gmail.com
 ticalc.org author profile: https://ticalc.org/archives/files/authors/117/11708.html
 Looking for the original Calculator Street Racing? You can find it here: https://github.com/NinjaWeedle/CSRacing
+Want the original version of Calculator Street Racing II for the TI-84 Plus CE? It's available here: https://www.cemetech.net/downloads/files/2307/x3259
+And also here:https://github.com/NinjaWeedle/CSRacing-Evolution/tree/master

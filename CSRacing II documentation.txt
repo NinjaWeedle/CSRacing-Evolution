@@ -1,10 +1,11 @@
-Calculator Street Racing II: Evolution DEVELOPER'S DOCUMENTATION
+Calculator Street Racing II: Evolution X DEVELOPER'S DOCUMENTATION
 
 STRINGS USED:
 Str1: Car name
 Str2: Opponent name
 Str3: Car to buy name
-Str0: temporary string (often used to create grey "bands")
+Str4: Temporary string used for Race Menu
+Str0: Temporary string (often used to create grey "bands")
 
 Car save format:
 A car's tune setup is all saved in its list entry in |LCSE, much like CSRacing I. However, more data is stored there than in CSRacing I:
@@ -44,8 +45,12 @@ List CSE: (Primary Save File)
 25: Special Event 5 completion status
 26: Special Event 6 completion status
 27: Unique player id (integer from 1 to 32768)
+28: Increceba (2016) owned?
+29:
+30:
+31:
 
-13 cars+ 30 + 13+ 6 = 49 things to complete
+13 cars + 30 + 13 + 6 = 49 things to complete
 
 
 List CAE: (Car Data)
@@ -172,4 +177,8 @@ CAR LIST (by car identifier number):
 13*: Oxiti Increceba (2023)
 14: Identifies custom cars
 15*: None
+16: Increceba (2016)
+17:
+18:
+19:
 *Not purchasable at dealer
