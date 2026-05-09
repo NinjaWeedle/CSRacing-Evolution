@@ -44,11 +44,13 @@ List CSE: (Primary Save File)
 24: Special Event 4 completion status
 25: Special Event 5 completion status
 26: Special Event 6 completion status
-27: Unique player id (integer from 1 to 32768)
-28: Increceba (2016) owned?
-29:
-30:
+27: Special Event 7 completion status
+28: Special Event 8 completion status
+29: Unique player id (integer from 1 to 32768)
+30: Oxiti Increceba GT (2024) owned?
 31:
+32:
+33:
 
 13 cars + 30 + 13 + 6 = 49 things to complete
 
@@ -176,9 +178,9 @@ CAR LIST (by car identifier number):
 12: Enso (2003)
 13*: Oxiti Increceba (2023)
 14: Identifies custom cars
-15*: None
-16: Increceba (2016)
+15: Oxiti Increceba GT (2024)
+16:
 17:
 18:
-19:
+19*: None
 *Not purchasable at dealer
